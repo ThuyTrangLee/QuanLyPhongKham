@@ -1,0 +1,4 @@
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.AssemblyReference.cache
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.Properties.Resources.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.GenerateResource.cache
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.CoreCompileInputs.cache

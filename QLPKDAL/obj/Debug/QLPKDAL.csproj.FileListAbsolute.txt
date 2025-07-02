@@ -1,0 +1,9 @@
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDAL.dll
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDAL.pdb
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDTO.dll
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDTO.pdb
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.AssemblyReference.cache
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.CoreCompileInputs.cache
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.Up2Date
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.dll
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.pdb
