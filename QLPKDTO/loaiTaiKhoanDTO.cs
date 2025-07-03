@@ -10,7 +10,7 @@ namespace QLPKDTO
     {
         private string tenLoaiaiKhoan;
         private int maRole;
-        public string TenLoaiTaiKhaon { get => tenLoaiaiKhoan; set => tenLoaiaiKhoan = value; }
+        public string TenLoaiTaiKhoan { get => tenLoaiaiKhoan; set => tenLoaiaiKhoan = value; }
         public int MaRole { get => maRole; set => maRole = value; }
 
     }

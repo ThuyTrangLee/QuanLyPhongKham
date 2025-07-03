@@ -2,3 +2,17 @@ D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.AssemblyReferenc
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.Properties.Resources.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.GenerateResource.cache
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.CoreCompileInputs.cache
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\GUI_QLPK.exe.config
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\GUI_QLPK.exe
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\GUI_QLPK.pdb
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\Guna.UI2.dll
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKBUS.dll
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKDAL.dll
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKDTO.dll
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKBUS.pdb
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKDAL.pdb
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\QLPKDTO.pdb
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.Login.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.Up2Date
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.exe
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.pdb

@@ -7,3 +7,5 @@ D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.CoreCompileInputs.
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.Up2Date
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.dll
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.pdb
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.xml
