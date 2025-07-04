@@ -3,20 +3,104 @@
   "WorkspaceRootPath": "D:\\WORKSPACE\\QuanLyPhongKham\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\qlpmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\qlpmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\qlpmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\qlpmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|d:\\workspace\\quanlyphongkham\\gui_qlpk\\tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\benhnhandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\benhnhandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0A9672A-14BE-4183-9DDD-0D98A8EC47D8}|QLPKBUS\\QLPKBUS.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkbus\\benhnhanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0A9672A-14BE-4183-9DDD-0D98A8EC47D8}|QLPKBUS\\QLPKBUS.csproj|solutionrelative:qlpkbus\\benhnhanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdal\\benhnhandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|solutionrelative:qlpkdal\\benhnhandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\lichhen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\lichhen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|d:\\workspace\\quanlyphongkham\\gui_qlpk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\gui_qlpk\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|d:\\workspace\\quanlyphongkham\\gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F2B136F7-DB02-4C75-9721-56D506776DE8}|GUI_QLPK\\GUI_QLPK.csproj|solutionrelative:gui_qlpk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\toathuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\toathuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\thuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\thuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\phieukhambenhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\phieukhambenhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\loaitaikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\loaitaikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\donvidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\donvidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\dichvudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\dichvudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\chitiettoathuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\chitiettoathuocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\chandoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\chandoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\cachdungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\cachdungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\benhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\benhdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|solutionrelative:qlpkdal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0A9672A-14BE-4183-9DDD-0D98A8EC47D8}|QLPKBUS\\QLPKBUS.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkbus\\loaitaikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,18 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F0A9672A-14BE-4183-9DDD-0D98A8EC47D8}|QLPKBUS\\QLPKBUS.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkbus\\taikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0A9672A-14BE-4183-9DDD-0D98A8EC47D8}|QLPKBUS\\QLPKBUS.csproj|solutionrelative:qlpkbus\\taikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|solutionrelative:qlpkdal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdto\\loaitaikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64C8D87B-D9C5-43D3-AEB8-42B8F844B4F3}|QLPKDTO\\QLPKDTO.csproj|solutionrelative:qlpkdto\\loaitaikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72C16550-2587-4537-8AF4-B81A0464CE6D}|QLPKDAL\\QLPKDAL.csproj|D:\\WORKSPACE\\QuanLyPhongKham\\qlpkdal\\loaitaikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,34 +122,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 48,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs",
               "RelativeDocumentMoniker": "GUI_QLPK\\Login.cs",
               "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs",
               "RelativeToolTip": "GUI_QLPK\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwDUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T04:58:49.228Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Program.cs",
-              "RelativeDocumentMoniker": "GUI_QLPK\\Program.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Program.cs",
-              "RelativeToolTip": "GUI_QLPK\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T07:43:22.435Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -105,45 +163,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "taiKhoanDAL.cs",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\taiKhoanDAL.cs",
-              "RelativeDocumentMoniker": "QLPKDAL\\taiKhoanDAL.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\taiKhoanDAL.cs",
-              "RelativeToolTip": "QLPKDAL\\taiKhoanDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAzAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TraCuuBenhNhan.cs [Design]",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\TraCuuBenhNhan.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\TraCuuBenhNhan.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\TraCuuBenhNhan.cs [Design]",
+              "RelativeToolTip": "GUI_QLPK\\TraCuuBenhNhan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:03:10.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs",
-              "RelativeDocumentMoniker": "GUI_QLPK\\Login.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs [Design]",
-              "RelativeToolTip": "GUI_QLPK\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T05:31:05.755Z",
+              "WhenOpened": "2025-07-04T08:04:17.256Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "loaiTaiKhoanBUS.cs",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\loaiTaiKhoanBUS.cs",
-              "RelativeDocumentMoniker": "QLPKBUS\\loaiTaiKhoanBUS.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\loaiTaiKhoanBUS.cs",
-              "RelativeToolTip": "QLPKBUS\\loaiTaiKhoanBUS.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "TraCuuBenhNhan.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\TraCuuBenhNhan.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\TraCuuBenhNhan.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\TraCuuBenhNhan.cs",
+              "RelativeToolTip": "GUI_QLPK\\TraCuuBenhNhan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T05:12:50.777Z",
+              "WhenOpened": "2025-07-04T08:45:52.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "benhnhanDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\benhnhanDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\benhnhanDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\benhnhanDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\benhnhanDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T08:57:54.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QLPMMain.cs [Design]",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\QLPMMain.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\QLPMMain.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\QLPMMain.cs [Design]",
+              "RelativeToolTip": "GUI_QLPK\\QLPMMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:11:37.88Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QLPMMain.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\QLPMMain.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\QLPMMain.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\QLPMMain.cs",
+              "RelativeToolTip": "GUI_QLPK\\QLPMMain.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:22:58.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "benhnhanDAL.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\benhnhanDAL.cs",
+              "RelativeDocumentMoniker": "QLPKDAL\\benhnhanDAL.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\benhnhanDAL.cs",
+              "RelativeToolTip": "QLPKDAL\\benhnhanDAL.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T08:53:01.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BenhNhanBUS.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\BenhNhanBUS.cs",
+              "RelativeDocumentMoniker": "QLPKBUS\\BenhNhanBUS.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\BenhNhanBUS.cs",
+              "RelativeToolTip": "QLPKBUS\\BenhNhanBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T08:57:57.697Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "lichHen.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\lichHen.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\lichHen.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\lichHen.cs",
+              "RelativeToolTip": "QLPKDTO\\lichHen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:09:30.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "phieukhambenhDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\phieukhambenhDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\phieukhambenhDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\phieukhambenhDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\phieukhambenhDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:00:03.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "taiKhoanDTO.cs",
               "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\taiKhoanDTO.cs",
               "RelativeDocumentMoniker": "QLPKDTO\\taiKhoanDTO.cs",
@@ -151,25 +281,70 @@
               "RelativeToolTip": "QLPKDTO\\taiKhoanDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:37:56.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T09:37:56.201Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "taiKhoanBUS.cs",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\taiKhoanBUS.cs",
-              "RelativeDocumentMoniker": "QLPKBUS\\taiKhoanBUS.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\taiKhoanBUS.cs",
-              "RelativeToolTip": "QLPKBUS\\taiKhoanBUS.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\Login.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Login.cs [Design]",
+              "RelativeToolTip": "GUI_QLPK\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T05:12:40.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T05:31:05.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Program.cs",
+              "RelativeDocumentMoniker": "GUI_QLPK\\Program.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\Program.cs",
+              "RelativeToolTip": "GUI_QLPK\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:43:22.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "loaiTaiKhoanDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\loaiTaiKhoanDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\loaiTaiKhoanDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\loaiTaiKhoanDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\loaiTaiKhoanDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T09:41:40.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "hoadonDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\hoadonDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\hoadonDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\hoadonDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\hoadonDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:08:08.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "thuocDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\thuocDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\thuocDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\thuocDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\thuocDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:04:42.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "App.config",
               "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\GUI_QLPK\\App.config",
               "RelativeDocumentMoniker": "GUI_QLPK\\App.config",
@@ -182,20 +357,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "loaiTaiKhoanDTO.cs",
-              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\loaiTaiKhoanDTO.cs",
-              "RelativeDocumentMoniker": "QLPKDTO\\loaiTaiKhoanDTO.cs",
-              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\loaiTaiKhoanDTO.cs",
-              "RelativeToolTip": "QLPKDTO\\loaiTaiKhoanDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswAwAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "toathuocDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\toathuocDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\toathuocDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\toathuocDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\toathuocDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T09:41:40.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T09:05:42.517Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
+              "Title": "donViDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\donViDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\donViDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\donViDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\donViDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:03:23.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "dichvuDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\dichvuDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\dichvuDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\dichvuDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\dichvuDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:07:32.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ChiTietToaThuocDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\ChiTietToaThuocDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\ChiTietToaThuocDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\ChiTietToaThuocDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\ChiTietToaThuocDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:06:48.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "chandoanDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\chandoanDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\chandoanDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\chandoanDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\chandoanDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:02:34.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "cachdungDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\cachdungDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\cachdungDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\cachdungDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\cachdungDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:04:06.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "benhDTO.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\benhDTO.cs",
+              "RelativeDocumentMoniker": "QLPKDTO\\benhDTO.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDTO\\benhDTO.cs",
+              "RelativeToolTip": "QLPKDTO\\benhDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T09:01:52.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "loaiTaiKhoanBUS.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\loaiTaiKhoanBUS.cs",
+              "RelativeDocumentMoniker": "QLPKBUS\\loaiTaiKhoanBUS.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\loaiTaiKhoanBUS.cs",
+              "RelativeToolTip": "QLPKBUS\\loaiTaiKhoanBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T05:12:50.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "taiKhoanDAL.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\taiKhoanDAL.cs",
+              "RelativeDocumentMoniker": "QLPKDAL\\taiKhoanDAL.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\taiKhoanDAL.cs",
+              "RelativeToolTip": "QLPKDAL\\taiKhoanDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T10:03:10.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "taiKhoanBUS.cs",
+              "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\taiKhoanBUS.cs",
+              "RelativeDocumentMoniker": "QLPKBUS\\taiKhoanBUS.cs",
+              "ToolTip": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKBUS\\taiKhoanBUS.cs",
+              "RelativeToolTip": "QLPKBUS\\taiKhoanBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T05:12:40.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "loaiTaiKhoanDAL.cs",
               "DocumentMoniker": "D:\\WORKSPACE\\QuanLyPhongKham\\QLPKDAL\\loaiTaiKhoanDAL.cs",
               "RelativeDocumentMoniker": "QLPKDAL\\loaiTaiKhoanDAL.cs",

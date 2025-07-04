@@ -16,3 +16,5 @@ D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.Login.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.csproj.Up2Date
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.exe
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.pdb
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QLPMMain.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.TraCuuBenhNhan.resources

@@ -45,7 +45,8 @@ namespace GUI_QLPK
             if (check)
             {
                 this.Hide();
-                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                QLPMMain main = new QLPMMain(TENTK);
+                main.Show();
             }
             else
             {
