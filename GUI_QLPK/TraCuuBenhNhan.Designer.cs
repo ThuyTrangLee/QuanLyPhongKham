@@ -52,7 +52,7 @@
             this.nhaptukhoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nhaptukhoa.IconLeft = global::GUI_QLPK.Properties.Resources.search;
             this.nhaptukhoa.IconLeftOffset = new System.Drawing.Point(8, 0);
-            this.nhaptukhoa.Location = new System.Drawing.Point(13, 26);
+            this.nhaptukhoa.Location = new System.Drawing.Point(40, 26);
             this.nhaptukhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nhaptukhoa.Name = "nhaptukhoa";
             this.nhaptukhoa.PlaceholderText = "Tìm từ khóa";
@@ -75,11 +75,12 @@
             this.timkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.timkiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.timkiem.HoverState.ForeColor = System.Drawing.Color.White;
-            this.timkiem.Location = new System.Drawing.Point(506, 29);
+            this.timkiem.Location = new System.Drawing.Point(533, 29);
             this.timkiem.Name = "timkiem";
             this.timkiem.Size = new System.Drawing.Size(123, 45);
             this.timkiem.TabIndex = 1;
             this.timkiem.Text = "Tìm";
+            this.timkiem.Click += new System.EventHandler(this.timkiem_Click);
             // 
             // gird
             // 
@@ -101,7 +102,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gird.DefaultCellStyle = dataGridViewCellStyle3;
@@ -111,7 +112,7 @@
             this.gird.RowHeadersVisible = false;
             this.gird.RowHeadersWidth = 45;
             this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(978, 625);
+            this.gird.Size = new System.Drawing.Size(1092, 797);
             this.gird.TabIndex = 3;
             this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -139,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 747);
+            this.ClientSize = new System.Drawing.Size(1092, 925);
             this.Controls.Add(this.gird);
             this.Controls.Add(this.timkiem);
             this.Controls.Add(this.nhaptukhoa);

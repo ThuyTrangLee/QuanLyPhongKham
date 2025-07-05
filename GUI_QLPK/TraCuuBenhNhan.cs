@@ -66,5 +66,21 @@ namespace GUI_QLPK
             }
             gird.DataSource = table.DefaultView;
         }
+
+        private void timkiem_Click(object sender, EventArgs e)
+        {
+            bnBus = new BenhNhanBUS();
+            string sKeyword = nhaptukhoa.Text;
+            if (sKeyword == null || sKeyword == string.Empty || sKeyword.Length == 0) // tìm tất cả
+            {
+                List<BenhNhanDTO> listBenhNhan = bnBus.select();
+                this.loadData_Vao_GridView(listBenhNhan);
+            }
+            else
+            {
+                List<BenhNhanDTO> listBenhNhan = bnBus.selectByKeyWord(sKeyword);
+                this.loadData_Vao_GridView(listBenhNhan);
+            }
+        }
     }
 }

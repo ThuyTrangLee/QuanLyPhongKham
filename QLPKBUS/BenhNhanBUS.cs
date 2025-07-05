@@ -19,5 +19,9 @@ namespace QLPKBUS
         {
             return bnDAL.select();
         }
+        public List<BenhNhanDTO> selectByKeyWord(string sKeyword)
+        {
+            return bnDAL.SelectByKeyWord(sKeyword);
+        }
     }
 }

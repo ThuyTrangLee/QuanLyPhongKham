@@ -14,6 +14,7 @@ namespace GUI_QLPK
 {
     public partial class QLPMMain : Form
     {
+        
         public int mataikhoan;
         taiKhoanBUS tkBUS = new taiKhoanBUS();
         public taiKhoanDTO tk = new taiKhoanDTO();
@@ -22,6 +23,7 @@ namespace GUI_QLPK
 
         public QLPMMain(int mataikhoanLogin)
         {
+            
             mataikhoan = mataikhoanLogin;
             List<taiKhoanDTO> listTk = tkBUS.select();
             List<loaiTaiKhoanDTO> listLoaiTk = loaitkBUS.select();
@@ -48,6 +50,7 @@ namespace GUI_QLPK
         private void QLPMMain_Load(object sender, EventArgs e)
         {
             guna2ShadowForm1.SetShadowForm(this);
+            customSubMenu();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -68,11 +71,109 @@ namespace GUI_QLPK
             guna2Panel_container.Tag = fm;
             fm.Show();
         }
-
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
             label_Val.Text = "Tra cứu bệnh nhân";
             container(new TraCuuBenhNhan());
+            
+        }
+
+        private void customSubMenu()
+        {
+            PansubMenuHoaDon.Visible = false;
+            subMenuDanhMuc.Visible = false;
+            PanSubBaoCao.Visible = false;
+        }
+        private void hideSubMenu()
+        {
+            if (PansubMenuHoaDon.Visible == true)
+            {
+                PansubMenuHoaDon.Visible = false;
+            }
+            if (subMenuDanhMuc.Visible == true)
+            {
+                subMenuDanhMuc.Visible = false;
+            }
+            if (PanSubBaoCao.Visible == true)
+            {
+                PanSubBaoCao.Visible = false;
+            }
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+        //nút chính
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Hóa Dơn";
+            showSubMenu(PansubMenuHoaDon);
+        }
+
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Danh Mục";
+            showSubMenu(subMenuDanhMuc);
+        }
+
+        //nút phụ 
+        private void btnLHD_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btnDSHD_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_qlThuoc_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_qlLoaiBenh_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_qlBN_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_qlDV_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_qlAcc_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+        //Nút chính
+        private void btn_BaoCao_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Báo Cáo";
+            showSubMenu(PanSubBaoCao);
+        }
+
+        private void btn_DThu_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btn_sdThuoc_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
         }
     }
 }
