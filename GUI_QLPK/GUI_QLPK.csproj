@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhSachBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachBenhNhan.Designer.cs">
+      <DependentUpon>DanhSachBenhNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeToa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="TraCuuBenhNhan.Designer.cs">
       <DependentUpon>TraCuuBenhNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DanhSachBenhNhan.resx">
+      <DependentUpon>DanhSachBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KeToa.resx">
       <DependentUpon>KeToa.cs</DependentUpon>
     </EmbeddedResource>
