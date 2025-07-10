@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeToa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeToa.Designer.cs">
+      <DependentUpon>KeToa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,12 +72,21 @@
     <Compile Include="QLPMMain.Designer.cs">
       <DependentUpon>QLPMMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemPhieuKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemPhieuKhamBenh.Designer.cs">
+      <DependentUpon>ThemPhieuKhamBenh.cs</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TraCuuBenhNhan.Designer.cs">
       <DependentUpon>TraCuuBenhNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="KeToa.resx">
+      <DependentUpon>KeToa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="QLPMMain.resx">
       <DependentUpon>QLPMMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemPhieuKhamBenh.resx">
+      <DependentUpon>ThemPhieuKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuBenhNhan.resx">
       <DependentUpon>TraCuuBenhNhan.cs</DependentUpon>

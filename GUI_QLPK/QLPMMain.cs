@@ -128,11 +128,13 @@ namespace GUI_QLPK
         private void btnLHD_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+
         }
 
         private void btnDSHD_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+
         }
 
         private void btn_qlThuoc_Click(object sender, EventArgs e)
@@ -174,6 +176,19 @@ namespace GUI_QLPK
         private void btn_sdThuoc_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Phiếu khám bệnh";
+            container(new ThemPhieuKhamBenh(mataikhoan));
+        }
+
+        private void btn_out_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login lg = new Login();
+            lg.Show();
         }
     }
 }

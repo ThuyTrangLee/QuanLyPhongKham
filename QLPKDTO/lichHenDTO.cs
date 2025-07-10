@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLPKDTO
 {
-    public class lichHen
+    public class lichHenDTO
     {
         private int maLichHen;
         private string maBenhNhan;
