@@ -64,6 +64,12 @@
     <Compile Include="KeToa.Designer.cs">
       <DependentUpon>KeToa.cs</DependentUpon>
     </Compile>
+    <Compile Include="LapHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapHoaDon.Designer.cs">
+      <DependentUpon>LapHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,18 @@
     </Compile>
     <Compile Include="QLPMMain.Designer.cs">
       <DependentUpon>QLPMMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDichVu.Designer.cs">
+      <DependentUpon>QuanLyDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDichVuMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDichVuMoi.Designer.cs">
+      <DependentUpon>ThemDichVuMoi.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemPhieuKhamBenh.cs">
       <SubType>Form</SubType>
@@ -96,6 +114,9 @@
     <EmbeddedResource Include="KeToa.resx">
       <DependentUpon>KeToa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LapHoaDon.resx">
+      <DependentUpon>LapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +132,12 @@
     </Compile>
     <EmbeddedResource Include="QLPMMain.resx">
       <DependentUpon>QLPMMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDichVu.resx">
+      <DependentUpon>QuanLyDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDichVuMoi.resx">
+      <DependentUpon>ThemDichVuMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemPhieuKhamBenh.resx">
       <DependentUpon>ThemPhieuKhamBenh.cs</DependentUpon>

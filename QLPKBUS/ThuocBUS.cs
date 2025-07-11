@@ -38,6 +38,10 @@ namespace QLPKBUS
         {
             return thDAL.selectByKeyWord(sKeyword);
         }
+        public List<thuocDTO> selectbypkb(string mapkb)
+        {
+            return thDAL.selectbypkb(mapkb);
+        }
         public int autogenerate_mathuoc()
         {
             return thDAL.autogenerate_mathuoc();

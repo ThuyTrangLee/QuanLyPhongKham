@@ -261,5 +261,58 @@ namespace QLPKDAL
             }
             return mathuoc;
         }
+
+        public List<thuocDTO> selectbypkb(string mapkb)
+        {
+            string query = @"
+        SELECT TH.maThuoc, TH.tenThuoc, TH.maCachDung, TH.maDonVi, TH.donGia 
+        FROM PhieuKhamBenh PKB 
+        JOIN ToaThuoc T ON PKB.maPKB = T.maPKB 
+        JOIN KeThuoc KT ON T.maToaThuoc = KT.maToaThuoc 
+        JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc 
+        WHERE PKB.maPKB = @mapkb";
+
+            List<thuocDTO> lsThuoc = new List<thuocDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("@mapkb", mapkb);
+                    try
+                    {
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    thuocDTO th = new thuocDTO
+                                    {
+                                        MaThuoc = reader["maThuoc"].ToString(),
+                                        TenThuoc = reader["tenThuoc"].ToString(),
+                                        MaDonVi = int.Parse(reader["maDonVi"].ToString()),
+                                        MaCachDung = int.Parse(reader["maCachDung"].ToString()),
+                                        DonGia = float.Parse(reader["donGia"].ToString())
+                                    };
+
+                                    lsThuoc.Add(th);
+                                }
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsThuoc;
+        }
     }
 }

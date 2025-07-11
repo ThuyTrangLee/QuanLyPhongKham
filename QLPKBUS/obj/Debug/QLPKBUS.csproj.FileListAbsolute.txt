@@ -9,3 +9,14 @@ D:\WORKSPACE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.csproj.CoreCompileInputs.
 D:\WORKSPACE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.csproj.Up2Date
 D:\WORKSPACE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.dll
 D:\WORKSPACE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.pdb
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKBUS.dll
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKBUS.pdb
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKDAL.dll
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKDTO.dll
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKDAL.pdb
+D:\CODE\QuanLyPhongKham\QLPKBUS\bin\Debug\QLPKDTO.pdb
+D:\CODE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.csproj.AssemblyReference.cache
+D:\CODE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.csproj.CoreCompileInputs.cache
+D:\CODE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.csproj.Up2Date
+D:\CODE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.dll
+D:\CODE\QuanLyPhongKham\QLPKBUS\obj\Debug\QLPKBUS.pdb

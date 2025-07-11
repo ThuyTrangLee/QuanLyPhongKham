@@ -9,3 +9,14 @@ D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.dll
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.pdb
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.dll
 D:\WORKSPACE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDAL.dll
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDAL.pdb
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDTO.dll
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\QLPKDTO.pdb
+D:\CODE\QuanLyPhongKham\QLPKDAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\CODE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.AssemblyReference.cache
+D:\CODE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.CoreCompileInputs.cache
+D:\CODE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.csproj.Up2Date
+D:\CODE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.dll
+D:\CODE\QuanLyPhongKham\QLPKDAL\obj\Debug\QLPKDAL.pdb
