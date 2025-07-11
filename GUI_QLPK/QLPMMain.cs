@@ -155,6 +155,8 @@ namespace GUI_QLPK
         private void btn_qlDV_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            label_Val.Text = "Quản lý dịch vụ";
+            container(new QuanLyDichVu());
         }
 
         private void btn_qlAcc_Click(object sender, EventArgs e)
@@ -189,6 +191,12 @@ namespace GUI_QLPK
             this.Close();
             Login lg = new Login();
             lg.Show();
+        }
+
+        private void btnDSBenhNhan_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Danh sách bệnh nhân";
+            container(new DanhSachBenhNhan());
         }
     }
 }

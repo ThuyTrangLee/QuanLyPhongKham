@@ -110,7 +110,7 @@
             this.tentaikhoandangnhat.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tentaikhoandangnhat.Location = new System.Drawing.Point(64, 12);
             this.tentaikhoandangnhat.Name = "tentaikhoandangnhat";
-            this.tentaikhoandangnhat.Size = new System.Drawing.Size(49, 19);
+            this.tentaikhoandangnhat.Size = new System.Drawing.Size(47, 17);
             this.tentaikhoandangnhat.TabIndex = 16;
             this.tentaikhoandangnhat.Text = "label2";
             // 
@@ -122,7 +122,7 @@
             this.txtChucvu.ForeColor = System.Drawing.Color.Gray;
             this.txtChucvu.Location = new System.Drawing.Point(65, 36);
             this.txtChucvu.Name = "txtChucvu";
-            this.txtChucvu.Size = new System.Drawing.Size(42, 17);
+            this.txtChucvu.Size = new System.Drawing.Size(39, 16);
             this.txtChucvu.TabIndex = 17;
             this.txtChucvu.Text = "label3";
             // 
@@ -351,7 +351,7 @@
             this.label_Val.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Val.Location = new System.Drawing.Point(36, 12);
             this.label_Val.Name = "label_Val";
-            this.label_Val.Size = new System.Drawing.Size(0, 22);
+            this.label_Val.Size = new System.Drawing.Size(0, 19);
             this.label_Val.TabIndex = 3;
             // 
             // guna2ControlBox3
@@ -609,6 +609,7 @@
             this.btnDSBenhNhan.Text = "Danh sách bệnh nhân";
             this.btnDSBenhNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDSBenhNhan.TextOffset = new System.Drawing.Point(25, 0);
+            this.btnDSBenhNhan.Click += new System.EventHandler(this.btnDSBenhNhan_Click);
             // 
             // btnDanhMuc
             // 
