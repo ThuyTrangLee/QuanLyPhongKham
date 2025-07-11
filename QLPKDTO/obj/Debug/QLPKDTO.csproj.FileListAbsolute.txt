@@ -4,3 +4,9 @@ D:\WORKSPACE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.csproj.AssemblyReference.
 D:\WORKSPACE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.csproj.CoreCompileInputs.cache
 D:\WORKSPACE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.dll
 D:\WORKSPACE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.pdb
+D:\CODE\QuanLyPhongKham\QLPKDTO\bin\Debug\QLPKDTO.dll
+D:\CODE\QuanLyPhongKham\QLPKDTO\bin\Debug\QLPKDTO.pdb
+D:\CODE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.csproj.AssemblyReference.cache
+D:\CODE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.csproj.CoreCompileInputs.cache
+D:\CODE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.dll
+D:\CODE\QuanLyPhongKham\QLPKDTO\obj\Debug\QLPKDTO.pdb
