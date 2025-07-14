@@ -15,6 +15,21 @@ namespace QLPKBUS
         {
             bnDAL = new BenhNhanDAL();
         }
+        public bool them(BenhNhanDTO bn)
+        {
+            bool re = bnDAL.Them(bn);
+            return re;
+        }
+        public bool sua(BenhNhanDTO bn, string maBNold)
+        {
+            bool re = bnDAL.Sua(bn, maBNold);
+            return re;
+        }
+        public bool xoa(BenhNhanDTO bn)
+        {
+            bool re = bnDAL.Xoa(bn);
+            return re;
+        }
         public List<BenhNhanDTO> select()
         {
             return bnDAL.select();
@@ -22,6 +37,10 @@ namespace QLPKBUS
         public List<BenhNhanDTO> selectByKeyWord(string sKeyword)
         {
             return bnDAL.SelectByKeyWord(sKeyword);
+        }
+        public int autogenerate_mabn()
+        {
+            return bnDAL.AutoGenerateMaBN();
         }
     }
 }

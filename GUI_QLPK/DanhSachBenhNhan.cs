@@ -57,6 +57,7 @@ namespace GUI_QLPK
             DataTable table = new DataTable();
             table.Columns.Add("Số thứ tự", typeof(int));
             table.Columns.Add("Tên bệnh nhân", typeof(string));
+            table.Columns.Add("CCCD", typeof(string));
             table.Columns.Add("Ngày khám", typeof(string));
             table.Columns.Add("Triệu chứng", typeof(string));
             table.Columns.Add("Tên bệnh", typeof(string));
@@ -78,6 +79,7 @@ namespace GUI_QLPK
                                         DataRow row = table.NewRow();
                                         row["Số thứ tự"] = stt;
                                         row["Tên bệnh nhân"] = bn.TenBN;
+                                        row["CCCD"] = bn.CanCuocCongDan;
                                         row["Ngày khám"] = DateTime.Parse(pkb.NgayKham.ToString()).ToString("dd/MM/yyyy");
                                         row["Triệu chứng"] = pkb.TrieuChung;
                                         row["Tên bệnh"] = be.TenBenh;

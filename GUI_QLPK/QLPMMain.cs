@@ -1,4 +1,6 @@
-﻿using QLPKBUS;
+﻿using GUI_QLPK;
+using GUI_QLPM;
+using QLPKBUS;
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,6 @@ namespace GUI_QLPK
 {
     public partial class QLPMMain : Form
     {
-        
         public int mataikhoan;
         taiKhoanBUS tkBUS = new taiKhoanBUS();
         public taiKhoanDTO tk = new taiKhoanDTO();
@@ -30,7 +31,8 @@ namespace GUI_QLPK
             InitializeComponent();
             foreach(taiKhoanDTO taiKhoan in listTk)
             {
-                if(taiKhoan.MaTK == mataikhoanLogin)
+                
+                if (taiKhoan.MaTK == mataikhoanLogin)
                 {
                     tentaikhoandangnhat.Text = taiKhoan.Name;
                     foreach(loaiTaiKhoanDTO loaiTaiKhoan in listLoaiTk)
@@ -40,9 +42,31 @@ namespace GUI_QLPK
                             txtChucvu.Text = loaiTaiKhoan.TenLoaiTaiKhoan;
                         }
                     }
-                    if(taiKhoan.MaLoai == 1)
+                    mataikhoan = taiKhoan.MaLoai;
+                    if (taiKhoan.MaLoai == 1)
                     {
-
+                        btnDanhMuc.Visible = false;
+                        btnHoaDon.Visible = false;
+                        btn_BaoCao.Visible = false;
+                    }
+                    else
+                    {
+                         if(taiKhoan.MaLoai == 2)
+                        {
+                            phieukham.Visible = false;
+                            btnDanhMuc.Visible = false;
+                            btn_BaoCao.Visible = false;
+                        }
+                         else if(taiKhoan.MaLoai == 3)
+                        {
+                            phieukham.Visible = false;
+                            btnHoaDon.Visible = false;
+                            btn_BaoCao.Visible = false;
+                            btn_qlAcc.Visible = false;
+                            btn_qlThuoc.Visible = false;
+                            btn_qlLoaiBenh.Visible = false;
+                            btn_qlDV.Visible = false;
+                        }
                     }
                 }
             }
@@ -129,29 +153,36 @@ namespace GUI_QLPK
         {
             hideSubMenu();
             label_Val.Text = "Lập hóa đơn";
-            container(new LapHoaDon());
+            container(new LapHoaDon(mataikhoan));
 
         }
 
         private void btnDSHD_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-
+            label_Val.Text = "Danh sách hóa đơn";
+            container(new DanhSachHoaDon());
         }
 
         private void btn_qlThuoc_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            label_Val.Text = "Quản lý thuốc";
+            container(new QuanLyThuoc());
         }
 
         private void btn_qlLoaiBenh_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            label_Val.Text = "Quản lý loại bệnh";
+            container(new QuanLyLoaiBenh());
         }
 
         private void btn_qlBN_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            label_Val.Text = "Quản lý bệnh nhân";
+            container(new QuanLyBenhNhan(mataikhoan));
         }
 
         private void btn_qlDV_Click(object sender, EventArgs e)
@@ -164,6 +195,8 @@ namespace GUI_QLPK
         private void btn_qlAcc_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            label_Val.Text = "Quản lý tài khoản";
+            container(new QuanLyTaiKhoan());
         }
         //Nút chính
         private void btn_BaoCao_Click(object sender, EventArgs e)
@@ -175,11 +208,13 @@ namespace GUI_QLPK
         private void btn_DThu_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            container(new BaoCaoDoanhThu());
         }
 
         private void btn_sdThuoc_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            container(new BaoCaoSuDungThuoc());
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

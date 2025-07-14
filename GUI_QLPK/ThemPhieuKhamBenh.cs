@@ -133,7 +133,7 @@ namespace GUI_QLPK
                 pkb.NgayKham = DateTime.UtcNow.Date;
                 pkb.TrieuChung = trieuchung.Text;
                 pkb.MaBenhNhan = mabenhnhan.Text;
-                pkb.NgayTaiKham = DateTime.UtcNow.Date;
+                pkb.NgayTaiKham = ngaytaikham.Value.Date;
                 pkb.MBS = maBS;
                 PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
                 ChandoanBUS cdBus = new ChandoanBUS();

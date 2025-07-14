@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -98,5 +99,41 @@ namespace QLPKDAL
             }
             return true;
         }
+        public List<chandoanDTO> selectByKeyWord(string sKeyword)
+        {
+            string query = "SELECT * FROM [Chandoan] WHERE (MaPkb LIKE '%' + @sKeyword + '%') OR (MaBenh LIKE '%' + @sKeyword + '%')";
+            List<chandoanDTO> list = new List<chandoanDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@sKeyword", sKeyword);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            chandoanDTO cd = new chandoanDTO();
+                            cd.MaPkb = reader["MaPkb"].ToString();
+                            cd.MaBenh = reader["MaBenh"].ToString();
+
+                            list.Add(cd);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close(); // Đóng kết nối khi có lỗi
+                        return null; // Trả về null nếu có lỗi
+                    }
+                }
+            }
+            return list;
+        }
+
+
     }
 }

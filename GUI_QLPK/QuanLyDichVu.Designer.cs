@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.themdv = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTienDV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenDV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.QLDichVu = new Guna.UI2.WinForms.Guna2Panel();
             this.huydv = new Guna.UI2.WinForms.Guna2Button();
             this.xoadv = new Guna.UI2.WinForms.Guna2Button();
             this.capnhatdv = new Guna.UI2.WinForms.Guna2Button();
             this.TimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.maDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.QLDichVu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gird
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gird.ColumnHeadersHeight = 30;
             this.gird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gird.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gird.DefaultCellStyle = dataGridViewCellStyle3;
             this.gird.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gird.Location = new System.Drawing.Point(0, 342);
@@ -130,7 +130,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(79, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 19);
+            this.label3.Size = new System.Drawing.Size(103, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên dịch vụ:";
             // 
@@ -140,7 +140,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(610, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 19);
+            this.label4.Size = new System.Drawing.Size(106, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tiền dịch vụ:";
             // 
@@ -184,25 +184,25 @@
             this.txtTenDV.Size = new System.Drawing.Size(247, 40);
             this.txtTenDV.TabIndex = 18;
             // 
-            // guna2Panel1
+            // QLDichVu
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.LightCyan;
-            this.guna2Panel1.Controls.Add(this.huydv);
-            this.guna2Panel1.Controls.Add(this.xoadv);
-            this.guna2Panel1.Controls.Add(this.capnhatdv);
-            this.guna2Panel1.Controls.Add(this.TimKiem);
-            this.guna2Panel1.Controls.Add(this.maDichVu);
-            this.guna2Panel1.Controls.Add(this.txtTenDV);
-            this.guna2Panel1.Controls.Add(this.txtTienDV);
-            this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.themdv);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1076, 342);
-            this.guna2Panel1.TabIndex = 21;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            this.QLDichVu.BackColor = System.Drawing.Color.LightCyan;
+            this.QLDichVu.Controls.Add(this.huydv);
+            this.QLDichVu.Controls.Add(this.xoadv);
+            this.QLDichVu.Controls.Add(this.capnhatdv);
+            this.QLDichVu.Controls.Add(this.TimKiem);
+            this.QLDichVu.Controls.Add(this.maDichVu);
+            this.QLDichVu.Controls.Add(this.txtTenDV);
+            this.QLDichVu.Controls.Add(this.txtTienDV);
+            this.QLDichVu.Controls.Add(this.label4);
+            this.QLDichVu.Controls.Add(this.label3);
+            this.QLDichVu.Controls.Add(this.themdv);
+            this.QLDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QLDichVu.Location = new System.Drawing.Point(0, 0);
+            this.QLDichVu.Name = "QLDichVu";
+            this.QLDichVu.Size = new System.Drawing.Size(1076, 342);
+            this.QLDichVu.TabIndex = 21;
+            this.QLDichVu.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // huydv
             // 
@@ -318,13 +318,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 886);
             this.Controls.Add(this.gird);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.QLDichVu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDichVu";
             this.Text = "QuanLyDichVu";
             ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.QLDichVu.ResumeLayout(false);
+            this.QLDichVu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,7 +336,7 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtTienDV;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDV;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel QLDichVu;
         private Guna.UI2.WinForms.Guna2Button xoadv;
         private Guna.UI2.WinForms.Guna2Button capnhatdv;
         private Guna.UI2.WinForms.Guna2Button TimKiem;

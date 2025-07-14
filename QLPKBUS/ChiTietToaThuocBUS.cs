@@ -25,5 +25,13 @@ namespace QLPKBUS
         {
             return ktDAL.selectbypkb(mapkb);
         }
+        public List<ChiTietToaThuocDTO> baocaobymonth(string month, string year)
+        {
+            return ktDAL.baocaobymonth(month, year);
+        }
+        public int solandungbymonth(string mathuoc, string month, string year)
+        {
+            return ktDAL.solandungbymonth(mathuoc, month, year);
+        }
     }
 }

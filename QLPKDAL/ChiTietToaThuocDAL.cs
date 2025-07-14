@@ -97,5 +97,104 @@ namespace QLPKDAL
             }
             return lskethuoc;
         }
+        public List<ChiTietToaThuocDTO> baocaobymonth(string month, string year)
+        {
+            string query = string.Empty;
+            query += "SELECT TH.maThuoc, TH.tenThuoc, sum(KT.soLuong) as soLuong " +
+                     "FROM ToaThuoc T " +
+                     "JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc " + // Sửa chỗ này
+                     "JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc " +
+                     "WHERE MONTH(T.ngayKeToa) = @month AND YEAR(T.ngayKeToa) = @year " +
+                     "GROUP BY TH.maThuoc, TH.tenThuoc";
+
+
+            List<ChiTietToaThuocDTO> lskethuoc = new List<ChiTietToaThuocDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                ChiTietToaThuocDTO kt = new ChiTietToaThuocDTO();
+                                kt.SoLuong = int.Parse(reader["soLuong"].ToString());
+                                kt.MaThuoc = reader["maThuoc"].ToString();
+                                lskethuoc.Add(kt);
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lskethuoc;
+        }
+        public int solandungbymonth(string mathuoc, string month, string year)
+        {
+            int SLD = 0;
+            string query = string.Empty;
+            query += "SELECT count(KT.maToaThuoc) as SLD " +
+                    "FROM ToaThuoc T " +
+                    "JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc " + // Sửa chỗ này
+                    "JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc " +
+                    "WHERE MONTH(T.ngayKeToa) = @month AND YEAR(T.ngayKeToa) = @year AND TH.maThuoc = @mathuoc";
+
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    cmd.Parameters.AddWithValue("@mathuoc", mathuoc);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                SLD = int.Parse(reader["SLD"].ToString());
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return SLD;
+        }
     }
 }

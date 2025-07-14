@@ -46,5 +46,9 @@ namespace QLPKBUS
         {
             return thDAL.autogenerate_mathuoc();
         }
+        public List<thuocDTO> baocaobymonth(string month, string year)
+        {
+            return thDAL.baocaobymonth(month, year);
+        }
     }
 }

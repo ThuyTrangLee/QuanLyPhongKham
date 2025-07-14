@@ -58,7 +58,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnTraCuu = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.phieukham = new Guna.UI2.WinForms.Guna2Button();
             this.btnHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnDSBenhNhan = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
@@ -110,7 +110,7 @@
             this.tentaikhoandangnhat.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tentaikhoandangnhat.Location = new System.Drawing.Point(64, 12);
             this.tentaikhoandangnhat.Name = "tentaikhoandangnhat";
-            this.tentaikhoandangnhat.Size = new System.Drawing.Size(47, 17);
+            this.tentaikhoandangnhat.Size = new System.Drawing.Size(49, 19);
             this.tentaikhoandangnhat.TabIndex = 16;
             this.tentaikhoandangnhat.Text = "label2";
             // 
@@ -122,7 +122,7 @@
             this.txtChucvu.ForeColor = System.Drawing.Color.Gray;
             this.txtChucvu.Location = new System.Drawing.Point(65, 36);
             this.txtChucvu.Name = "txtChucvu";
-            this.txtChucvu.Size = new System.Drawing.Size(39, 16);
+            this.txtChucvu.Size = new System.Drawing.Size(42, 17);
             this.txtChucvu.TabIndex = 17;
             this.txtChucvu.Text = "label3";
             // 
@@ -351,7 +351,7 @@
             this.label_Val.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Val.Location = new System.Drawing.Point(36, 12);
             this.label_Val.Name = "label_Val";
-            this.label_Val.Size = new System.Drawing.Size(0, 19);
+            this.label_Val.Size = new System.Drawing.Size(0, 22);
             this.label_Val.TabIndex = 3;
             // 
             // guna2ControlBox3
@@ -420,7 +420,7 @@
             this.flpMenu.Controls.Add(this.guna2GradientPanel1);
             this.flpMenu.Controls.Add(this.btnHome);
             this.flpMenu.Controls.Add(this.btnTraCuu);
-            this.flpMenu.Controls.Add(this.guna2Button3);
+            this.flpMenu.Controls.Add(this.phieukham);
             this.flpMenu.Controls.Add(this.btnHoaDon);
             this.flpMenu.Controls.Add(this.PansubMenuHoaDon);
             this.flpMenu.Controls.Add(this.btnDSBenhNhan);
@@ -527,33 +527,33 @@
             this.btnTraCuu.TextOffset = new System.Drawing.Point(25, 0);
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
-            // guna2Button3
+            // phieukham
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.White;
-            this.guna2Button3.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(8, 0);
-            this.guna2Button3.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button3.Location = new System.Drawing.Point(3, 199);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(226, 45);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Text = "Phiếu khám bệnh";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.TextOffset = new System.Drawing.Point(25, 0);
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.phieukham.BackColor = System.Drawing.Color.White;
+            this.phieukham.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.phieukham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.phieukham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.phieukham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.phieukham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.phieukham.FillColor = System.Drawing.Color.Transparent;
+            this.phieukham.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phieukham.ForeColor = System.Drawing.Color.Black;
+            this.phieukham.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.phieukham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.phieukham.HoverState.ForeColor = System.Drawing.Color.White;
+            this.phieukham.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.phieukham.Image = ((System.Drawing.Image)(resources.GetObject("phieukham.Image")));
+            this.phieukham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.phieukham.ImageOffset = new System.Drawing.Point(8, 0);
+            this.phieukham.ImageSize = new System.Drawing.Size(25, 25);
+            this.phieukham.Location = new System.Drawing.Point(3, 199);
+            this.phieukham.Name = "phieukham";
+            this.phieukham.Size = new System.Drawing.Size(226, 45);
+            this.phieukham.TabIndex = 3;
+            this.phieukham.Text = "Phiếu khám bệnh";
+            this.phieukham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.phieukham.TextOffset = new System.Drawing.Point(25, 0);
+            this.phieukham.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // btnHoaDon
             // 
@@ -799,7 +799,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_BaoCao;
         private Guna.UI2.WinForms.Guna2Button btnDanhMuc;
         private Guna.UI2.WinForms.Guna2Button btnHoaDon;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button phieukham;
         private Guna.UI2.WinForms.Guna2Button btnTraCuu;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

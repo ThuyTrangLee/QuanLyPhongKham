@@ -53,3 +53,13 @@ D:\CODE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.ThemDichVuMoi.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyDichVu.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.ThemDichVuMoi.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.LapHoaDon.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.DanhSachHoaDon.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.BaoCaoDoanhThu.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.BaoCaoSuDungThuoc.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyLoaiBenh.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyThuoc.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyTaiKhoan.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPM.QuanLyTaiKhoan.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPM.ThemTaiKhoan.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyBenhNhan.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.ThemBenhNhanMoi.resources

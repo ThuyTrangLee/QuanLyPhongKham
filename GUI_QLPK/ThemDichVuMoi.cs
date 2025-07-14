@@ -71,6 +71,5 @@ namespace GUI_QLPK
             }
 
         }
-
     }
 }

@@ -39,12 +39,12 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(360, 71);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.73585F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(271, 67);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(351, 35);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(575, 39);
             this.guna2HtmlLabel1.TabIndex = 1;
-            this.guna2HtmlLabel1.Text = "DANH SÁCH BỆNH NHÂN";
+            this.guna2HtmlLabel1.Text = "DANH SÁCH BỆNH NHÂN ĐÃ KHÁM";
             // 
             // gird
             // 

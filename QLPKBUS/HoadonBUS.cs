@@ -15,9 +15,26 @@ namespace QLPKBUS
         {
             hdDAL = new HoadonDAL();
         }
+        public bool them(hoadonDTO hd)
+        {
+            bool re = hdDAL.them(hd);
+            return re;
+        }
+        public List<hoadonDTO> select()
+        {
+            return hdDAL.select();
+        }
+        public decimal doanhthu(string ngHD)
+        {
+            return hdDAL.doanhthu(ngHD);
+        }
         public int sobenhnhan(string ngHD)
         {
             return hdDAL.sobenhnhan(ngHD);
+        }
+        public List<hoadonDTO> selectByMonth(string month, string year)
+        {
+            return hdDAL.selectByMonth(month, year);
         }
         public int autogenerate_mahd()
         {
@@ -32,6 +49,10 @@ namespace QLPKBUS
         {
             float re = hdDAL.tienkham();
             return re;
+        }
+        public float doanhthuMonth(string month, string year)
+        {
+            return hdDAL.doanhthuMonth(month, year);
         }
     }
 }

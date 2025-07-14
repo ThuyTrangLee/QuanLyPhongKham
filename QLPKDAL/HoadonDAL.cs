@@ -19,6 +19,45 @@ namespace QLPKDAL
         }
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
+        public bool them(hoadonDTO hd)
+        {
+            string query = string.Empty;
+            query += "INSERT INTO [HoaDon] ([ngayLapHoaDon], [tienThuoc], [tienKham], [tongTien], [maPKB],[maTaiKhoan],[ngayTaiKham])";
+            query += "VALUES (@ngayLapHoaDon,@tienThuoc,@tienKham,@tongTien,@maPKB, @maTaiKhoan, @ngayTaiKham)";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@ngayLapHoaDon", hd.NgayLapHoaDon);
+                    cmd.Parameters.AddWithValue("@tienThuoc", hd.TienThuoc);
+                    cmd.Parameters.AddWithValue("@tienKham", hd.TienKham);
+                    cmd.Parameters.AddWithValue("@tongTien", hd.TongTien);
+                    cmd.Parameters.AddWithValue("@maPKB", hd.MaPKB);
+                    cmd.Parameters.AddWithValue("@maTaiKhoan", hd.MaNVTN);
+                    cmd.Parameters.AddWithValue("@ngayTaiKham", hd.NgayTaiKham);    
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+
         public List<hoadonDTO> select()
         {
             string query = string.Empty;
@@ -53,6 +92,7 @@ namespace QLPKDAL
                                 hd.TienKham = float.Parse(reader["tienKham"].ToString());
                                 hd.MaPKB = reader["maPKB"].ToString();
                                 hd.MaNVTN = int.Parse(reader["maTaiKhoan"].ToString());
+                                hd.NgayTaiKham = DateTime.Parse(reader["NgayTaiKham"].ToString());
 
                                 lsHoaDon.Add(hd);
 
@@ -70,6 +110,48 @@ namespace QLPKDAL
                 }
             }
             return lsHoaDon;
+        }
+
+        public decimal doanhthu(string ngayLapHoaDon)
+        {
+            decimal doanhthu = 0;
+            string query = string.Empty;
+            query += "SELECT sum (HD.TongTien) as doanhthu FROM HoaDon HD WHERE HD.NgayLapHoaDon=@NgayLapHoaDon";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@NgayLapHoaDon", ngayLapHoaDon);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                doanhthu = decimal.Parse(reader["doanhthu"].ToString());
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return doanhthu;
         }
         public int sobenhnhan(string ngayLapHoaDon)
         {
@@ -119,7 +201,7 @@ namespace QLPKDAL
             query += "SELECT SUM(TH.donGia * KT.soLuong) AS TIENTHUOC ";
             query += "FROM PhieuKhamBenh PKB ";
             query += "JOIN ToaThuoc T ON PKB.maPKB = T.maPKB ";
-            query += "JOIN KeThuoc KT ON T.maToaThuoc = KT.maToaThuoc ";
+            query += "JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc ";
             query += "JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc ";
             query += "WHERE PKB.maPKB = @maPKB";
 
@@ -227,6 +309,96 @@ namespace QLPKDAL
                 }
             }
             return tien;
+        }
+        public List<hoadonDTO> selectByMonth(string month, string year)
+        {
+            string query = string.Empty;
+            query += " SELECT NgayLapHoaDon ";
+            query += " FROM [HoaDon] ";
+            query += " WHERE MONTH(NgayLapHoaDon)=@month and YEAR(NgayLapHoaDon)=@year group by NgayLapHoaDon ";
+
+
+            List<hoadonDTO> lsHoadon = new List<hoadonDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                hoadonDTO hd = new hoadonDTO();
+                                hd.NgayLapHoaDon = DateTime.Parse(reader["NgayLapHoaDon"].ToString());
+                                lsHoadon.Add(hd);
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsHoadon;
+        }
+        public float doanhthuMonth(string month, string year)
+        {
+            float doanhthu = 0;
+            string query = string.Empty;
+            query += "SELECT sum (HD.TongTien) as doanhthuthang FROM HoaDon HD WHERE MONTH(HD.NgayLapHoaDon)=@month AND YEAR(HD.NgayLapHoaDon)=@year";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                doanhthu = float.Parse(reader["doanhthuthang"].ToString());
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return doanhthu;
         }
     }
 

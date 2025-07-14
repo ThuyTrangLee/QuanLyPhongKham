@@ -26,5 +26,10 @@ namespace QLPKBUS
             return cdDAL.select(); 
         }
 
+        public List<chandoanDTO> selectByKeyWord(string sKeyword)
+        {
+            return cdDAL.selectByKeyWord(sKeyword);
+        }
+
     }
 }

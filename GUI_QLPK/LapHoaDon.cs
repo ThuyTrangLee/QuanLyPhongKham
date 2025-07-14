@@ -21,8 +21,8 @@ namespace GUI_QLPK
         DichvuBUS dvBus = new DichvuBUS();
         cachDungBUS cdBus = new cachDungBUS();
         donviBUS donviBus = new donviBUS();
-        List<cachDungBUS> listcd;
-        List<donviBUS> listdv;
+        List<cachdungDTO> listcd;
+        List<donViDTO> listdv;
 
         PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
         System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
@@ -34,16 +34,11 @@ namespace GUI_QLPK
         {
             maNV = mataikhoan;
             InitializeComponent();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LapHoaDon_Load(object sender, EventArgs e)
-        {
-            ngayhd.FillColor = Color.White;
+            listcd = cdBus.select(); 
+            listdv = donviBus.select();
+            load();
+            //tự động điều chỉnh độ rộng
+            gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void load()
         {
@@ -51,6 +46,19 @@ namespace GUI_QLPK
             hdBus = new HoadonBUS();
             ngayhd.Text = DateTime.UtcNow.Date.ToString();
             mahd.Text = hdBus.autogenerate_mahd().ToString();
+            load_combobox();
+            load_TenBN();
+            loadtiendichvu();
+            load_data(mapkb.Text);
+        }
+
+        public void load_combobox()
+        {
+            BenhNhanBUS bnBus = new BenhNhanBUS();
+            List<phieukhambenhDTO> listpkb = pkbBus.select();
+            List<hoadonDTO> listhd = hdBus.select();
+            List<dichvuDTO> listdv = dvBus.select();
+            this.loadData_Vao_Combobox(listpkb, listhd, listdv);
         }
         public void load_TenBN()
         {
@@ -106,38 +114,49 @@ namespace GUI_QLPK
                 {
                     if (listBenhnhan == null)
                     {
-                        System.Windows.Forms.MessageBox.Show("Có lỗi khi lấy thông tin tên bn từ DB", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MessageBox.Show("Có lỗi khi lấy thông tin tên bệnh nhân từ DB", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         return;
                     }
+
                     foreach (BenhNhanDTO bn in listBenhnhan)
                     {
                         if (bn.MaBN == pkb.MaBenhNhan)
                         {
                             tenbn.Text = bn.TenBN;
+                            
                         }
                     }
+                    // Nếu có ngày tái khám, hiển thị nó
+                    if (pkb.NgayTaiKham == null || pkb.NgayTaiKham == DateTime.MinValue)
+                    {
+                        ngayTK.Value = DateTime.UtcNow.Date;
+                    }
+                    else
+                        ngayTK.Value = pkb.NgayTaiKham;
                 }
             }
         }
 
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //hoadonDTO hd = new hoadonDTO();
-            //hd.MaNVTN = maNV;
-            //hd.TongTien = tt;
-            //hd.MaPKB = mapkb.Text;
-            //hd.NgayLapHoaDon = DateTime.UtcNow.Date;
-            //hd.TienKham = tkham;
-            //hd.TienThuoc = hdBus.tienthuoc(hd, mapkb.Text);
-            //hdBus = new HoadonBUS();
-            //bool kq = hdBus.them(hd);
-            //if (kq == false)
-            //    System.Windows.Forms.MessageBox.Show("Lưu hóa đơn thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //else
-            //{
-            //    System.Windows.Forms.MessageBox.Show("Lưu hóa đơn thành công", "Result");
-            //    load();
-            //}
+            hoadonDTO hd = new hoadonDTO();
+            hd.MaNVTN = maNV;
+            hd.TongTien = tt;
+            hd.MaPKB = mapkb.Text;
+            hd.NgayLapHoaDon = DateTime.UtcNow.Date;
+            hd.TienKham = tkham;
+            hd.TienThuoc = hdBus.tienthuoc(hd, mapkb.Text);
+            hd.NgayTaiKham = ngayTK.Value.Date;
+            hdBus = new HoadonBUS();
+            bool kq = hdBus.them(hd);
+            if (kq == false)
+                System.Windows.Forms.MessageBox.Show("Lưu hóa đơn thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Lưu hóa đơn thành công", "Result");
+                load();
+            }
         }
 
         public void load_data(string mapkb)
@@ -173,7 +192,6 @@ namespace GUI_QLPK
 
                         DataRow row = table.NewRow();
                         row["Tên thuốc"] = th.TenThuoc;
-
                         foreach (donViDTO donvi in listdv)
                         {
                             if (donvi.MaDonVi == th.MaDonVi)
@@ -201,8 +219,6 @@ namespace GUI_QLPK
 
         public void loadtiendichvu()
         {
-
-
             int selectedIndex = comboDichVu.SelectedIndex;
             List<dichvuDTO> listdv = dvBus.select();
             foreach (dichvuDTO d in listdv)
@@ -239,6 +255,68 @@ namespace GUI_QLPK
                 }
 
             }
+        }
+
+        private void mapkb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load_data(mapkb.Text);
+            load_TenBN();
+            tt = 0;
+            stt = 1;
+            hdBus = new HoadonBUS();
+            hoadonDTO hd = new hoadonDTO();
+            load_TenBN();
+            load_data(mapkb.Text);
+
+            // Lấy tiền thuốc và chuyển đổi sang kiểu decimal
+            string tthuoc = hdBus.tienthuoc(hd, mapkb.Text).ToString();
+
+            // Chuyển đổi tiền thuốc sang kiểu decimal và định dạng lại chuỗi
+            decimal valueTthuoc;
+            if (decimal.TryParse(tthuoc, System.Globalization.NumberStyles.AllowThousands, culture, out valueTthuoc))
+            {
+                tienthuoc.Text = String.Format(culture, "{0:N0}", valueTthuoc);
+                tienthuoc.Select(tienthuoc.Text.Length, 0);
+            }
+
+            // Chuyển đổi tiền khám sang kiểu decimal và định dạng lại chuỗi
+            decimal valueTienkham;
+            if (decimal.TryParse(tienkham.Text, System.Globalization.NumberStyles.AllowThousands, culture, out valueTienkham))
+            {
+                tienkham.Text = String.Format(culture, "{0:N0}", valueTienkham);
+                tienkham.Select(tienkham.Text.Length, 0);
+            }
+            // Tính tổng tiền và chuyển đổi sang chuỗi
+            tt = (float)valueTthuoc + (float)valueTienkham;
+            decimal valueTongtien = (decimal)tt;
+
+            // Định dạng tổng tiền
+            tongtien.Text = String.Format(culture, "{0:N0}", valueTongtien);
+            tongtien.Select(tongtien.Text.Length, 0);
+        }
+
+        private void btnHoanTac_Click(object sender, EventArgs e)
+        {
+            mahd.Text = hdBus.autogenerate_mahd().ToString();
+            tongtien.Text = "";
+            tienthuoc.Text = "";
+            tienkham.Text = "";
+            tenbn.Text = "";
+
+            load_combobox();
+            if (mapkb.Items.Count > 0)
+            {
+                mapkb.SelectedIndex = 0;
+            }
+
+            ngayhd.Value = DateTime.Today;
+            ngayTK.Value = DateTime.Today;
+
+            gird.DataSource = null;
+            gird.Rows.Clear();
+            tt = 0;
+            tkham = 0;
+            stt = 1;
         }
     }
 }

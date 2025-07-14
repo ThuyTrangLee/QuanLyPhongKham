@@ -268,7 +268,7 @@ namespace QLPKDAL
         SELECT TH.maThuoc, TH.tenThuoc, TH.maCachDung, TH.maDonVi, TH.donGia 
         FROM PhieuKhamBenh PKB 
         JOIN ToaThuoc T ON PKB.maPKB = T.maPKB 
-        JOIN KeThuoc KT ON T.maToaThuoc = KT.maToaThuoc 
+        JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc 
         JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc 
         WHERE PKB.maPKB = @mapkb";
 
@@ -307,6 +307,59 @@ namespace QLPKDAL
                     catch (Exception ex)
                     {
                         Console.WriteLine($"Error: {ex.Message}");
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsThuoc;
+        }
+
+        public List<thuocDTO> baocaobymonth(string month, string year)
+        {
+            string query = string.Empty;
+            query += "SELECT TH.maThuoc, TH.tenThuoc, TH.maDonVi " +
+                "FROM ToaThuoc T " +
+                "JOIN ChiTietToaThuoc KT ON T.maToaThuoc=KT.maToaThuoc " +
+                "JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc " +
+                "WHERE MONTH(T.ngayKeToa)=@month and YEAR(T.ngayKeToa)=@year group by TH.maThuoc,TH.tenThuoc,TH.maDonVi";
+
+
+            List<thuocDTO> lsThuoc = new List<thuocDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                thuocDTO th = new thuocDTO();
+                                th.MaThuoc = reader["maThuoc"].ToString();
+                                th.TenThuoc = reader["tenThuoc"].ToString();
+                                th.MaDonVi = int.Parse(reader["maDonVi"].ToString());
+                                lsThuoc.Add(th);
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
                         con.Close();
                         return null;
                     }
