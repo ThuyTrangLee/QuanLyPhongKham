@@ -1,5 +1,4 @@
 ﻿using QLPKBUS;
-using QLPKDAL;
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
@@ -67,8 +66,8 @@ namespace GUI_QLPK
                     }
                 }
             }
-
             gird.DataSource = table.DefaultView;
+
         }
 
         private void xem_Click(object sender, EventArgs e)

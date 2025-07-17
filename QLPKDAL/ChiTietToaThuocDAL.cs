@@ -100,12 +100,7 @@ namespace QLPKDAL
         public List<ChiTietToaThuocDTO> baocaobymonth(string month, string year)
         {
             string query = string.Empty;
-            query += "SELECT TH.maThuoc, TH.tenThuoc, sum(KT.soLuong) as soLuong " +
-                     "FROM ToaThuoc T " +
-                     "JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc " + // Sửa chỗ này
-                     "JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc " +
-                     "WHERE MONTH(T.ngayKeToa) = @month AND YEAR(T.ngayKeToa) = @year " +
-                     "GROUP BY TH.maThuoc, TH.tenThuoc";
+            query += "SELECT TH.maThuoc, TH.tenThuoc, sum (KT.soLuong) as soLuong FROM ToaThuoc T JOIN ChiTietDonThuoc KT ON T.maToaThuoc=KT.maToaThuoc JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc WHERE MONTH(T.ngayKeToa)=@month and year(T.ngayKeToa)=@year group by TH.maThuoc,TH.tenThuoc";
 
 
             List<ChiTietToaThuocDTO> lskethuoc = new List<ChiTietToaThuocDTO>();
@@ -153,11 +148,7 @@ namespace QLPKDAL
         {
             int SLD = 0;
             string query = string.Empty;
-            query += "SELECT count(KT.maToaThuoc) as SLD " +
-                    "FROM ToaThuoc T " +
-                    "JOIN ChiTietDonThuoc KT ON T.maToaThuoc = KT.maToaThuoc " + // Sửa chỗ này
-                    "JOIN Thuoc TH ON KT.maThuoc = TH.maThuoc " +
-                    "WHERE MONTH(T.ngayKeToa) = @month AND YEAR(T.ngayKeToa) = @year AND TH.maThuoc = @mathuoc";
+            query += "SELECT  count (KT.maToaThuoc) as SLD FROM ToaThuoc T JOIN ChiTietDonThuoc KT ON T.maToaThuoc=KT.maToaThuoc JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc WHERE MONTH(T.ngayKeToa)=@month and year(T.ngayKeToa)=@year and TH.maThuoc=@mathuoc";
 
 
             using (SqlConnection con = new SqlConnection(ConnectionString))

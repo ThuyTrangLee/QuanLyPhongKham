@@ -48,7 +48,7 @@ namespace GUI_QLPK
             ngaysinh.Text = DateTime.UtcNow.Date.ToString();
             gioitinh.Text = "";
             diachi.Text = "";
-            maCCCD.Text = "";
+            macccd.Text = "";
         }
         private void loadData_Vao_GridView(List<BenhNhanDTO> listBenhNhan)
         {
@@ -109,7 +109,7 @@ namespace GUI_QLPK
                 ngaysinh.Text = row.Cells[2].Value.ToString();
                 diachi.Text = row.Cells[3].Value.ToString();
                 gioitinh.Text = row.Cells[4].Value.ToString();
-                maCCCD.Text = row.Cells[5].Value.ToString();
+                macccd.Text = row.Cells[5].Value.ToString();
                 temp_ma = row.Cells[0].Value.ToString();
             }
         }
@@ -120,6 +120,7 @@ namespace GUI_QLPK
             bn.DiachiBN = diachi.Text;
             bn.NgsinhBN = DateTime.Parse(ngaysinh.Text);
             bn.GtBN = gioitinh.Text;
+            bn.CanCuocCongDan = macccd.Text;
 
             bool kq = bnBus.sua(bn, temp_ma);
             if (!kq)
@@ -168,7 +169,7 @@ namespace GUI_QLPK
             ngaysinh.Text = DateTime.UtcNow.Date.ToString();
             gioitinh.Text = string.Empty;
             diachi.Text = string.Empty;
-            maCCCD.Text = string.Empty;
+            macccd.Text = string.Empty;
             temp_ma = string.Empty;
             load_data();
         }

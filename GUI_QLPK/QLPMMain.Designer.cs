@@ -35,10 +35,10 @@
             this.tentaikhoandangnhat = new System.Windows.Forms.Label();
             this.txtChucvu = new System.Windows.Forms.Label();
             this.subMenuDanhMuc = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btn_qlBN = new Guna.UI2.WinForms.Guna2Button();
             this.btn_qlThuoc = new Guna.UI2.WinForms.Guna2Button();
             this.btn_qlAcc = new Guna.UI2.WinForms.Guna2Button();
             this.btn_qlDV = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_qlBN = new Guna.UI2.WinForms.Guna2Button();
             this.btn_qlLoaiBenh = new Guna.UI2.WinForms.Guna2Button();
             this.PansubMenuHoaDon = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnLHD = new Guna.UI2.WinForms.Guna2Button();
@@ -129,15 +129,41 @@
             // subMenuDanhMuc
             // 
             this.subMenuDanhMuc.BackColor = System.Drawing.Color.White;
+            this.subMenuDanhMuc.Controls.Add(this.btn_qlBN);
             this.subMenuDanhMuc.Controls.Add(this.btn_qlThuoc);
             this.subMenuDanhMuc.Controls.Add(this.btn_qlAcc);
             this.subMenuDanhMuc.Controls.Add(this.btn_qlDV);
-            this.subMenuDanhMuc.Controls.Add(this.btn_qlBN);
             this.subMenuDanhMuc.Controls.Add(this.btn_qlLoaiBenh);
             this.subMenuDanhMuc.Location = new System.Drawing.Point(3, 509);
             this.subMenuDanhMuc.Name = "subMenuDanhMuc";
             this.subMenuDanhMuc.Size = new System.Drawing.Size(228, 245);
             this.subMenuDanhMuc.TabIndex = 22;
+            // 
+            // btn_qlBN
+            // 
+            this.btn_qlBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
+            this.btn_qlBN.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.btn_qlBN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_qlBN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_qlBN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_qlBN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_qlBN.FillColor = System.Drawing.Color.Transparent;
+            this.btn_qlBN.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold);
+            this.btn_qlBN.ForeColor = System.Drawing.Color.Black;
+            this.btn_qlBN.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.btn_qlBN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_qlBN.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_qlBN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_qlBN.ImageOffset = new System.Drawing.Point(8, 0);
+            this.btn_qlBN.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_qlBN.Location = new System.Drawing.Point(2, 3);
+            this.btn_qlBN.Name = "btn_qlBN";
+            this.btn_qlBN.Size = new System.Drawing.Size(224, 45);
+            this.btn_qlBN.TabIndex = 20;
+            this.btn_qlBN.Text = "Quản lý bệnh nhân";
+            this.btn_qlBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_qlBN.TextOffset = new System.Drawing.Point(70, 0);
+            this.btn_qlBN.Click += new System.EventHandler(this.btn_qlBN_Click);
             // 
             // btn_qlThuoc
             // 
@@ -156,7 +182,7 @@
             this.btn_qlThuoc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qlThuoc.ImageOffset = new System.Drawing.Point(8, 0);
             this.btn_qlThuoc.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qlThuoc.Location = new System.Drawing.Point(3, 3);
+            this.btn_qlThuoc.Location = new System.Drawing.Point(1, 96);
             this.btn_qlThuoc.Name = "btn_qlThuoc";
             this.btn_qlThuoc.Size = new System.Drawing.Size(224, 45);
             this.btn_qlThuoc.TabIndex = 18;
@@ -182,7 +208,7 @@
             this.btn_qlAcc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qlAcc.ImageOffset = new System.Drawing.Point(8, 0);
             this.btn_qlAcc.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qlAcc.Location = new System.Drawing.Point(3, 194);
+            this.btn_qlAcc.Location = new System.Drawing.Point(1, 191);
             this.btn_qlAcc.Name = "btn_qlAcc";
             this.btn_qlAcc.Size = new System.Drawing.Size(224, 45);
             this.btn_qlAcc.TabIndex = 22;
@@ -208,7 +234,7 @@
             this.btn_qlDV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qlDV.ImageOffset = new System.Drawing.Point(8, 0);
             this.btn_qlDV.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qlDV.Location = new System.Drawing.Point(3, 146);
+            this.btn_qlDV.Location = new System.Drawing.Point(2, 143);
             this.btn_qlDV.Name = "btn_qlDV";
             this.btn_qlDV.Size = new System.Drawing.Size(224, 45);
             this.btn_qlDV.TabIndex = 21;
@@ -216,32 +242,6 @@
             this.btn_qlDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qlDV.TextOffset = new System.Drawing.Point(70, 0);
             this.btn_qlDV.Click += new System.EventHandler(this.btn_qlDV_Click);
-            // 
-            // btn_qlBN
-            // 
-            this.btn_qlBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
-            this.btn_qlBN.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.btn_qlBN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_qlBN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_qlBN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_qlBN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_qlBN.FillColor = System.Drawing.Color.Transparent;
-            this.btn_qlBN.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold);
-            this.btn_qlBN.ForeColor = System.Drawing.Color.Black;
-            this.btn_qlBN.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.btn_qlBN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btn_qlBN.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_qlBN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_qlBN.ImageOffset = new System.Drawing.Point(8, 0);
-            this.btn_qlBN.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qlBN.Location = new System.Drawing.Point(3, 98);
-            this.btn_qlBN.Name = "btn_qlBN";
-            this.btn_qlBN.Size = new System.Drawing.Size(224, 45);
-            this.btn_qlBN.TabIndex = 20;
-            this.btn_qlBN.Text = "Quản lý bệnh nhân";
-            this.btn_qlBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_qlBN.TextOffset = new System.Drawing.Point(70, 0);
-            this.btn_qlBN.Click += new System.EventHandler(this.btn_qlBN_Click);
             // 
             // btn_qlLoaiBenh
             // 
@@ -260,7 +260,7 @@
             this.btn_qlLoaiBenh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_qlLoaiBenh.ImageOffset = new System.Drawing.Point(8, 0);
             this.btn_qlLoaiBenh.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_qlLoaiBenh.Location = new System.Drawing.Point(3, 50);
+            this.btn_qlLoaiBenh.Location = new System.Drawing.Point(1, 50);
             this.btn_qlLoaiBenh.Name = "btn_qlLoaiBenh";
             this.btn_qlLoaiBenh.Size = new System.Drawing.Size(224, 45);
             this.btn_qlLoaiBenh.TabIndex = 19;

@@ -72,6 +72,7 @@
             this.maDichVu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.maDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.maDichVu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.maDichVu.Enabled = false;
             this.maDichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maDichVu.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maDichVu.ForeColor = System.Drawing.Color.Black;
@@ -83,6 +84,7 @@
             this.maDichVu.SelectedText = "";
             this.maDichVu.Size = new System.Drawing.Size(175, 40);
             this.maDichVu.TabIndex = 29;
+            this.maDichVu.TabStop = false;
             // 
             // label1
             // 

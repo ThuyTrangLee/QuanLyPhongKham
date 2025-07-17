@@ -23,13 +23,14 @@ namespace QLPKDAL
 
         // Thuộc tính cho chuỗi kết nối
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+        public object MessageBox { get; private set; }
 
         public bool Them(BenhNhanDTO bn)
         {
             // Chuỗi truy vấn SQL để thêm bệnh nhân
             string query = string.Empty;
-            query += "INSERT INTO BenhNhan(maBenhNhan, tenBenhNhan, diaChi, gioiTinh, ngaySinh, CCCD)";
-            query += "VALUES(@maBN, @tenBN, @diaChi, @gioiTinh, @ngaySinh, @cccd)";
+            query += "INSERT INTO [BenhNhan] ([tenBenhNhan], [gioiTinh], [ngaySinh], [diaChi], [CCCD])";
+            query += "VALUES ( @tenBenhNhan, @gioiTinh, @ngaySinh, @diaChi, @cccd)";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -63,10 +64,35 @@ namespace QLPKDAL
         // Phương thức sửa một bệnh nhân
         public bool Sua(BenhNhanDTO bn, string maBNold)
         {
+            //if (string.IsNullOrWhiteSpace(bn.CanCuocCongDan))
+            //{
+            //    Console.WriteLine("❌ CCCD bị null hoặc rỗng.");
+            //    return false;
+            //}
+            //string checkQuery = "SELECT COUNT(*) FROM BenhNhan WHERE CCCD = @cccd AND maBenhNhan != @maBNold";
+
+            //using (SqlConnection checkCon = new SqlConnection(ConnectionString))
+            //{
+            //    using (SqlCommand checkCmd = new SqlCommand(checkQuery, checkCon))
+            //    {
+            //        checkCmd.Parameters.AddWithValue("@cccd", bn.CanCuocCongDan);
+            //        checkCmd.Parameters.AddWithValue("@maBNold", maBNold);
+
+            //        checkCon.Open();
+            //        int count = (int)checkCmd.ExecuteScalar();
+            //        checkCon.Close();
+
+            //        if (count > 0)
+            //        {
+            //            Console.WriteLine("❌ CCCD đã tồn tại ở bệnh nhân khác.");
+            //            return false;
+            //        }
+            //    }
+            //}
             // Chuỗi truy vấn SQL để cập nhật bệnh nhân
             string query = string.Empty;
             query += "UPDATE [BenhNhan] ";
-            query += "SET tenBenhNhan=@tenBenhNhan, gioiTinh=@gioiTinh, ngaySinh=@ngaySinh, diaChi=@diaChi, CCCD = @cccd";
+            query += "SET tenBenhNhan=@tenBenhNhan, gioiTinh=@gioiTinh, ngaySinh=@ngaySinh, diaChi=@diaChi, CCCD=@cccd ";
             query += "WHERE maBenhNhan=@maBNold";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -184,53 +210,65 @@ namespace QLPKDAL
         public List<BenhNhanDTO> SelectByKeyWord(string sKeyword)
         {
             // Chuỗi truy vấn SQL để chọn bệnh nhân theo từ khóa
-            string query = string.Empty;
-            query += "SELECT * ";
-            query += "FROM [BenhNhan] ";
-            query += "WHERE (maBenhNhan LIKE CONCAT('%',@sKeyword,'%')) ";
-            query += "OR (tenBenhNhan LIKE CONCAT('%',@sKeyword,'%')) ";
-            query += "OR (ngaySinh LIKE CONCAT('%',@sKeyword,'%')) ";
+            string query = "SELECT * FROM BenhNhan WHERE ";
+            bool isNumber = int.TryParse(sKeyword, out int maBN);
 
-            List<BenhNhanDTO> lsBenhNhan = new List<BenhNhanDTO>(); // Danh sách để chứa kết quả
+            if (isNumber)
+            {
+                query += "maBenhNhan = @maBN ";
+            }
+            else
+            {
+                query += "(tenBenhNhan LIKE CONCAT('%', @sKeyword, '%') ";
+                query += "OR CCCD LIKE CONCAT('%', @sKeyword, '%'))";
+            }
+
+            List<BenhNhanDTO> lsBenhNhan = new List<BenhNhanDTO>(); //ds chứa kết quả
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Connection = con; // Kết nối lệnh với cơ sở dữ liệu
-                    cmd.CommandType = System.Data.CommandType.Text; // Kiểu lệnh là văn bản
-                    cmd.CommandText = query; // Gán chuỗi truy vấn cho lệnh
-                    cmd.Parameters.AddWithValue("@sKeyword", sKeyword); // Thêm tham số cho lệnh SQL
+                    cmd.CommandType = System.Data.CommandType.Text;  // Kiểu lệnh là văn bản
+
+                    if (isNumber)
+                        //là số thì gán
+                        cmd.Parameters.AddWithValue("@maBN", maBN);
+                    else
+                        cmd.Parameters.AddWithValue("@sKeyword", sKeyword);
 
                     try
                     {
-                        con.Open(); // Mở kết nối
-                        SqlDataReader reader = cmd.ExecuteReader(); // Thực thi lệnh và nhận kết quả
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                         {
-                            while (reader.Read()) // Đọc từng dòng kết quả
+                            while (reader.Read())// Đọc từng dòng kết quả
                             {
                                 BenhNhanDTO bn = new BenhNhanDTO();
-                                bn.MaBN = reader["maBenhNhan"].ToString(); 
-                                bn.TenBN = reader["tenBenhNhan"].ToString(); 
+                                bn.MaBN = reader["maBenhNhan"].ToString();
+                                bn.TenBN = reader["tenBenhNhan"].ToString();
                                 bn.GtBN = reader["gioiTinh"].ToString();
                                 bn.NgsinhBN = DateTime.Parse(reader["ngaySinh"].ToString());
-                                bn.DiachiBN = reader["diaChi"].ToString(); 
-                                bn.CanCuocCongDan = reader["cccd"].ToString(); 
-                                lsBenhNhan.Add(bn); // Thêm vào danh sách
+                                bn.DiachiBN = reader["diaChi"].ToString();
+                                bn.CanCuocCongDan = reader["CCCD"].ToString();
+                                lsBenhNhan.Add(bn);
                             }
                         }
-                        con.Close(); // Đóng kết nối
+                        con.Close();
                     }
                     catch (Exception)
                     {
-                        con.Close(); // Đóng kết nối khi có lỗi
-                        return null; // Trả về null nếu có lỗi
+                        con.Close();
+                        return null;
                     }
                 }
             }
+
             return lsBenhNhan;
         }
+
+
         // Phương thức tự động tạo mã bệnh nhân
         public int AutoGenerateMaBN()
         {

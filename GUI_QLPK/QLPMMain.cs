@@ -17,6 +17,7 @@ namespace GUI_QLPK
     public partial class QLPMMain : Form
     {
         public int mataikhoan;
+        public int ma;
         taiKhoanBUS tkBUS = new taiKhoanBUS();
         public taiKhoanDTO tk = new taiKhoanDTO();
         loaiTaiKhoanBUS loaitkBUS = new loaiTaiKhoanBUS();
@@ -42,7 +43,7 @@ namespace GUI_QLPK
                             txtChucvu.Text = loaiTaiKhoan.TenLoaiTaiKhoan;
                         }
                     }
-                    mataikhoan = taiKhoan.MaLoai;
+                    ma = taiKhoan.MaLoai;
                     if (taiKhoan.MaLoai == 1)
                     {
                         btnDanhMuc.Visible = false;
@@ -51,13 +52,13 @@ namespace GUI_QLPK
                     }
                     else
                     {
-                         if(taiKhoan.MaLoai == 2)
+                        if (taiKhoan.MaLoai == 2)
                         {
                             phieukham.Visible = false;
                             btnDanhMuc.Visible = false;
                             btn_BaoCao.Visible = false;
                         }
-                         else if(taiKhoan.MaLoai == 3)
+                        else if (taiKhoan.MaLoai == 3)
                         {
                             phieukham.Visible = false;
                             btnHoaDon.Visible = false;
@@ -182,7 +183,7 @@ namespace GUI_QLPK
         {
             hideSubMenu();
             label_Val.Text = "Quản lý bệnh nhân";
-            container(new QuanLyBenhNhan(mataikhoan));
+            container(new QuanLyBenhNhan(ma));
         }
 
         private void btn_qlDV_Click(object sender, EventArgs e)

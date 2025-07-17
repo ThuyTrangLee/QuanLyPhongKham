@@ -62,6 +62,7 @@ namespace GUI_QLPK
             table.Columns.Add("Tiền khám", typeof(string));
             table.Columns.Add("Tiền thuốc", typeof(string));
             table.Columns.Add("Tổng tiền", typeof(string));
+            table.Columns.Add("Ngày lập", typeof(string));
             table.Columns.Add("Nhân viên thu ngân", typeof(string));
             foreach (BenhNhanDTO bn in listBenhNhan)
             {
@@ -92,6 +93,7 @@ namespace GUI_QLPK
                                         row["Tiền khám"] = hd.TienKham.ToString("N0", culture);
                                         row["Tiền thuốc"] = hd.TienThuoc.ToString("N0", culture);
                                         row["Tổng tiền"] = hd.TongTien.ToString("N0", culture);
+                                        row["Ngày lập"] = DateTime.Parse(hd.NgayLapHoaDon.ToString()).ToString("dd/MM/yyyy");
                                         foreach (taiKhoanDTO tk in listTK)
                                         {
                                             if (tk.MaTK == hd.MaNVTN)

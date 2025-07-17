@@ -24,7 +24,7 @@ namespace GUI_QLPK
         loaiTaiKhoanBUS loaitkBUS = new loaiTaiKhoanBUS();
         loaiTaiKhoanDTO loaitk = new loaiTaiKhoanDTO();
 
-        Boolean check = true;
+        Boolean check = false;
 
         private void dangnhap_Click(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace GUI_QLPK
                     if(tk.Password == matkhau.Text)
                     {
                         check = true;
-                        TENTK = tk.MaLoai; // Lấy mã loại tài khoản
+                        TENTK = tk.MaTK; 
                     }
                 }
             }
@@ -50,7 +50,7 @@ namespace GUI_QLPK
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại! Vui lòng kiểm tra lại tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sai mật khẩu hoặc tài khoản", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 username.Text = "";
                 matkhau.Text = "";
                 // Đặt con trỏ vào ô nhập tên đăng nhập

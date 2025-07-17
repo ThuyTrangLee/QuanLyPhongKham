@@ -135,7 +135,7 @@ namespace GUI_QLPK
         private void HoanTac_Click(object sender, EventArgs e)
         {
             key.Text = string.Empty;
-            maBenh.Text = string.Empty;
+            //maBenh.Text = string.Empty;
             tenBenh.Text = string.Empty;
         }
 

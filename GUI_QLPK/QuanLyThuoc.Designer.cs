@@ -122,6 +122,7 @@
             this.mathuoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.mathuoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.mathuoc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.mathuoc.Enabled = false;
             this.mathuoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.mathuoc.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mathuoc.ForeColor = System.Drawing.Color.Black;
@@ -133,6 +134,7 @@
             this.mathuoc.SelectedText = "";
             this.mathuoc.Size = new System.Drawing.Size(247, 40);
             this.mathuoc.TabIndex = 18;
+            this.mathuoc.TabStop = false;
             // 
             // key
             // 

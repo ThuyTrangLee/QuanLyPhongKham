@@ -29,12 +29,12 @@ namespace GUI_QLPK
             ngaysinh.Value = DateTime.Now;
             gioitinh.Text = "";
             diachi.Text = "";
-            mabenhnhan.Text = "";
+            macccd.Text = "";
         }
 
         private void Them_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(mabenhnhan.Text) || string.IsNullOrEmpty(hoten.Text) || (string.IsNullOrEmpty(gioitinh.Text)) || ngaysinh.Value == null || string.IsNullOrEmpty(diachi.Text))
+            if (string.IsNullOrEmpty(mabenhnhan.Text) || string.IsNullOrEmpty(hoten.Text) || (string.IsNullOrEmpty(gioitinh.Text)) || ngaysinh.Value == null || string.IsNullOrEmpty(diachi.Text) || string.IsNullOrEmpty(macccd.Text))
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân");
             }
@@ -49,8 +49,13 @@ namespace GUI_QLPK
                 bn.NgsinhBN = ngaysinh.Value;
                 bn.DiachiBN = diachi.Text;
                 bn.CanCuocCongDan = macccd.Text;
-                bn.MaBN = bnBus.autogenerate_mabn().ToString();
 
+                List<BenhNhanDTO> danhSach = bnBus.select();
+                if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan))
+                {
+                    MessageBox.Show("CCCD đã tồn tại. Vui lòng nhập CCCD khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 bool kq = bnBus.them(bn);
                 if (kq == true)
                 {

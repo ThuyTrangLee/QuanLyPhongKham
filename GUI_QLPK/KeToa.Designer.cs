@@ -72,7 +72,7 @@
             this.txt_ketoa.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ketoa.Location = new System.Drawing.Point(3, 9);
             this.txt_ketoa.Name = "txt_ketoa";
-            this.txt_ketoa.Size = new System.Drawing.Size(101, 17);
+            this.txt_ketoa.Size = new System.Drawing.Size(103, 19);
             this.txt_ketoa.TabIndex = 4;
             this.txt_ketoa.Text = "Kê Toa Thuốc";
             // 
@@ -82,7 +82,7 @@
             this.label_Val.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Val.Location = new System.Drawing.Point(36, 12);
             this.label_Val.Name = "label_Val";
-            this.label_Val.Size = new System.Drawing.Size(0, 19);
+            this.label_Val.Size = new System.Drawing.Size(0, 22);
             this.label_Val.TabIndex = 3;
             // 
             // guna2ControlBox3
@@ -114,6 +114,7 @@
             this.maToa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.maToa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.maToa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.maToa.Enabled = false;
             this.maToa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maToa.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maToa.ForeColor = System.Drawing.Color.Black;
@@ -125,6 +126,7 @@
             this.maToa.SelectedText = "";
             this.maToa.Size = new System.Drawing.Size(175, 40);
             this.maToa.TabIndex = 16;
+            this.maToa.TabStop = false;
             // 
             // label2
             // 
@@ -132,7 +134,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
+            this.label2.Size = new System.Drawing.Size(63, 21);
             this.label2.TabIndex = 15;
             this.label2.Text = "Thuốc:";
             // 
@@ -142,7 +144,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 19);
+            this.label1.Size = new System.Drawing.Size(66, 21);
             this.label1.TabIndex = 14;
             this.label1.Text = "Mã toa:";
             // 
@@ -167,7 +169,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(341, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 19);
+            this.label3.Size = new System.Drawing.Size(165, 21);
             this.label3.TabIndex = 18;
             this.label3.Text = "Mã phiếu khám bệnh";
             // 
@@ -212,7 +214,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(342, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 19);
+            this.label4.Size = new System.Drawing.Size(82, 21);
             this.label4.TabIndex = 19;
             this.label4.Text = "Số lượng:";
             // 

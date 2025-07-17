@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.QLBenhNhan = new Guna.UI2.WinForms.Guna2Panel();
+            this.macccd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ngaysinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.xoa = new Guna.UI2.WinForms.Guna2Button();
             this.gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,8 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Them = new Guna.UI2.WinForms.Guna2Button();
-            this.maCCCD = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.QLBenhNhan.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +112,7 @@
             // QLBenhNhan
             // 
             this.QLBenhNhan.BackColor = System.Drawing.Color.LightCyan;
-            this.QLBenhNhan.Controls.Add(this.maCCCD);
+            this.QLBenhNhan.Controls.Add(this.macccd);
             this.QLBenhNhan.Controls.Add(this.label1);
             this.QLBenhNhan.Controls.Add(this.ngaysinh);
             this.QLBenhNhan.Controls.Add(this.xoa);
@@ -133,6 +133,36 @@
             this.QLBenhNhan.Name = "QLBenhNhan";
             this.QLBenhNhan.Size = new System.Drawing.Size(1092, 391);
             this.QLBenhNhan.TabIndex = 29;
+            // 
+            // macccd
+            // 
+            this.macccd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.macccd.DefaultText = "";
+            this.macccd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.macccd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.macccd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.macccd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.macccd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.macccd.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macccd.ForeColor = System.Drawing.Color.Black;
+            this.macccd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.macccd.Location = new System.Drawing.Point(206, 239);
+            this.macccd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.macccd.Name = "macccd";
+            this.macccd.PlaceholderText = "";
+            this.macccd.SelectedText = "";
+            this.macccd.Size = new System.Drawing.Size(247, 40);
+            this.macccd.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 248);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 21);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "CCCD:";
             // 
             // ngaysinh
             // 
@@ -376,36 +406,6 @@
             this.Them.Text = "Thêm";
             this.Them.Click += new System.EventHandler(this.Them_Click);
             // 
-            // maCCCD
-            // 
-            this.maCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.maCCCD.DefaultText = "";
-            this.maCCCD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.maCCCD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.maCCCD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.maCCCD.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.maCCCD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.maCCCD.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maCCCD.ForeColor = System.Drawing.Color.Black;
-            this.maCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.maCCCD.Location = new System.Drawing.Point(206, 239);
-            this.maCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.maCCCD.Name = "maCCCD";
-            this.maCCCD.PlaceholderText = "";
-            this.maCCCD.SelectedText = "";
-            this.maCCCD.Size = new System.Drawing.Size(247, 40);
-            this.maCCCD.TabIndex = 40;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 248);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 21);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "CCCD:";
-            // 
             // QuanLyBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,7 +441,7 @@
         private Guna.UI2.WinForms.Guna2Button Them;
         private Guna.UI2.WinForms.Guna2Button xoa;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngaysinh;
-        private Guna.UI2.WinForms.Guna2TextBox maCCCD;
+        private Guna.UI2.WinForms.Guna2TextBox macccd;
         private System.Windows.Forms.Label label1;
     }
 }

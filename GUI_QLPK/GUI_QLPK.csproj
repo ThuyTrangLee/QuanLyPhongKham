@@ -65,6 +65,12 @@
     <Compile Include="BaoCaoSuDungThuoc.Designer.cs">
       <DependentUpon>BaoCaoSuDungThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="DangKyKham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKyKham.Designer.cs">
+      <DependentUpon>DangKyKham.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="DanhSachHoaDon.Designer.cs">
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSLaySoKham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSLaySoKham.Designer.cs">
+      <DependentUpon>DSLaySoKham.cs</DependentUpon>
     </Compile>
     <Compile Include="KeToa.cs">
       <SubType>Form</SubType>
@@ -169,11 +181,17 @@
     <EmbeddedResource Include="BaoCaoSuDungThuoc.resx">
       <DependentUpon>BaoCaoSuDungThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DangKyKham.resx">
+      <DependentUpon>DangKyKham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhSachBenhNhan.resx">
       <DependentUpon>DanhSachBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachHoaDon.resx">
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSLaySoKham.resx">
+      <DependentUpon>DSLaySoKham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeToa.resx">
       <DependentUpon>KeToa.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace GUI_QLPK
 {
-    partial class BaoCaoSuDungThuoc
+    partial class DSLaySoKham
     {
         /// <summary>
         /// Required designer variable.
@@ -31,92 +31,62 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.nam = new System.Windows.Forms.ComboBox();
-            this.thang = new System.Windows.Forms.ComboBox();
-            this.xem = new Guna.UI2.WinForms.Guna2Button();
+            this.timkiem = new Guna.UI2.WinForms.Guna2Button();
+            this.nhaptukhoa = new Guna.UI2.WinForms.Guna2TextBox();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2HtmlLabel1
+            // timkiem
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.73585F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(378, 43);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(354, 39);
-            this.guna2HtmlLabel1.TabIndex = 38;
-            this.guna2HtmlLabel1.Text = "Báo cáo sử dụng thuốc";
+            this.timkiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.timkiem.BorderRadius = 15;
+            this.timkiem.BorderThickness = 1;
+            this.timkiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.timkiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.timkiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.timkiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.timkiem.FillColor = System.Drawing.Color.Transparent;
+            this.timkiem.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.timkiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.timkiem.HoverState.ForeColor = System.Drawing.Color.White;
+            this.timkiem.Location = new System.Drawing.Point(541, 104);
+            this.timkiem.Name = "timkiem";
+            this.timkiem.Size = new System.Drawing.Size(123, 45);
+            this.timkiem.TabIndex = 12;
+            this.timkiem.Text = "Tìm";
             // 
-            // nam
+            // nhaptukhoa
             // 
-            this.nam.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nam.Font = new System.Drawing.Font("Times New Roman", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nam.FormattingEnabled = true;
-            this.nam.Items.AddRange(new object[] {
-            "2025",
-            "2026",
-            "2027",
-            "2028"});
-            this.nam.Location = new System.Drawing.Point(475, 134);
-            this.nam.Margin = new System.Windows.Forms.Padding(2);
-            this.nam.Name = "nam";
-            this.nam.Size = new System.Drawing.Size(135, 31);
-            this.nam.TabIndex = 37;
-            this.nam.Text = "Năm";
-            // 
-            // thang
-            // 
-            this.thang.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.thang.Font = new System.Drawing.Font("Times New Roman", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thang.FormattingEnabled = true;
-            this.thang.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.thang.Location = new System.Drawing.Point(298, 134);
-            this.thang.Margin = new System.Windows.Forms.Padding(2);
-            this.thang.Name = "thang";
-            this.thang.Size = new System.Drawing.Size(135, 31);
-            this.thang.TabIndex = 36;
-            this.thang.Text = "Tháng";
-            // 
-            // xem
-            // 
-            this.xem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xem.BorderRadius = 10;
-            this.xem.BorderThickness = 1;
-            this.xem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.xem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.xem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.xem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xem.FillColor = System.Drawing.Color.Transparent;
-            this.xem.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xem.HoverState.ForeColor = System.Drawing.Color.White;
-            this.xem.Location = new System.Drawing.Point(664, 134);
-            this.xem.Name = "xem";
-            this.xem.Size = new System.Drawing.Size(123, 33);
-            this.xem.TabIndex = 35;
-            this.xem.Text = "Xem";
-            this.xem.Click += new System.EventHandler(this.xem_Click);
+            this.nhaptukhoa.BorderRadius = 20;
+            this.nhaptukhoa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nhaptukhoa.DefaultText = "";
+            this.nhaptukhoa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.nhaptukhoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.nhaptukhoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nhaptukhoa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nhaptukhoa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nhaptukhoa.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhaptukhoa.ForeColor = System.Drawing.Color.Black;
+            this.nhaptukhoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nhaptukhoa.IconLeft = global::GUI_QLPK.Properties.Resources.search;
+            this.nhaptukhoa.IconLeftOffset = new System.Drawing.Point(8, 0);
+            this.nhaptukhoa.Location = new System.Drawing.Point(43, 104);
+            this.nhaptukhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nhaptukhoa.Name = "nhaptukhoa";
+            this.nhaptukhoa.PlaceholderText = "Tìm kiếm theo ngày";
+            this.nhaptukhoa.SelectedText = "";
+            this.nhaptukhoa.Size = new System.Drawing.Size(460, 48);
+            this.nhaptukhoa.TabIndex = 11;
+            this.nhaptukhoa.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // gird
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -136,14 +106,15 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gird.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gird.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.Location = new System.Drawing.Point(1, 240);
+            this.gird.Location = new System.Drawing.Point(0, 202);
             this.gird.Name = "gird";
             this.gird.RowHeadersVisible = false;
             this.gird.RowHeadersWidth = 45;
             this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(1090, 548);
-            this.gird.TabIndex = 39;
+            this.gird.Size = new System.Drawing.Size(1076, 682);
+            this.gird.TabIndex = 10;
             this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.gird.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -166,20 +137,29 @@
             this.gird.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gird.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // BaoCaoSuDungThuoc
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.73585F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(295, 29);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(544, 39);
+            this.guna2HtmlLabel1.TabIndex = 9;
+            this.guna2HtmlLabel1.Text = "DANH SÁCH LẤY SỐ KHÁM BỆNH";
+            // 
+            // DSLaySoKham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1092, 925);
+            this.ClientSize = new System.Drawing.Size(1076, 884);
+            this.Controls.Add(this.timkiem);
+            this.Controls.Add(this.nhaptukhoa);
             this.Controls.Add(this.gird);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.nam);
-            this.Controls.Add(this.thang);
-            this.Controls.Add(this.xem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BaoCaoSuDungThuoc";
-            this.Text = "BaoCaoSuDungThuoc";
+            this.Name = "DSLaySoKham";
+            this.Text = "DSLaySoKham";
             ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,10 +168,9 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private System.Windows.Forms.ComboBox nam;
-        private System.Windows.Forms.ComboBox thang;
-        private Guna.UI2.WinForms.Guna2Button xem;
+        private Guna.UI2.WinForms.Guna2Button timkiem;
+        private Guna.UI2.WinForms.Guna2TextBox nhaptukhoa;
         private Guna.UI2.WinForms.Guna2DataGridView gird;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

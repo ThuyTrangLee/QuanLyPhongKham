@@ -212,6 +212,7 @@
             this.maBenh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.maBenh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.maBenh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.maBenh.Enabled = false;
             this.maBenh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maBenh.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maBenh.ForeColor = System.Drawing.Color.Black;
@@ -223,6 +224,7 @@
             this.maBenh.SelectedText = "";
             this.maBenh.Size = new System.Drawing.Size(247, 40);
             this.maBenh.TabIndex = 18;
+            this.maBenh.TabStop = false;
             // 
             // label3
             // 
