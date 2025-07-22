@@ -38,34 +38,42 @@ namespace GUI_QLPK
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân");
             }
-            else
+            DateTime ngaySinh = ngaysinh.Value.Date;
+            if (ngaySinh > DateTime.Today)
             {
-                BenhNhanDTO bn = new BenhNhanDTO();
-                phieukhambenhDTO pkb = new phieukhambenhDTO();
-                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-                bn.MaBN = mabenhnhan.Text;
-                bn.TenBN = hoten.Text;
-                bn.GtBN = gioitinh.Text;
-                bn.NgsinhBN = ngaysinh.Value;
-                bn.DiachiBN = diachi.Text;
-                bn.CanCuocCongDan = macccd.Text;
-
-                List<BenhNhanDTO> danhSach = bnBus.select();
-                if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan))
-                {
-                    MessageBox.Show("CCCD đã tồn tại. Vui lòng nhập CCCD khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                bool kq = bnBus.them(bn);
-                if (kq == true)
-                {
-                    System.Windows.Forms.MessageBox.Show("Thêm Bệnh nhân thành công", "Result");
-                    this.Close();
-                }
-                else
-                    System.Windows.Forms.MessageBox.Show("Thêm Bệnh nhân thất bại", "Result", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Warning);
-
+                MessageBox.Show(
+                    "Ngày sinh không được chọn ở tương lai. Vui lòng chọn lại!",
+                    "Ngày sinh không hợp lệ",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                ngaysinh.Focus();
+                return;
             }
+            BenhNhanDTO bn = new BenhNhanDTO();
+            phieukhambenhDTO pkb = new phieukhambenhDTO();
+            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+            bn.MaBN = mabenhnhan.Text;
+            bn.TenBN = hoten.Text;
+            bn.GtBN = gioitinh.Text;
+            bn.NgsinhBN = ngaysinh.Value;
+            bn.DiachiBN = diachi.Text;
+            bn.CanCuocCongDan = macccd.Text;
+
+            List<BenhNhanDTO> danhSach = bnBus.select();
+            if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan))
+            {
+                MessageBox.Show("CCCD đã tồn tại. Vui lòng nhập CCCD khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            bool kq = bnBus.them(bn);
+            if (kq == true)
+            {
+                System.Windows.Forms.MessageBox.Show("Thêm Bệnh nhân thành công", "Result");
+                this.Close();
+            }
+            else
+                System.Windows.Forms.MessageBox.Show("Thêm Bệnh nhân thất bại", "Result", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Warning);
         }
     }
 }

@@ -53,9 +53,17 @@ namespace GUI_QLPK
             chart1.ChartAreas.Clear();
             //tạo series mới
             ChartArea chartArea = chart1.ChartAreas.Add("chartArea");
+
+            // 3) Tạo series mới kiểu Column
             Series series = chart1.Series.Add("Doanh thu năm " + year);
             series.ChartType = SeriesChartType.Column;
-            foreach (var item in dataByMonth)
+
+            // 4) Cấu hình trục X
+            chartArea.AxisX.IsLabelAutoFit = true;
+            chartArea.AxisX.Interval = 1;                  // mỗi tháng một nhãn
+            chartArea.AxisX.LabelStyle.Angle = -45;         // xoay nghiêng 45° cho dễ đọc
+
+            foreach (KeyValuePair<string, float> item in dataByMonth)
             {
                 series.Points.AddXY(item.Key, item.Value);
             }

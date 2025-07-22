@@ -49,6 +49,7 @@
     <Compile Include="DichvuBUS.cs" />
     <Compile Include="donviBUS.cs" />
     <Compile Include="HoadonBUS.cs" />
+    <Compile Include="lichHenBUS.cs" />
     <Compile Include="loaiTaiKhoanBUS.cs" />
     <Compile Include="PhieukhambenhBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

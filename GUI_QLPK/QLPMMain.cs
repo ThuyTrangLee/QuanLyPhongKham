@@ -49,6 +49,7 @@ namespace GUI_QLPK
                         btnDanhMuc.Visible = false;
                         btnHoaDon.Visible = false;
                         btn_BaoCao.Visible = false;
+                        lichkham.Visible = false;
                     }
                     else
                     {
@@ -57,6 +58,8 @@ namespace GUI_QLPK
                             phieukham.Visible = false;
                             btnDanhMuc.Visible = false;
                             btn_BaoCao.Visible = false;
+                            lichkham.Visible = false;
+                            dsLichkham.Visible = false;
                         }
                         else if (taiKhoan.MaLoai == 3)
                         {
@@ -67,6 +70,7 @@ namespace GUI_QLPK
                             btn_qlThuoc.Visible = false;
                             btn_qlLoaiBenh.Visible = false;
                             btn_qlDV.Visible = false;
+                            dsLichkham.Visible = false;
                         }
                     }
                 }
@@ -108,6 +112,7 @@ namespace GUI_QLPK
             PansubMenuHoaDon.Visible = false;
             subMenuDanhMuc.Visible = false;
             PanSubBaoCao.Visible = false;
+            subLichKham.Visible = false;
         }
         private void hideSubMenu()
         {
@@ -122,6 +127,10 @@ namespace GUI_QLPK
             if (PanSubBaoCao.Visible == true)
             {
                 PanSubBaoCao.Visible = false;
+            }
+            if (subLichKham.Visible == true)
+            {
+                subLichKham.Visible = false;
             }
         }
         private void showSubMenu(Panel subMenu)
@@ -235,6 +244,31 @@ namespace GUI_QLPK
         {
             label_Val.Text = "Danh sách bệnh nhân";
             container(new DanhSachBenhNhan());
+        }
+
+        private void dangkykham_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            label_Val.Text = "Đăng ký khám bệnh";
+            container(new DangKyKham(mataikhoan));
+        }
+
+        private void dsLichkham_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            label_Val.Text = "Danh sách lịch khám";
+            container(new DSLaySoKham());
+        }
+        private void lichkham_Click(object sender, EventArgs e)
+        {
+            label_Val.Text = "Lịch khám bệnh";
+            showSubMenu(subLichKham);
+        }
+
+        private void qlNhacLich_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            container(new QuanLyNhacHen());
         }
     }
 }

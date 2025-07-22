@@ -14,6 +14,7 @@ namespace QLPKDTO
         private string gtBN;
         private DateTime ngsinhBN;
         private string ccCD;
+        private string email;
 
         public string MaBN { get => maBN; set => maBN = value; }
         public string TenBN { get => tenBN; set => tenBN = value; }
@@ -21,5 +22,6 @@ namespace QLPKDTO
         public string GtBN { get => gtBN; set => gtBN = value; }
         public DateTime NgsinhBN { get => ngsinhBN; set => ngsinhBN = value; }
         public string CanCuocCongDan { get => ccCD; set => ccCD = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

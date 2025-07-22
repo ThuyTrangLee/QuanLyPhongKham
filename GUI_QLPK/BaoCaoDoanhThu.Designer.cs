@@ -137,7 +137,7 @@
             this.chart2.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(29, 207);
+            this.chart2.Location = new System.Drawing.Point(23, 207);
             this.chart2.Margin = new System.Windows.Forms.Padding(2);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
@@ -145,7 +145,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(497, 268);
+            this.chart2.Size = new System.Drawing.Size(503, 389);
             this.chart2.TabIndex = 35;
             this.chart2.Text = "chart2";
             // 
@@ -156,7 +156,7 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(568, 207);
+            this.chart1.Location = new System.Drawing.Point(564, 207);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
@@ -164,7 +164,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(480, 268);
+            this.chart1.Size = new System.Drawing.Size(503, 389);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
             // 
@@ -194,12 +194,12 @@
             this.gird.DefaultCellStyle = dataGridViewCellStyle3;
             this.gird.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.Location = new System.Drawing.Point(0, 533);
+            this.gird.Location = new System.Drawing.Point(0, 648);
             this.gird.Name = "gird";
             this.gird.RowHeadersVisible = false;
             this.gird.RowHeadersWidth = 45;
             this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(1092, 392);
+            this.gird.Size = new System.Drawing.Size(1092, 277);
             this.gird.TabIndex = 37;
             this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;

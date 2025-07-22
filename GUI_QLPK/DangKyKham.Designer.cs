@@ -33,20 +33,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.mabenhnhan = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.giokham = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.maCCCD = new Guna.UI2.WinForms.Guna2TextBox();
+            this.hoten = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ngaysinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.xoa = new Guna.UI2.WinForms.Guna2Button();
-            this.gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ngaykham = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btn_xoa = new Guna.UI2.WinForms.Guna2Button();
+            this.bacsi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.hoten = new Guna.UI2.WinForms.Guna2TextBox();
+            this.malichhen = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Them = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_dangky = new Guna.UI2.WinForms.Guna2Button();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.QLBenhNhan = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
@@ -73,38 +73,37 @@
             this.guna2HtmlLabel1.TabIndex = 44;
             this.guna2HtmlLabel1.Text = "ĐĂNG KÝ KHÁM BỆNH";
             // 
-            // guna2ComboBox1
+            // mabenhnhan
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(206, 175);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(247, 36);
-            this.guna2ComboBox1.TabIndex = 43;
+            this.mabenhnhan.BackColor = System.Drawing.Color.Transparent;
+            this.mabenhnhan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.mabenhnhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mabenhnhan.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mabenhnhan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.mabenhnhan.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
+            this.mabenhnhan.ForeColor = System.Drawing.Color.Black;
+            this.mabenhnhan.ItemHeight = 30;
+            this.mabenhnhan.Location = new System.Drawing.Point(206, 175);
+            this.mabenhnhan.Name = "mabenhnhan";
+            this.mabenhnhan.Size = new System.Drawing.Size(247, 36);
+            this.mabenhnhan.TabIndex = 43;
+            this.mabenhnhan.SelectedIndexChanged += new System.EventHandler(this.mabenhnhan_SelectedIndexChanged);
             // 
-            // guna2DateTimePicker1
+            // giokham
             // 
-            this.guna2DateTimePicker1.BackColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(737, 171);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(247, 40);
-            this.guna2DateTimePicker1.TabIndex = 42;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 7, 14, 8, 17, 50, 518);
+            this.giokham.BackColor = System.Drawing.Color.White;
+            this.giokham.Checked = true;
+            this.giokham.FillColor = System.Drawing.Color.White;
+            this.giokham.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.giokham.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.giokham.Location = new System.Drawing.Point(737, 171);
+            this.giokham.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.giokham.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.giokham.Name = "giokham";
+            this.giokham.ShowUpDown = true;
+            this.giokham.Size = new System.Drawing.Size(247, 40);
+            this.giokham.TabIndex = 42;
+            this.giokham.Value = new System.DateTime(2025, 7, 18, 8, 17, 0, 0);
             // 
             // label6
             // 
@@ -116,25 +115,25 @@
             this.label6.TabIndex = 41;
             this.label6.Text = "Giờ khám:";
             // 
-            // maCCCD
+            // hoten
             // 
-            this.maCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.maCCCD.DefaultText = "";
-            this.maCCCD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.maCCCD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.maCCCD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.maCCCD.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.maCCCD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.maCCCD.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maCCCD.ForeColor = System.Drawing.Color.Black;
-            this.maCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.maCCCD.Location = new System.Drawing.Point(206, 239);
-            this.maCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.maCCCD.Name = "maCCCD";
-            this.maCCCD.PlaceholderText = "";
-            this.maCCCD.SelectedText = "";
-            this.maCCCD.Size = new System.Drawing.Size(247, 40);
-            this.maCCCD.TabIndex = 40;
+            this.hoten.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.hoten.DefaultText = "";
+            this.hoten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.hoten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.hoten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hoten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.hoten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.hoten.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoten.ForeColor = System.Drawing.Color.Black;
+            this.hoten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.hoten.Location = new System.Drawing.Point(206, 239);
+            this.hoten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hoten.Name = "hoten";
+            this.hoten.PlaceholderText = "";
+            this.hoten.SelectedText = "";
+            this.hoten.Size = new System.Drawing.Size(247, 40);
+            this.hoten.TabIndex = 40;
             // 
             // label1
             // 
@@ -146,58 +145,56 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "Họ tên:";
             // 
-            // ngaysinh
+            // ngaykham
             // 
-            this.ngaysinh.BackColor = System.Drawing.Color.White;
-            this.ngaysinh.Checked = true;
-            this.ngaysinh.FillColor = System.Drawing.Color.White;
-            this.ngaysinh.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngaysinh.Location = new System.Drawing.Point(737, 109);
-            this.ngaysinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ngaysinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(247, 40);
-            this.ngaysinh.TabIndex = 38;
-            this.ngaysinh.Value = new System.DateTime(2025, 7, 14, 8, 17, 50, 518);
+            this.ngaykham.BackColor = System.Drawing.Color.White;
+            this.ngaykham.Checked = true;
+            this.ngaykham.FillColor = System.Drawing.Color.White;
+            this.ngaykham.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngaykham.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ngaykham.Location = new System.Drawing.Point(737, 109);
+            this.ngaykham.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ngaykham.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ngaykham.Name = "ngaykham";
+            this.ngaykham.Size = new System.Drawing.Size(247, 40);
+            this.ngaykham.TabIndex = 38;
+            this.ngaykham.Value = new System.DateTime(2025, 7, 14, 8, 17, 50, 518);
             // 
-            // xoa
+            // btn_xoa
             // 
-            this.xoa.BackColor = System.Drawing.Color.White;
-            this.xoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xoa.BorderThickness = 1;
-            this.xoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.xoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xoa.FillColor = System.Drawing.Color.Transparent;
-            this.xoa.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.xoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.xoa.Location = new System.Drawing.Point(593, 318);
-            this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(123, 36);
-            this.xoa.TabIndex = 37;
-            this.xoa.Text = "Xóa";
+            this.btn_xoa.BackColor = System.Drawing.Color.White;
+            this.btn_xoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_xoa.BorderThickness = 1;
+            this.btn_xoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_xoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_xoa.FillColor = System.Drawing.Color.Transparent;
+            this.btn_xoa.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_xoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_xoa.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_xoa.Location = new System.Drawing.Point(593, 318);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(123, 36);
+            this.btn_xoa.TabIndex = 37;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
-            // gioitinh
+            // bacsi
             // 
-            this.gioitinh.BackColor = System.Drawing.Color.Transparent;
-            this.gioitinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gioitinh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gioitinh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gioitinh.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
-            this.gioitinh.ForeColor = System.Drawing.Color.Black;
-            this.gioitinh.ItemHeight = 30;
-            this.gioitinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.gioitinh.Location = new System.Drawing.Point(737, 239);
-            this.gioitinh.Name = "gioitinh";
-            this.gioitinh.Size = new System.Drawing.Size(247, 36);
-            this.gioitinh.TabIndex = 36;
+            this.bacsi.BackColor = System.Drawing.Color.Transparent;
+            this.bacsi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bacsi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bacsi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bacsi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bacsi.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
+            this.bacsi.ForeColor = System.Drawing.Color.Black;
+            this.bacsi.ItemHeight = 30;
+            this.bacsi.Location = new System.Drawing.Point(737, 239);
+            this.bacsi.Name = "bacsi";
+            this.bacsi.Size = new System.Drawing.Size(247, 36);
+            this.bacsi.TabIndex = 36;
             // 
             // label5
             // 
@@ -219,25 +216,27 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Mã bệnh nhân:";
             // 
-            // hoten
+            // malichhen
             // 
-            this.hoten.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.hoten.DefaultText = "";
-            this.hoten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.hoten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.hoten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.hoten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.hoten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.hoten.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoten.ForeColor = System.Drawing.Color.Black;
-            this.hoten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.hoten.Location = new System.Drawing.Point(206, 109);
-            this.hoten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.hoten.Name = "hoten";
-            this.hoten.PlaceholderText = "";
-            this.hoten.SelectedText = "";
-            this.hoten.Size = new System.Drawing.Size(247, 40);
-            this.hoten.TabIndex = 18;
+            this.malichhen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.malichhen.DefaultText = "";
+            this.malichhen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.malichhen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.malichhen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.malichhen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.malichhen.Enabled = false;
+            this.malichhen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.malichhen.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.malichhen.ForeColor = System.Drawing.Color.Black;
+            this.malichhen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.malichhen.Location = new System.Drawing.Point(206, 109);
+            this.malichhen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.malichhen.Name = "malichhen";
+            this.malichhen.PlaceholderText = "";
+            this.malichhen.SelectedText = "";
+            this.malichhen.Size = new System.Drawing.Size(247, 40);
+            this.malichhen.TabIndex = 18;
+            this.malichhen.TabStop = false;
             // 
             // label4
             // 
@@ -253,31 +252,32 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 120);
+            this.label3.Location = new System.Drawing.Point(86, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 21);
+            this.label3.Size = new System.Drawing.Size(124, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Số thứ tự:";
+            this.label3.Text = "Mã khám bệnh:";
             // 
-            // Them
+            // btn_dangky
             // 
-            this.Them.BackColor = System.Drawing.Color.White;
-            this.Them.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.Them.BorderThickness = 1;
-            this.Them.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Them.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Them.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Them.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Them.FillColor = System.Drawing.Color.Transparent;
-            this.Them.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Them.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.Them.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.Them.HoverState.ForeColor = System.Drawing.Color.White;
-            this.Them.Location = new System.Drawing.Point(395, 318);
-            this.Them.Name = "Them";
-            this.Them.Size = new System.Drawing.Size(123, 36);
-            this.Them.TabIndex = 2;
-            this.Them.Text = "Đăng Ký";
+            this.btn_dangky.BackColor = System.Drawing.Color.White;
+            this.btn_dangky.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_dangky.BorderThickness = 1;
+            this.btn_dangky.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangky.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangky.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_dangky.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_dangky.FillColor = System.Drawing.Color.Transparent;
+            this.btn_dangky.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dangky.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_dangky.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_dangky.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_dangky.Location = new System.Drawing.Point(395, 318);
+            this.btn_dangky.Name = "btn_dangky";
+            this.btn_dangky.Size = new System.Drawing.Size(123, 36);
+            this.btn_dangky.TabIndex = 2;
+            this.btn_dangky.Text = "Đăng Ký";
+            this.btn_dangky.Click += new System.EventHandler(this.btn_dangky_Click);
             // 
             // gird
             // 
@@ -333,26 +333,27 @@
             this.gird.ThemeStyle.RowsStyle.Height = 28;
             this.gird.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gird.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gird.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gird_CellClick);
             // 
             // QLBenhNhan
             // 
             this.QLBenhNhan.BackColor = System.Drawing.Color.LightCyan;
             this.QLBenhNhan.Controls.Add(this.guna2HtmlLabel2);
             this.QLBenhNhan.Controls.Add(this.guna2HtmlLabel1);
-            this.QLBenhNhan.Controls.Add(this.guna2ComboBox1);
-            this.QLBenhNhan.Controls.Add(this.guna2DateTimePicker1);
+            this.QLBenhNhan.Controls.Add(this.mabenhnhan);
+            this.QLBenhNhan.Controls.Add(this.giokham);
             this.QLBenhNhan.Controls.Add(this.label6);
-            this.QLBenhNhan.Controls.Add(this.maCCCD);
+            this.QLBenhNhan.Controls.Add(this.hoten);
             this.QLBenhNhan.Controls.Add(this.label1);
-            this.QLBenhNhan.Controls.Add(this.ngaysinh);
-            this.QLBenhNhan.Controls.Add(this.xoa);
-            this.QLBenhNhan.Controls.Add(this.gioitinh);
+            this.QLBenhNhan.Controls.Add(this.ngaykham);
+            this.QLBenhNhan.Controls.Add(this.btn_xoa);
+            this.QLBenhNhan.Controls.Add(this.bacsi);
             this.QLBenhNhan.Controls.Add(this.label5);
             this.QLBenhNhan.Controls.Add(this.label2);
-            this.QLBenhNhan.Controls.Add(this.hoten);
+            this.QLBenhNhan.Controls.Add(this.malichhen);
             this.QLBenhNhan.Controls.Add(this.label4);
             this.QLBenhNhan.Controls.Add(this.label3);
-            this.QLBenhNhan.Controls.Add(this.Them);
+            this.QLBenhNhan.Controls.Add(this.btn_dangky);
             this.QLBenhNhan.Dock = System.Windows.Forms.DockStyle.Top;
             this.QLBenhNhan.Location = new System.Drawing.Point(0, 0);
             this.QLBenhNhan.Name = "QLBenhNhan";
@@ -380,20 +381,20 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2ComboBox mabenhnhan;
+        private Guna.UI2.WinForms.Guna2DateTimePicker giokham;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox maCCCD;
+        private Guna.UI2.WinForms.Guna2TextBox hoten;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker ngaysinh;
-        private Guna.UI2.WinForms.Guna2Button xoa;
-        private Guna.UI2.WinForms.Guna2ComboBox gioitinh;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ngaykham;
+        private Guna.UI2.WinForms.Guna2Button btn_xoa;
+        private Guna.UI2.WinForms.Guna2ComboBox bacsi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox hoten;
+        private Guna.UI2.WinForms.Guna2TextBox malichhen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button Them;
+        private Guna.UI2.WinForms.Guna2Button btn_dangky;
         private Guna.UI2.WinForms.Guna2DataGridView gird;
         private Guna.UI2.WinForms.Guna2Panel QLBenhNhan;
     }

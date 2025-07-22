@@ -23,7 +23,6 @@ namespace QLPKDAL
 
         // Thuộc tính cho chuỗi kết nối
         public string ConnectionString { get => connectionString; set => connectionString = value; }
-        public object MessageBox { get; private set; }
 
         public bool Them(BenhNhanDTO bn)
         {
@@ -64,32 +63,6 @@ namespace QLPKDAL
         // Phương thức sửa một bệnh nhân
         public bool Sua(BenhNhanDTO bn, string maBNold)
         {
-            //if (string.IsNullOrWhiteSpace(bn.CanCuocCongDan))
-            //{
-            //    Console.WriteLine("❌ CCCD bị null hoặc rỗng.");
-            //    return false;
-            //}
-            //string checkQuery = "SELECT COUNT(*) FROM BenhNhan WHERE CCCD = @cccd AND maBenhNhan != @maBNold";
-
-            //using (SqlConnection checkCon = new SqlConnection(ConnectionString))
-            //{
-            //    using (SqlCommand checkCmd = new SqlCommand(checkQuery, checkCon))
-            //    {
-            //        checkCmd.Parameters.AddWithValue("@cccd", bn.CanCuocCongDan);
-            //        checkCmd.Parameters.AddWithValue("@maBNold", maBNold);
-
-            //        checkCon.Open();
-            //        int count = (int)checkCmd.ExecuteScalar();
-            //        checkCon.Close();
-
-            //        if (count > 0)
-            //        {
-            //            Console.WriteLine("❌ CCCD đã tồn tại ở bệnh nhân khác.");
-            //            return false;
-            //        }
-            //    }
-            //}
-            // Chuỗi truy vấn SQL để cập nhật bệnh nhân
             string query = string.Empty;
             query += "UPDATE [BenhNhan] ";
             query += "SET tenBenhNhan=@tenBenhNhan, gioiTinh=@gioiTinh, ngaySinh=@ngaySinh, diaChi=@diaChi, CCCD=@cccd ";
@@ -192,6 +165,7 @@ namespace QLPKDAL
                                 bn.NgsinhBN = DateTime.Parse(reader["ngaySinh"].ToString());
                                 bn.DiachiBN = reader["diaChi"].ToString();
                                 bn.CanCuocCongDan = reader["CCCD"].ToString();
+                                bn.Email = reader["Email"].ToString();
                                 lsBenhNhan.Add(bn); // Thêm vào danh sách
                             }
                         }

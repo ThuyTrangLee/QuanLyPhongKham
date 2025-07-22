@@ -20,6 +20,9 @@ namespace GUI_QLPK
         BenhBUS beBus = new BenhBUS();
         ChandoanBUS cdBUS = new ChandoanBUS();
         PhieukhambenhBUS pkbBUS = new PhieukhambenhBUS();
+        lichHenBUS lhBUS = new lichHenBUS();
+        lichHenDAL lichHenDAL = new lichHenDAL();
+
         private int stt;
 
         public ThemPhieuKhamBenh(int mabs)
@@ -28,7 +31,6 @@ namespace GUI_QLPK
             InitializeComponent();
             load_combobox_mabn();
             load_combobox_benh();
-            ngaykham.Text = DateTime.Now.ToString();
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Load_Gird();
             load_data();
@@ -103,86 +105,100 @@ namespace GUI_QLPK
                 benh.Items.Add(be.TenBenh.ToString());
             }
         }
-
-        private void btnkiemtra_Click(object sender, EventArgs e)
-        {
-            bnBUS = new BenhNhanBUS();
-            List<BenhNhanDTO> listBenhNhan = bnBUS.select();
-            load_ten(listBenhNhan, mabenhnhan.Text);
-        }
         private void btnLapphieu_Click(object sender, EventArgs e)
         {
             if (maPKB.Text == null || trieuchung.Text == null)
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập đầy đủ thông tin phiếu khám bệnh");
             }
-            else
+            //kiểm tra ràng buộc
+            DateTime ngay = ngaytaikham.Value.Date;
+            DateTime ngayKham = DateTime.Parse(ngaykham.Text);
+            if (ngay < DateTime.Now && ngay < ngayKham)
             {
-                phieukhambenhDTO pkb = new phieukhambenhDTO();
-                chandoanDTO cd = new chandoanDTO();
-                List<benhDTO> listBenh = beBus.select();
-                cd.MaPkb = maPKB.Text;
-                foreach (benhDTO be in listBenh)
-                {
-                    if (benh.Text == be.TenBenh)
-                    {
-                        cd.MaBenh = be.MaBenh;
-                    }
-                }
-                pkb.MaPKB = maPKB.Text;
-                pkb.NgayKham = DateTime.UtcNow.Date;
-                pkb.TrieuChung = trieuchung.Text;
-                pkb.MaBenhNhan = mabenhnhan.Text;
-                pkb.NgayTaiKham = ngaytaikham.Value.Date;
-                pkb.MBS = maBS;
-                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-                ChandoanBUS cdBus = new ChandoanBUS();
-                bool kq2 = pkbBus.them(pkb);
-                bool kq1 = cdBus.them(cd);
-                if (kq2 == true && kq1 == true)
-                {
-                    System.Windows.Forms.MessageBox.Show("Lập phiếu thành công", "Result");
-                    load_data();
-                    Load_Gird();
-                }
-                else System.Windows.Forms.MessageBox.Show("Lập phiếu thất bại", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn đã chọn ngày trong quá khứ. Vui lòng chọn lại!",
+                                "Ngày hẹn không hợp lệ",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
             }
+            phieukhambenhDTO pkb = new phieukhambenhDTO();
+            chandoanDTO cd = new chandoanDTO();
+
+            List<benhDTO> listBenh = beBus.select();
+            cd.MaPkb = maPKB.Text;
+            foreach (benhDTO be in listBenh)
+            {
+                if (benh.Text == be.TenBenh)
+                {
+                    cd.MaBenh = be.MaBenh;
+                }
+            }
+            pkb.MaPKB = maPKB.Text;
+            pkb.NgayKham = DateTime.UtcNow.Date;
+            pkb.TrieuChung = trieuchung.Text;
+            pkb.MaBenhNhan = mabenhnhan.Text;
+            pkb.NgayTaiKham = ngaytaikham.Value.Date;
+            pkb.MBS = maBS;
+            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+            ChandoanBUS cdBus = new ChandoanBUS();
+            bool kq2 = pkbBus.them(pkb);
+            bool kq1 = cdBus.them(cd);
+            if (kq2 == true && kq1 == true)
+            {
+
+                System.Windows.Forms.MessageBox.Show("Lập phiếu thành công", "Result");
+                load_data();
+                Load_Gird();
+            }
+            else System.Windows.Forms.MessageBox.Show("Lập phiếu thất bại", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
         }
         public void Load_Gird()
         {
             int stt = 1;
 
             List<BenhNhanDTO> listBenhNhan = bnBUS.select();
-            List<phieukhambenhDTO> listpkb = pkbBUS.select();
+            List<lichHenDTO> listLichHen = lhBUS.select();
+            string mabs = maBS.ToString();
+            List<lichHenDTO> lhbacsi = new List<lichHenDTO>();
+            foreach (lichHenDTO lh in listLichHen)
+            {
+                //hiện trong ngày
+                if(lh.MaTaiKhoan == mabs && lh.NgayHen.Date >= DateTime.Today)
+                {
+                    lhbacsi.Add(lh);
+                }
+
+            }
+
             DataTable table = new DataTable();
             table.Columns.Add("Số thứ tự", typeof(int));
             table.Columns.Add("Mã bệnh nhân", typeof(string));
             table.Columns.Add("Tên bệnh nhân", typeof(string));
             table.Columns.Add("Ngày sinh", typeof(string));
             table.Columns.Add("Địa chỉ", typeof(string));
+            table.Columns.Add("Ngày hẹn", typeof(string));
+            table.Columns.Add("Giờ hẹn", typeof(string));
+            table.Columns.Add("Trạng thái", typeof(string));
 
-            // Tạo HashSet để lưu mã bệnh nhân đã có phiếu khám bệnh
-            HashSet<string> maBenhNhanDaCoPhieu = new HashSet<string>();
-
-            // Thêm mã bệnh nhân từ danh sách phiếu khám bệnh vào HashSet
-            foreach (phieukhambenhDTO pkb in listpkb)
-            {
-                maBenhNhanDaCoPhieu.Add(pkb.MaBenhNhan);
-            }
-
-            // Duyệt qua danh sách bệnh nhân và chỉ thêm những bệnh nhân không có trong HashSet vào DataTable
             foreach (BenhNhanDTO bn in listBenhNhan)
             {
-                if (!maBenhNhanDaCoPhieu.Contains(bn.MaBN))
+                foreach(lichHenDTO lh in lhbacsi)
                 {
-                    DataRow row = table.NewRow();
-                    row["Số thứ tự"] = stt;
-                    row["Mã bệnh nhân"] = bn.MaBN;
-                    row["Tên bệnh nhân"] = bn.TenBN;
-                    row["Ngày sinh"] = DateTime.Parse(bn.NgsinhBN.ToString()).ToString("dd/MM/yyyy");
-                    row["Địa chỉ"] = bn.DiachiBN;
-                    table.Rows.Add(row);
-                    stt += 1;
+                    if(bn.MaBN.ToString() == lh.MaBenhNhan)
+                    {
+                        DataRow row = table.NewRow();
+                        row["Số thứ tự"] = stt;
+                        row["Mã bệnh nhân"] = bn.MaBN;
+                        row["Tên bệnh nhân"] = bn.TenBN;
+                        row["Ngày sinh"] = DateTime.Parse(bn.NgsinhBN.ToString()).ToString("dd/MM/yyyy");
+                        row["Địa chỉ"] = bn.DiachiBN;
+                        row["Ngày hẹn"] = lh.NgayHen.ToString("dd/MM/yyyy");
+                        row["Giờ hẹn"] = lh.NgayHen.ToString("hh:mm");
+                        row["Trạng thái"] = lh.TrangThai;
+                        table.Rows.Add(row);
+                        stt += 1;
+                    }
                 }
             }
             gird.DataSource = table.DefaultView;
@@ -195,6 +211,10 @@ namespace GUI_QLPK
                 DataGridViewRow row = gird.Rows[e.RowIndex];
                 hoten.Text = row.Cells[2].Value.ToString();
                 mabenhnhan.Text = row.Cells[1].Value.ToString();
+                //malichhen = int.Parse(row.Cells["maLichHen"].Value.ToString());
+                string ngay = row.Cells[5].Value.ToString();    // "dd/MM/yyyy"
+                string gio = row.Cells[6].Value.ToString();     // "HH:mm"
+                ngaykham.Text = ngay+" " + gio;
             }
         }
 
@@ -204,5 +224,14 @@ namespace GUI_QLPK
             toa.Show();
         }
 
+        private void mabenhnhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mabenhnhan.SelectedIndex < 0) return;
+            //lấy mã đã được chọn
+            string selectedMaBN = mabenhnhan.SelectedItem.ToString();
+            //lấy danh sách bệnh nhân
+            List<BenhNhanDTO> listBenhNhan = bnBUS.select();
+            load_ten(listBenhNhan, selectedMaBN);
+        }
     }
 }

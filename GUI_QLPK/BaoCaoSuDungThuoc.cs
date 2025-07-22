@@ -1,9 +1,11 @@
 ﻿using QLPKBUS;
+using QLPKDAL;
 using QLPKDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,10 +19,16 @@ namespace GUI_QLPK
     {
         ThuocBUS thBus = new ThuocBUS();
         ChiTietToaThuocBUS ktBus = new ChiTietToaThuocBUS();
+        donviBUS dvBus = new donviBUS();
+        List<donViDTO> listDonVi;
         public int stt;
         public BaoCaoSuDungThuoc()
         {
             InitializeComponent();
+            dvBus = new donviBUS();
+
+            // Lấy danh sách đơn vị ở đây
+            listDonVi = dvBus.select();
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void load_data()
@@ -43,9 +51,9 @@ namespace GUI_QLPK
                 return;
             }
             DataTable table = new DataTable();
+            table.Columns.Add("Số Thứ Tự", typeof(int));
             table.Columns.Add("Tên Thuốc", typeof(string));
             table.Columns.Add("Đơn Vị Tính", typeof(string));
-            table.Columns.Add("Số Thứ Tự", typeof(int));
             table.Columns.Add("Số Lần Dùng", typeof(int));
             table.Columns.Add("Số Lượng", typeof(int));
             foreach (thuocDTO th in listThuoc)
@@ -56,11 +64,12 @@ namespace GUI_QLPK
                     {
 
                         DataRow row = table.NewRow();
+                        row["Số Thứ Tự"] = stt;
                         row["Tên Thuốc"] = th.TenThuoc;
-                        row["Đơn Vị Tính"] = th.MaDonVi;
+                        donViDTO dv = listDonVi.Find(x => x.MaDonVi == th.MaDonVi);
+                        row["Đơn Vị Tính"] = dv.TenDonVi;
                         row["Số Lượng"] = kt.SoLuong;
                         row["Số Lần Dùng"] = ktBus.solandungbymonth(th.MaThuoc, month, year);
-                        row["Số Thứ Tự"] = stt;
                         table.Rows.Add(row);
                         stt += 1;
                     }

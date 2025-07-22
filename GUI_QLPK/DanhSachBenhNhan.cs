@@ -56,9 +56,11 @@ namespace GUI_QLPK
 
             DataTable table = new DataTable();
             table.Columns.Add("Số thứ tự", typeof(int));
+            table.Columns.Add("Mã phiếu khám", typeof(string));
             table.Columns.Add("Tên bệnh nhân", typeof(string));
             table.Columns.Add("CCCD", typeof(string));
             table.Columns.Add("Ngày khám", typeof(string));
+            table.Columns.Add("Ngày tái khám", typeof(string));
             table.Columns.Add("Triệu chứng", typeof(string));
             table.Columns.Add("Tên bệnh", typeof(string));
             table.Columns.Add("Bác sĩ khám", typeof(string));
@@ -78,9 +80,11 @@ namespace GUI_QLPK
                                     {
                                         DataRow row = table.NewRow();
                                         row["Số thứ tự"] = stt;
+                                        row["Mã phiếu khám"] = pkb.MaPKB;
                                         row["Tên bệnh nhân"] = bn.TenBN;
                                         row["CCCD"] = bn.CanCuocCongDan;
                                         row["Ngày khám"] = DateTime.Parse(pkb.NgayKham.ToString()).ToString("dd/MM/yyyy");
+                                        row["Ngày tái khám"] = DateTime.Parse(pkb.NgayTaiKham.ToString()).ToString("dd/MM/yyyy");   
                                         row["Triệu chứng"] = pkb.TrieuChung;
                                         row["Tên bệnh"] = be.TenBenh;
                                         foreach (taiKhoanDTO tk in listTK)

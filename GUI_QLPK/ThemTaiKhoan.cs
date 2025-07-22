@@ -52,7 +52,7 @@ namespace GUI_QLPM
                 else
                 {
                     System.Windows.Forms.MessageBox.Show("Thêm tài khoản thành công", "Result");
-                    //this.Close();
+                    this.Close();
                 }
 
             }
