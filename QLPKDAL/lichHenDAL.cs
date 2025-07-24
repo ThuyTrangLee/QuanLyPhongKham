@@ -43,7 +43,6 @@ namespace QLPKDAL
                             lh.MaDieuDuong = int.Parse(reader["maDieuDuong"].ToString());
                             lh.NgayHen = DateTime.Parse(reader["ngayHen"].ToString());
                             lh.TrangThai = reader["trangThai"].ToString();
-                            lh.DaGuiMail = (bool)reader["DaGuiMail"];
                             lslichHen.Add(lh);
                         }
                     }
@@ -163,17 +162,16 @@ namespace QLPKDAL
                 }
             }
         }
-        public bool CapNhatDaGuiMail(string maLichHen, bool daGui)
+        public bool CapNhatTrangThai(string maBenhNhan, DateTime ngayHen, string trangThaiMoi)
         {
-            string query =
-                "UPDATE LichHen " +
-                "SET DaGuiMail = @dg " +
-                "WHERE maLichHen = @mlh";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            string query = "UPDATE LichHen SET TrangThai = @trangThaiMoi WHERE MaBenhNhan = @maBenhNhan AND CAST(NgayHen AS DATE) = @ngayHen";
+            using (SqlConnection con = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@dg", daGui);
-                cmd.Parameters.AddWithValue("@mlh", maLichHen);
+                cmd.Parameters.AddWithValue("@trangThaiMoi", trangThaiMoi);
+                cmd.Parameters.AddWithValue("@maBenhNhan", maBenhNhan);
+                cmd.Parameters.AddWithValue("@ngayHen", ngayHen.Date);  // chỉ lấy phần ngày
+
                 try
                 {
                     con.Open();
@@ -185,5 +183,34 @@ namespace QLPKDAL
                 }
             }
         }
+        public List<lichHenDTO> selectByDate(DateTime ngay)
+        {
+            string query = "SELECT * FROM LichHen WHERE CAST(NgayHen AS DATE) = @ngay";
+            List<lichHenDTO> ds = new List<lichHenDTO>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@ngay", ngay.Date);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lichHenDTO lh = new lichHenDTO();
+                    lh.MaLichHen = reader["maLichHen"].ToString();
+                    lh.MaBenhNhan = reader["maBenhNhan"].ToString();
+                    lh.MaTaiKhoan = reader["maTaiKhoan"].ToString();
+                    lh.MaDieuDuong = int.Parse(reader["maDieuDuong"].ToString());
+                    lh.NgayHen = DateTime.Parse(reader["ngayHen"].ToString());
+                    lh.TrangThai = reader["trangThai"].ToString();
+                    ds.Add(lh);
+                }
+            }
+
+            return ds;
+        }
+  
+
     }
 }

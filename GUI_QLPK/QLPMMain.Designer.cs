@@ -60,6 +60,10 @@
             this.btnTraCuu = new Guna.UI2.WinForms.Guna2Button();
             this.phieukham = new Guna.UI2.WinForms.Guna2Button();
             this.lichkham = new Guna.UI2.WinForms.Guna2Button();
+            this.subLichKham = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.qlNhacLich = new Guna.UI2.WinForms.Guna2Button();
+            this.dangkykham = new Guna.UI2.WinForms.Guna2Button();
+            this.dsLichkham = new Guna.UI2.WinForms.Guna2Button();
             this.btnHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnDSBenhNhan = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
@@ -68,10 +72,6 @@
             this.btn_DThu = new Guna.UI2.WinForms.Guna2Button();
             this.btn_sdThuoc = new Guna.UI2.WinForms.Guna2Button();
             this.btn_out = new Guna.UI2.WinForms.Guna2Button();
-            this.subLichKham = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.dangkykham = new Guna.UI2.WinForms.Guna2Button();
-            this.dsLichkham = new Guna.UI2.WinForms.Guna2Button();
-            this.qlNhacLich = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.subMenuDanhMuc.SuspendLayout();
@@ -81,8 +81,8 @@
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.PanSubBaoCao.SuspendLayout();
             this.subLichKham.SuspendLayout();
+            this.PanSubBaoCao.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel3
@@ -591,6 +591,96 @@
             this.lichkham.TextOffset = new System.Drawing.Point(25, 0);
             this.lichkham.Click += new System.EventHandler(this.lichkham_Click);
             // 
+            // subLichKham
+            // 
+            this.subLichKham.BackColor = System.Drawing.Color.White;
+            this.subLichKham.Controls.Add(this.qlNhacLich);
+            this.subLichKham.Controls.Add(this.dangkykham);
+            this.subLichKham.Controls.Add(this.dsLichkham);
+            this.subLichKham.Location = new System.Drawing.Point(3, 301);
+            this.subLichKham.Name = "subLichKham";
+            this.subLichKham.Size = new System.Drawing.Size(229, 151);
+            this.subLichKham.TabIndex = 22;
+            // 
+            // qlNhacLich
+            // 
+            this.qlNhacLich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
+            this.qlNhacLich.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.qlNhacLich.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.qlNhacLich.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.qlNhacLich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.qlNhacLich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.qlNhacLich.FillColor = System.Drawing.Color.Transparent;
+            this.qlNhacLich.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qlNhacLich.ForeColor = System.Drawing.Color.Black;
+            this.qlNhacLich.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.qlNhacLich.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.qlNhacLich.HoverState.ForeColor = System.Drawing.Color.White;
+            this.qlNhacLich.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.qlNhacLich.ImageOffset = new System.Drawing.Point(8, 0);
+            this.qlNhacLich.ImageSize = new System.Drawing.Size(25, 25);
+            this.qlNhacLich.Location = new System.Drawing.Point(0, 98);
+            this.qlNhacLich.Name = "qlNhacLich";
+            this.qlNhacLich.Size = new System.Drawing.Size(224, 45);
+            this.qlNhacLich.TabIndex = 20;
+            this.qlNhacLich.Text = "Quản lý nhắc hẹn";
+            this.qlNhacLich.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.qlNhacLich.TextOffset = new System.Drawing.Point(70, 0);
+            this.qlNhacLich.Click += new System.EventHandler(this.qlNhacLich_Click);
+            // 
+            // dangkykham
+            // 
+            this.dangkykham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
+            this.dangkykham.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.dangkykham.BorderThickness = 1;
+            this.dangkykham.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.dangkykham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dangkykham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dangkykham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dangkykham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dangkykham.FillColor = System.Drawing.Color.Transparent;
+            this.dangkykham.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dangkykham.ForeColor = System.Drawing.Color.Black;
+            this.dangkykham.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.dangkykham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.dangkykham.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dangkykham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dangkykham.ImageSize = new System.Drawing.Size(25, 25);
+            this.dangkykham.Location = new System.Drawing.Point(0, 3);
+            this.dangkykham.Name = "dangkykham";
+            this.dangkykham.Size = new System.Drawing.Size(228, 45);
+            this.dangkykham.TabIndex = 19;
+            this.dangkykham.Text = "Đăng ký khám";
+            this.dangkykham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dangkykham.TextOffset = new System.Drawing.Point(70, 0);
+            this.dangkykham.Click += new System.EventHandler(this.dangkykham_Click);
+            // 
+            // dsLichkham
+            // 
+            this.dsLichkham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
+            this.dsLichkham.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.dsLichkham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dsLichkham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dsLichkham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dsLichkham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dsLichkham.FillColor = System.Drawing.Color.Transparent;
+            this.dsLichkham.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dsLichkham.ForeColor = System.Drawing.Color.Black;
+            this.dsLichkham.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.dsLichkham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.dsLichkham.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dsLichkham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dsLichkham.ImageOffset = new System.Drawing.Point(8, 0);
+            this.dsLichkham.ImageSize = new System.Drawing.Size(25, 25);
+            this.dsLichkham.Location = new System.Drawing.Point(2, 50);
+            this.dsLichkham.Name = "dsLichkham";
+            this.dsLichkham.Size = new System.Drawing.Size(224, 45);
+            this.dsLichkham.TabIndex = 19;
+            this.dsLichkham.Text = "Danh sách lịch khám";
+            this.dsLichkham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dsLichkham.TextOffset = new System.Drawing.Point(70, 0);
+            this.dsLichkham.Click += new System.EventHandler(this.dsLichkham_Click);
+            // 
             // btnHoaDon
             // 
             this.btnHoaDon.BackColor = System.Drawing.Color.White;
@@ -793,96 +883,6 @@
             this.btn_out.TextOffset = new System.Drawing.Point(25, 0);
             this.btn_out.Click += new System.EventHandler(this.btn_out_Click);
             // 
-            // subLichKham
-            // 
-            this.subLichKham.BackColor = System.Drawing.Color.White;
-            this.subLichKham.Controls.Add(this.qlNhacLich);
-            this.subLichKham.Controls.Add(this.dangkykham);
-            this.subLichKham.Controls.Add(this.dsLichkham);
-            this.subLichKham.Location = new System.Drawing.Point(3, 301);
-            this.subLichKham.Name = "subLichKham";
-            this.subLichKham.Size = new System.Drawing.Size(229, 151);
-            this.subLichKham.TabIndex = 22;
-            // 
-            // dangkykham
-            // 
-            this.dangkykham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
-            this.dangkykham.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.dangkykham.BorderThickness = 1;
-            this.dangkykham.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.dangkykham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.dangkykham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.dangkykham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.dangkykham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.dangkykham.FillColor = System.Drawing.Color.Transparent;
-            this.dangkykham.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dangkykham.ForeColor = System.Drawing.Color.Black;
-            this.dangkykham.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.dangkykham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.dangkykham.HoverState.ForeColor = System.Drawing.Color.White;
-            this.dangkykham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dangkykham.ImageSize = new System.Drawing.Size(25, 25);
-            this.dangkykham.Location = new System.Drawing.Point(0, 3);
-            this.dangkykham.Name = "dangkykham";
-            this.dangkykham.Size = new System.Drawing.Size(228, 45);
-            this.dangkykham.TabIndex = 19;
-            this.dangkykham.Text = "Đăng ký khám";
-            this.dangkykham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dangkykham.TextOffset = new System.Drawing.Point(70, 0);
-            this.dangkykham.Click += new System.EventHandler(this.dangkykham_Click);
-            // 
-            // dsLichkham
-            // 
-            this.dsLichkham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
-            this.dsLichkham.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.dsLichkham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.dsLichkham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.dsLichkham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.dsLichkham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.dsLichkham.FillColor = System.Drawing.Color.Transparent;
-            this.dsLichkham.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dsLichkham.ForeColor = System.Drawing.Color.Black;
-            this.dsLichkham.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.dsLichkham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.dsLichkham.HoverState.ForeColor = System.Drawing.Color.White;
-            this.dsLichkham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dsLichkham.ImageOffset = new System.Drawing.Point(8, 0);
-            this.dsLichkham.ImageSize = new System.Drawing.Size(25, 25);
-            this.dsLichkham.Location = new System.Drawing.Point(2, 50);
-            this.dsLichkham.Name = "dsLichkham";
-            this.dsLichkham.Size = new System.Drawing.Size(224, 45);
-            this.dsLichkham.TabIndex = 19;
-            this.dsLichkham.Text = "Danh sách lịch khám";
-            this.dsLichkham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dsLichkham.TextOffset = new System.Drawing.Point(70, 0);
-            this.dsLichkham.Click += new System.EventHandler(this.dsLichkham_Click);
-            // 
-            // qlNhacLich
-            // 
-            this.qlNhacLich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(209)))), ((int)(((byte)(245)))));
-            this.qlNhacLich.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.qlNhacLich.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.qlNhacLich.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.qlNhacLich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.qlNhacLich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.qlNhacLich.FillColor = System.Drawing.Color.Transparent;
-            this.qlNhacLich.Font = new System.Drawing.Font("Times New Roman", 8.830189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qlNhacLich.ForeColor = System.Drawing.Color.Black;
-            this.qlNhacLich.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.qlNhacLich.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.qlNhacLich.HoverState.ForeColor = System.Drawing.Color.White;
-            this.qlNhacLich.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.qlNhacLich.ImageOffset = new System.Drawing.Point(8, 0);
-            this.qlNhacLich.ImageSize = new System.Drawing.Size(25, 25);
-            this.qlNhacLich.Location = new System.Drawing.Point(0, 98);
-            this.qlNhacLich.Name = "qlNhacLich";
-            this.qlNhacLich.Size = new System.Drawing.Size(224, 45);
-            this.qlNhacLich.TabIndex = 20;
-            this.qlNhacLich.Text = "Quản lý nhắc hẹn";
-            this.qlNhacLich.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.qlNhacLich.TextOffset = new System.Drawing.Point(70, 0);
-            this.qlNhacLich.Click += new System.EventHandler(this.qlNhacLich_Click);
-            // 
             // QLPMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -893,6 +893,7 @@
             this.Controls.Add(this.guna2Panel_container);
             this.Controls.Add(this.Panel_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QLPMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLPMMain";
@@ -908,8 +909,8 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.PanSubBaoCao.ResumeLayout(false);
             this.subLichKham.ResumeLayout(false);
+            this.PanSubBaoCao.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

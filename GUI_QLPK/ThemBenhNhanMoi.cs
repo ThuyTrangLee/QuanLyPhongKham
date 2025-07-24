@@ -30,11 +30,12 @@ namespace GUI_QLPK
             gioitinh.Text = "";
             diachi.Text = "";
             macccd.Text = "";
+            txtEmail.Text = "";
         }
 
         private void Them_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(mabenhnhan.Text) || string.IsNullOrEmpty(hoten.Text) || (string.IsNullOrEmpty(gioitinh.Text)) || ngaysinh.Value == null || string.IsNullOrEmpty(diachi.Text) || string.IsNullOrEmpty(macccd.Text))
+            if (string.IsNullOrEmpty(mabenhnhan.Text) || string.IsNullOrEmpty(hoten.Text) || (string.IsNullOrEmpty(gioitinh.Text)) || ngaysinh.Value == null || string.IsNullOrEmpty(diachi.Text) || string.IsNullOrEmpty(macccd.Text) || string.IsNullOrEmpty(txtEmail.Text))
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân");
             }
@@ -50,6 +51,12 @@ namespace GUI_QLPK
                 ngaysinh.Focus();
                 return;
             }
+            string email = txtEmail.Text.Trim();
+            if (!email.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("Vui lòng nhập email đúng định dạng @gmail.com", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             BenhNhanDTO bn = new BenhNhanDTO();
             phieukhambenhDTO pkb = new phieukhambenhDTO();
             PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
@@ -59,6 +66,7 @@ namespace GUI_QLPK
             bn.NgsinhBN = ngaysinh.Value;
             bn.DiachiBN = diachi.Text;
             bn.CanCuocCongDan = macccd.Text;
+            bn.Email = txtEmail.Text;
 
             List<BenhNhanDTO> danhSach = bnBus.select();
             if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan))

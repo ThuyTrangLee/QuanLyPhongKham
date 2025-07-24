@@ -49,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Them = new Guna.UI2.WinForms.Guna2Button();
+            this.email = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.QLBenhNhan.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +114,8 @@
             // QLBenhNhan
             // 
             this.QLBenhNhan.BackColor = System.Drawing.Color.LightCyan;
+            this.QLBenhNhan.Controls.Add(this.email);
+            this.QLBenhNhan.Controls.Add(this.label6);
             this.QLBenhNhan.Controls.Add(this.macccd);
             this.QLBenhNhan.Controls.Add(this.label1);
             this.QLBenhNhan.Controls.Add(this.ngaysinh);
@@ -213,7 +217,7 @@
             this.gioitinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.gioitinh.Location = new System.Drawing.Point(737, 171);
+            this.gioitinh.Location = new System.Drawing.Point(737, 175);
             this.gioitinh.Name = "gioitinh";
             this.gioitinh.Size = new System.Drawing.Size(247, 36);
             this.gioitinh.TabIndex = 36;
@@ -222,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(618, 182);
+            this.label5.Location = new System.Drawing.Point(618, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 21);
             this.label5.TabIndex = 35;
@@ -406,6 +410,36 @@
             this.Them.Text = "Thêm";
             this.Them.Click += new System.EventHandler(this.Them_Click);
             // 
+            // email
+            // 
+            this.email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.email.DefaultText = "";
+            this.email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.email.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.ForeColor = System.Drawing.Color.Black;
+            this.email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.email.Location = new System.Drawing.Point(737, 239);
+            this.email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.email.Name = "email";
+            this.email.PlaceholderText = "";
+            this.email.SelectedText = "";
+            this.email.Size = new System.Drawing.Size(247, 40);
+            this.email.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(618, 248);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 21);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Email:";
+            // 
             // QuanLyBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,5 +477,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker ngaysinh;
         private Guna.UI2.WinForms.Guna2TextBox macccd;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox email;
+        private System.Windows.Forms.Label label6;
     }
 }

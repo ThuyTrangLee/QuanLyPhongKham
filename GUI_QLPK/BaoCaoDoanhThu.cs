@@ -7,12 +7,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using System.Runtime.Remoting.Messaging;
+using iText.Kernel.Colors;
+using iText.IO.Font;
+using static iText.Kernel.Font.PdfFontFactory;
+using iText.Layout.Borders;
+using iTextImage = iText.Layout.Element.Image; 
 namespace GUI_QLPK
 {
     public partial class BaoCaoDoanhThu : Form
@@ -54,7 +66,7 @@ namespace GUI_QLPK
             //tạo series mới
             ChartArea chartArea = chart1.ChartAreas.Add("chartArea");
 
-            // 3) Tạo series mới kiểu Column
+             //3) Tạo series mới kiểu Column
             Series series = chart1.Series.Add("Doanh thu năm " + year);
             series.ChartType = SeriesChartType.Column;
 
@@ -141,6 +153,97 @@ namespace GUI_QLPK
         private void xem_Click(object sender, EventArgs e)
         {
             load_data();
+        }
+
+        private void btn_Xuatpdf_Click(object sender, EventArgs e)
+        {
+            string fontPath = @"C:\Windows\Fonts\arial.ttf";
+            SaveFileDialog save = new SaveFileDialog
+            {
+                Filter = "PDF files (*.pdf)|*.pdf",
+                FileName = "BaoCaoDoanhThu.pdf"
+            };
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                using (PdfWriter writer = new PdfWriter(save.FileName))
+                {
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    {
+                        Document doc = new Document(pdf, iText.Kernel.Geom.PageSize.A4.Rotate());
+                        PdfFont font = PdfFontFactory.CreateFont( fontPath,PdfEncodings.IDENTITY_H,EmbeddingStrategy.PREFER_EMBEDDED);
+
+                        // 1. Tiêu đề
+                        Paragraph title = new Paragraph("BÁO CÁO DOANH THU")
+                            .SetFont(font)
+                            .SetFontSize(18)
+                            .SetTextAlignment(TextAlignment.CENTER);
+                        doc.Add(title);
+
+                        string thangNam = $"Tháng {thang.Text} Năm {nam.Text}";
+                        Paragraph subtitle = new Paragraph(thangNam)
+                            .SetFont(font)
+                            .SetFontSize(14)
+                            .SetTextAlignment(TextAlignment.CENTER);
+                        doc.Add(subtitle);
+
+                        // Tạo bảng 2 cột để chứa 2 biểu đồ ngang hàng
+                        Table chartTable = new Table(UnitValue.CreatePercentArray(new float[] { 50, 50 })).UseAllAvailableWidth();
+
+                        // chart1
+                        using (MemoryStream ms1 = new MemoryStream())
+                        {
+                            chart1.SaveImage(ms1, ChartImageFormat.Png);
+                            iTextImage img1 = new iTextImage(iText.IO.Image.ImageDataFactory.Create(ms1.ToArray()));
+                            img1.SetAutoScale(true);
+                            chartTable.AddCell(new Cell().Add(img1).SetBorder(Border.NO_BORDER));
+                        }
+
+                        // chart2
+                        using (MemoryStream ms2 = new MemoryStream())
+                        {
+                            chart2.SaveImage(ms2, ChartImageFormat.Png);
+                            iTextImage img2 = new iTextImage(iText.IO.Image.ImageDataFactory.Create(ms2.ToArray()));
+                            img2.SetAutoScale(true);
+                            chartTable.AddCell(new Cell().Add(img2).SetBorder(Border.NO_BORDER));
+                        }
+
+                        // Thêm bảng 2 biểu đồ vào tài liệu
+                        doc.Add(chartTable);
+
+
+                        // 2. Bảng từ DataGridView
+                        Table pdfTable = new Table(gird.Columns.Count, true);
+                        pdfTable.SetWidth(UnitValue.CreatePercentValue(100));
+
+                        // Tiêu đề cột
+                        foreach (DataGridViewColumn col in gird.Columns)
+                        {
+                            Cell headerCell = new Cell()
+                                .Add(new Paragraph(col.HeaderText).SetFont(font))
+                                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                                .SetTextAlignment(TextAlignment.CENTER);
+                            pdfTable.AddHeaderCell(headerCell);
+                        }
+
+                        // Dữ liệu từng dòng
+                        foreach (DataGridViewRow row in gird.Rows)
+                        {
+                            if (!row.IsNewRow)
+                            {
+                                foreach (DataGridViewCell cell in row.Cells)
+                                {
+                                    pdfTable.AddCell(new Paragraph(cell.Value?.ToString() ?? "").SetFont(font));
+                                }
+                            }
+                        }
+                        doc.Add(pdfTable);
+                        doc.Close();
+                    }
+                }
+
+                MessageBox.Show("Xuất PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

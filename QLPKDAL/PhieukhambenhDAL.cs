@@ -40,6 +40,7 @@ namespace QLPKDAL
                             pkb.MaBenhNhan = reader["maBenhNhan"].ToString();
                             pkb.MBS = int.Parse(reader["maTaiKhoan"].ToString());
                             pkb.NgayTaiKham = Convert.ToDateTime(reader["NgayTaiKham"]);
+                            pkb.DaGuiMail = Convert.ToBoolean(reader["DaGuiMail"]);
                             lspkb.Add(pkb);
                         }
                     }
@@ -147,5 +148,53 @@ namespace QLPKDAL
             }
             return true;
         }
+        public bool CapNhatDaGuiMail(string maPKB, bool daGui)
+        {
+            string query = "UPDATE PhieuKhamBenh SET DaGuiMail = @daGui WHERE maPKB = @maPKB";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@daGui", daGui);
+                cmd.Parameters.AddWithValue("@maPKB", maPKB);
+                try
+                {
+                    con.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+        public List<phieukhambenhDTO> selectByDate(DateTime ngay)
+        {
+            string query = "SELECT * FROM PhieuKhamBenh WHERE CAST(NgayKham AS DATE) = @ngay";
+            List<phieukhambenhDTO> ds = new List<phieukhambenhDTO>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@ngay", ngay.Date);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    phieukhambenhDTO pkb = new phieukhambenhDTO();
+                    pkb.MaPKB = reader["maPKB"].ToString();
+                    pkb.TrieuChung = reader["TrieuChung"].ToString();
+                    pkb.NgayKham = Convert.ToDateTime(reader["NgayKham"]);
+                    pkb.MaBenhNhan = reader["maBenhNhan"].ToString();
+                    pkb.MBS = int.Parse(reader["maTaiKhoan"].ToString());
+                    pkb.NgayTaiKham = Convert.ToDateTime(reader["NgayTaiKham"]);
+                    pkb.DaGuiMail = Convert.ToBoolean(reader["DaGuiMail"]);
+                    ds.Add(pkb);
+                }
+            }
+
+            return ds;
+        }
+
     }
 }

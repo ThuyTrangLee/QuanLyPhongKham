@@ -33,5 +33,9 @@ namespace QLPKBUS
         {
             return ktDAL.solandungbymonth(mathuoc, month, year);
         }
+        public List<ChiTietToaThuocDTO> selectByDate(DateTime ngay)
+        {
+            return ktDAL.selectByDate(ngay);
+        }
     }
 }

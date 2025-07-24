@@ -53,7 +53,8 @@ namespace GUI_QLPK
                 return;
 
             }
-
+            // Sắp xếp mã phiếu khám tăng dần
+            listpkb.Sort((x, y) => int.Parse(x.MaPKB).CompareTo(int.Parse(y.MaPKB)));
             DataTable table = new DataTable();
             table.Columns.Add("Số thứ tự", typeof(int));
             table.Columns.Add("Tên bệnh nhân", typeof(string));
@@ -64,15 +65,17 @@ namespace GUI_QLPK
             table.Columns.Add("Tổng tiền", typeof(string));
             table.Columns.Add("Ngày lập", typeof(string));
             table.Columns.Add("Nhân viên thu ngân", typeof(string));
-            foreach (BenhNhanDTO bn in listBenhNhan)
+            int stt = 1;
+
+            foreach (phieukhambenhDTO pkb in listpkb)
             {
-                foreach (phieukhambenhDTO pkb in listpkb)
+                foreach (BenhNhanDTO bn in listBenhNhan)
                 {
                     if (bn.MaBN == pkb.MaBenhNhan)
                     {
                         foreach (chandoanDTO cd in listcd)
                         {
-                            if (pkb.MaPKB == cd.MaPkb)
+                            if (cd.MaPkb == pkb.MaPKB)
                             {
                                 foreach (hoadonDTO hd in listhd)
                                 {
@@ -81,27 +84,30 @@ namespace GUI_QLPK
                                         DataRow row = table.NewRow();
                                         row["Số thứ tự"] = stt;
                                         row["Tên bệnh nhân"] = bn.TenBN;
-                                        row["Ngày khám"] = DateTime.Parse(pkb.NgayKham.ToString()).ToString("dd/MM/yyyy");
+                                        row["Ngày khám"] = pkb.NgayKham.ToString("dd/MM/yyyy");
+
                                         if (pkb.NgayTaiKham != null)
                                         {
-                                            row["Ngày tái khám"] = DateTime.Parse(pkb.NgayTaiKham.ToString()).ToString("dd/MM/yyyy");
+                                            row["Ngày tái khám"] = pkb.NgayTaiKham.ToString("dd/MM/yyyy");
                                         }
                                         else
                                         {
                                             row["Ngày tái khám"] = "Chưa có";
                                         }
+
                                         row["Tiền khám"] = hd.TienKham.ToString("N0", culture);
                                         row["Tiền thuốc"] = hd.TienThuoc.ToString("N0", culture);
                                         row["Tổng tiền"] = hd.TongTien.ToString("N0", culture);
-                                        row["Ngày lập"] = DateTime.Parse(hd.NgayLapHoaDon.ToString()).ToString("dd/MM/yyyy");
+                                        row["Ngày lập"] = hd.NgayLapHoaDon.ToString("dd/MM/yyyy");
+
                                         foreach (taiKhoanDTO tk in listTK)
                                         {
                                             if (tk.MaTK == hd.MaNVTN)
                                             {
                                                 row["Nhân viên thu ngân"] = tk.Name;
-
                                             }
                                         }
+
                                         table.Rows.Add(row);
                                         stt += 1;
                                     }
@@ -111,6 +117,7 @@ namespace GUI_QLPK
                     }
                 }
             }
+
             gird.DataSource = table.DefaultView;
         }
     }

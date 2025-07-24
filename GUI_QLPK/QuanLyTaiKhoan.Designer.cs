@@ -113,7 +113,7 @@
             this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboBoxRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
             this.comboBoxRole.ForeColor = System.Drawing.Color.Black;
             this.comboBoxRole.ItemHeight = 30;
             this.comboBoxRole.Location = new System.Drawing.Point(729, 202);

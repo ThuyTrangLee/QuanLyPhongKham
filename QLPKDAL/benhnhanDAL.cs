@@ -28,8 +28,8 @@ namespace QLPKDAL
         {
             // Chuỗi truy vấn SQL để thêm bệnh nhân
             string query = string.Empty;
-            query += "INSERT INTO [BenhNhan] ([tenBenhNhan], [gioiTinh], [ngaySinh], [diaChi], [CCCD])";
-            query += "VALUES ( @tenBenhNhan, @gioiTinh, @ngaySinh, @diaChi, @cccd)";
+            query += "INSERT INTO [BenhNhan] ([tenBenhNhan], [gioiTinh], [ngaySinh], [diaChi], [CCCD],[email])";
+            query += "VALUES ( @tenBenhNhan, @gioiTinh, @ngaySinh, @diaChi, @cccd, @email)";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -43,6 +43,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@ngaySinh", bn.NgsinhBN);
                     cmd.Parameters.AddWithValue("@diaChi", bn.DiachiBN);
                     cmd.Parameters.AddWithValue("@cccd", bn.CanCuocCongDan);
+                    cmd.Parameters.AddWithValue("@email", bn.Email);
 
                     try
                     {
@@ -65,7 +66,7 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += "UPDATE [BenhNhan] ";
-            query += "SET tenBenhNhan=@tenBenhNhan, gioiTinh=@gioiTinh, ngaySinh=@ngaySinh, diaChi=@diaChi, CCCD=@cccd ";
+            query += "SET tenBenhNhan=@tenBenhNhan, gioiTinh=@gioiTinh, ngaySinh=@ngaySinh, diaChi=@diaChi, CCCD=@cccd, email=@email ";
             query += "WHERE maBenhNhan=@maBNold";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -81,7 +82,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@diaChi", bn.DiachiBN);
                     cmd.Parameters.AddWithValue("@maBNold", maBNold);
                     cmd.Parameters.AddWithValue("@cccd", bn.CanCuocCongDan);
-
+                    cmd.Parameters.AddWithValue("@email", bn.Email);
                     try
                     {
                         con.Open(); // Mở kết nối
@@ -165,7 +166,7 @@ namespace QLPKDAL
                                 bn.NgsinhBN = DateTime.Parse(reader["ngaySinh"].ToString());
                                 bn.DiachiBN = reader["diaChi"].ToString();
                                 bn.CanCuocCongDan = reader["CCCD"].ToString();
-                                bn.Email = reader["Email"].ToString();
+                                bn.Email = reader["email"].ToString();
                                 lsBenhNhan.Add(bn); // Thêm vào danh sách
                             }
                         }
@@ -226,6 +227,7 @@ namespace QLPKDAL
                                 bn.NgsinhBN = DateTime.Parse(reader["ngaySinh"].ToString());
                                 bn.DiachiBN = reader["diaChi"].ToString();
                                 bn.CanCuocCongDan = reader["CCCD"].ToString();
+                                bn.Email = reader["Email"].ToString();
                                 lsBenhNhan.Add(bn);
                             }
                         }
@@ -282,5 +284,46 @@ namespace QLPKDAL
             }
             return maBN;
         }
+        public List<BenhNhanDTO> selectBenhNhanLanDauKhamTrongNgay(DateTime ngay)
+        {
+            List<BenhNhanDTO> list = new List<BenhNhanDTO>();
+
+            string query = @"
+                        SSELECT BN.maBenhNhan, BN.tenBenhNhan
+                        FROM BenhNhan BN
+                        INNER JOIN (
+                            SELECT MaBenhNhan, MIN(NgayKham) AS NgayKhamDauTien
+                            FROM PhieuKhamBenh
+                            GROUP BY MaBenhNhan
+                        ) PKBMin ON BN.maBenhNhan = PKBMin.MaBenhNhan
+                        WHERE CAST(PKBMin.NgayKhamDauTien AS DATE) = @ngay";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@ngay", ngay.Date);
+
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        BenhNhanDTO bn = new BenhNhanDTO();
+                        bn.MaBN = reader["maBenhNhan"].ToString();
+                        bn.TenBN = reader["tenBenhNhan"].ToString();
+                        list.Add(bn);
+                    }
+                    reader.Close();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            return list;
+        }
+
     }
 }

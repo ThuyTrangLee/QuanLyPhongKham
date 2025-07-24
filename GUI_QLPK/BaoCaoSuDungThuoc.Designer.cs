@@ -31,11 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoSuDungThuoc));
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.nam = new System.Windows.Forms.ComboBox();
             this.thang = new System.Windows.Forms.ComboBox();
             this.xem = new Guna.UI2.WinForms.Guna2Button();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btn_Xuatpdf = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             "2026",
             "2027",
             "2028"});
-            this.nam.Location = new System.Drawing.Point(475, 134);
+            this.nam.Location = new System.Drawing.Point(428, 133);
             this.nam.Margin = new System.Windows.Forms.Padding(2);
             this.nam.Name = "nam";
             this.nam.Size = new System.Drawing.Size(135, 31);
@@ -84,7 +86,7 @@
             "10",
             "11",
             "12"});
-            this.thang.Location = new System.Drawing.Point(298, 134);
+            this.thang.Location = new System.Drawing.Point(251, 133);
             this.thang.Margin = new System.Windows.Forms.Padding(2);
             this.thang.Name = "thang";
             this.thang.Size = new System.Drawing.Size(135, 31);
@@ -105,7 +107,7 @@
             this.xem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.xem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.xem.HoverState.ForeColor = System.Drawing.Color.White;
-            this.xem.Location = new System.Drawing.Point(664, 134);
+            this.xem.Location = new System.Drawing.Point(617, 133);
             this.xem.Name = "xem";
             this.xem.Size = new System.Drawing.Size(123, 33);
             this.xem.TabIndex = 35;
@@ -166,18 +168,41 @@
             this.gird.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gird.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // btn_Xuatpdf
+            // 
+            this.btn_Xuatpdf.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_Xuatpdf.BorderRadius = 10;
+            this.btn_Xuatpdf.BorderThickness = 1;
+            this.btn_Xuatpdf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Xuatpdf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Xuatpdf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Xuatpdf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Xuatpdf.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Xuatpdf.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xuatpdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_Xuatpdf.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btn_Xuatpdf.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_Xuatpdf.Location = new System.Drawing.Point(790, 133);
+            this.btn_Xuatpdf.Name = "btn_Xuatpdf";
+            this.btn_Xuatpdf.Size = new System.Drawing.Size(123, 33);
+            this.btn_Xuatpdf.TabIndex = 40;
+            this.btn_Xuatpdf.Text = "Xuất file";
+            this.btn_Xuatpdf.Click += new System.EventHandler(this.btn_Xuatpdf_Click);
+            // 
             // BaoCaoSuDungThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1092, 925);
+            this.Controls.Add(this.btn_Xuatpdf);
             this.Controls.Add(this.gird);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.nam);
             this.Controls.Add(this.thang);
             this.Controls.Add(this.xem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaoCaoSuDungThuoc";
             this.Text = "BaoCaoSuDungThuoc";
             ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
@@ -193,5 +218,6 @@
         private System.Windows.Forms.ComboBox thang;
         private Guna.UI2.WinForms.Guna2Button xem;
         private Guna.UI2.WinForms.Guna2DataGridView gird;
+        private Guna.UI2.WinForms.Guna2Button btn_Xuatpdf;
     }
 }

@@ -187,5 +187,40 @@ namespace QLPKDAL
             }
             return SLD;
         }
+        public List<ChiTietToaThuocDTO> selectByDate(DateTime ngay)
+        {
+            List<ChiTietToaThuocDTO> list = new List<ChiTietToaThuocDTO>();
+
+            string query = @"
+                        SELECT CT.maThuoc, CT.maToaThuoc, CT.soLuong
+                        FROM ChiTietDonThuoc CT
+                        INNER JOIN ToaThuoc TT ON CT.maToaThuoc = TT.maToaThuoc
+                        WHERE CAST(TT.ngayKeToa AS DATE) = @ngay";
+
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@ngay", ngay.Date);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ChiTietToaThuocDTO kt = new ChiTietToaThuocDTO();
+                    kt.SoLuong = int.Parse(reader["soLuong"].ToString());
+                    kt.MaToa = reader["maToaThuoc"].ToString();
+                    kt.MaThuoc = reader["maThuoc"].ToString();
+
+                    list.Add(kt);
+                }
+
+                reader.Close();
+            }
+
+            return list;
+        }
+
     }
 }

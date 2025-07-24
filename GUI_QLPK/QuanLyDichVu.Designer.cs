@@ -73,12 +73,12 @@
             this.gird.DefaultCellStyle = dataGridViewCellStyle3;
             this.gird.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.Location = new System.Drawing.Point(0, 342);
+            this.gird.Location = new System.Drawing.Point(0, 0);
             this.gird.Name = "gird";
             this.gird.RowHeadersVisible = false;
             this.gird.RowHeadersWidth = 45;
             this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(1076, 544);
+            this.gird.Size = new System.Drawing.Size(1076, 886);
             this.gird.TabIndex = 22;
             this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -317,8 +317,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 886);
-            this.Controls.Add(this.gird);
             this.Controls.Add(this.QLDichVu);
+            this.Controls.Add(this.gird);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDichVu";
             this.Text = "QuanLyDichVu";

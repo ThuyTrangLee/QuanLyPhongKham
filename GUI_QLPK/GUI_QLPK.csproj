@@ -177,6 +177,12 @@
     <Compile Include="DSLaySoKham.Designer.cs">
       <DependentUpon>DSLaySoKham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeToa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DSLaySoKham.resx">
       <DependentUpon>DSLaySoKham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeToa.resx">
       <DependentUpon>KeToa.cs</DependentUpon>

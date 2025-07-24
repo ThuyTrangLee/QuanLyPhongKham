@@ -148,56 +148,55 @@ namespace GUI_QLPK
 
         private void Them_Click(object sender, EventArgs e)
         {
-            bool kt;
-            try
+            float gia;
+            if (!float.TryParse(dongia.Text.Trim(), out gia) || gia <= 0)
             {
-                float.Parse(dongia.Text);
-                kt = true;
-            }
-            catch (Exception)
-            {
-                System.Windows.Forms.MessageBox.Show("Vui lòng nhập số và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                kt = false;
-            }
-            if (!kt)
-            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập số dương và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dongia.Text = "";
                 dongia.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(mathuoc.Text) || string.IsNullOrEmpty(tenthuoc.Text) || string.IsNullOrEmpty(cachdung.Text) || string.IsNullOrEmpty(donvitinh.Text))
+            // Kiểm tra tên thuốc trùng
+            if (thBus.kiemTraTrungTen(tenthuoc.Text.Trim()))
+            {
+                System.Windows.Forms.MessageBox.Show("Tên thuốc đã tồn tại, vui lòng nhập tên khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tenthuoc.Focus();
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(mathuoc.Text) || string.IsNullOrEmpty(tenthuoc.Text) || string.IsNullOrEmpty(cachdung.Text) || string.IsNullOrEmpty(donvitinh.Text))
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            thuocDTO th = new thuocDTO();
+            th.MaThuoc = mathuoc.Text;
+            th.TenThuoc = tenthuoc.Text;
+            th.DonGia = float.Parse(dongia.Text);
+            foreach (donViDTO donvi in listdv)
+            {
+                if (donvi.TenDonVi == donvitinh.Text)
+                {
+                    th.MaDonVi = donvi.MaDonVi;
+                }
+            }
+            foreach (cachdungDTO cd in listcd)
+            {
+                if (cd.TenCachDung == cachdung.Text)
+                {
+                    th.MaCachDung = cd.MaCachDung;
+                }
+            }
+            thBus = new ThuocBUS();
+            bool kq = thBus.them(th);
+            if (!kq)
+                System.Windows.Forms.MessageBox.Show("Thêm Thuốc thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             else
             {
-                thuocDTO th = new thuocDTO();
-                th.MaThuoc = mathuoc.Text;
-                th.TenThuoc = tenthuoc.Text;
-                th.DonGia = float.Parse(dongia.Text);
-                foreach (donViDTO donvi in listdv)
-                {
-                    if (donvi.TenDonVi == donvitinh.Text)
-                    {
-                        th.MaDonVi = donvi.MaDonVi;
-                    }
-                }
-                foreach (cachdungDTO cd in listcd)
-                {
-                    if (cd.TenCachDung == cachdung.Text)
-                    {
-                        th.MaCachDung = cd.MaCachDung;
-                    }
-                }
-                thBus = new ThuocBUS();
-                bool kq = thBus.them(th);
-                if (!kq)
-                    System.Windows.Forms.MessageBox.Show("Thêm Thuốc thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Thêm Thuốc thành công", "Result");
-                    load_data();
-                    load();
-                }
+                System.Windows.Forms.MessageBox.Show("Thêm Thuốc thành công", "Result");
+                load_data();
+                load();
             }
         }
 
@@ -217,6 +216,13 @@ namespace GUI_QLPK
                 {
                     th.MaCachDung = cd.MaCachDung;
                 }
+            }
+            int gia;
+            if (int.TryParse(dongia.Text.Trim(), out gia) && gia <= 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập số dương và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dongia.Focus();
+                return;
             }
             th.DonGia = int.Parse(dongia.Text);
             bool kq = thBus.sua(th, temp);

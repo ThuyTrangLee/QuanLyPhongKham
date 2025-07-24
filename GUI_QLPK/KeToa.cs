@@ -178,6 +178,17 @@ namespace GUI_QLPK
                 kt = false;
 
             }
+            int soLuongNhap;
+            bool laSoNguyen = int.TryParse(soLuong.Text, out soLuongNhap);
+
+            if (!laSoNguyen || soLuongNhap <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập số lượng là số nguyên dương!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                soLuong.Text = "";
+                soLuong.Focus();
+                return;
+            }
+
             if (kt == false)
             {
                 soLuong.Text = "";

@@ -1,4 +1,11 @@
-﻿using QLPKBUS;
+﻿using iText.IO.Font;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using QLPKBUS;
 using QLPKDAL;
 using QLPKDTO;
 using System;
@@ -12,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static iText.Kernel.Font.PdfFontFactory;
 
 namespace GUI_QLPK
 {
@@ -82,6 +90,86 @@ namespace GUI_QLPK
         private void xem_Click(object sender, EventArgs e)
         {
             load_data();
+        }
+
+        private void btn_Xuatpdf_Click(object sender, EventArgs e)
+        {
+            string fontPath = @"C:\Windows\Fonts\arial.ttf";
+            SaveFileDialog save = new SaveFileDialog
+            {
+                Filter = "PDF files (*.pdf)|*.pdf",
+                FileName = "BaoCaoSuDungThuoc.pdf"
+            };
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    PdfWriter writer = new PdfWriter(save.FileName);
+                    PdfDocument pdfDoc = new PdfDocument(writer);
+                    Document doc = new Document(pdfDoc, iText.Kernel.Geom.PageSize.A4);
+                    doc.SetMargins(40, 40, 40, 40);
+
+                    PdfFont vnFont = PdfFontFactory.CreateFont(fontPath, PdfEncodings.IDENTITY_H, EmbeddingStrategy.PREFER_EMBEDDED);
+                    doc.SetFont(vnFont);
+                    doc.SetFontSize(12);
+
+                    // 1. Tiêu đề
+                    Paragraph title = new Paragraph("BÁO CÁO SỬ DỤNG THUỐC")
+                        .SetFont(vnFont)
+                        .SetFontSize(18)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(10f);
+                    doc.Add(title);
+
+                    // 2. Tháng - Năm
+                    string thangNam = $"Tháng {thang.Text} Năm {nam.Text}";
+                    Paragraph subtitle = new Paragraph(thangNam)
+                        .SetFont(vnFont)
+                        .SetFontSize(14)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(20f);
+                    doc.Add(subtitle);
+
+                    // 3. Bảng dữ liệu
+                    float[] colWidths = Enumerable.Repeat(1f, gird.Columns.Count).ToArray();
+                    Table table = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth();
+
+                    // Tiêu đề cột
+                    foreach (DataGridViewColumn col in gird.Columns)
+                    {
+                        Cell headerCell = new Cell()
+                            .Add(new Paragraph(col.HeaderText).SetFont(vnFont))
+                            .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                            .SetTextAlignment(TextAlignment.CENTER);
+                        table.AddHeaderCell(headerCell);
+                    }
+
+                    // Dữ liệu
+                    foreach (DataGridViewRow row in gird.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                string text = cell.Value?.ToString() ?? "";
+                                Cell dataCell = new Cell()
+                                    .Add(new Paragraph(text).SetFont(vnFont))
+                                    .SetTextAlignment(TextAlignment.LEFT);
+                                table.AddCell(dataCell);
+                            }
+                        }
+                    }
+
+                    doc.Add(table);
+                    doc.Close();
+                    MessageBox.Show("Xuất PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

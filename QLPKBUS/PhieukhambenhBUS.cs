@@ -32,5 +32,13 @@ namespace QLPKBUS
             bool re = pkbDAL.them(pkb);
             return re;
         }
+        public bool CapNhatDaGuiMail(string maPKB, bool daGui)
+        {
+            return pkbDAL.CapNhatDaGuiMail(maPKB, daGui);
+        }
+        public List<phieukhambenhDTO> selectByDate(DateTime ngay)
+        {
+            return pkbDAL.selectByDate(ngay);
+        }
     }
 }

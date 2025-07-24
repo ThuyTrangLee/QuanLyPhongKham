@@ -49,6 +49,7 @@ namespace GUI_QLPK
             gioitinh.Text = "";
             diachi.Text = "";
             macccd.Text = "";
+            email.Text = "";
         }
         private void loadData_Vao_GridView(List<BenhNhanDTO> listBenhNhan)
         {
@@ -67,6 +68,7 @@ namespace GUI_QLPK
             table.Columns.Add("Địa chỉ", typeof(string));
             table.Columns.Add("Giới tính", typeof(string));
             table.Columns.Add("CCCD", typeof(string));
+            table.Columns.Add("Email", typeof(string));
 
 
             foreach (BenhNhanDTO bn in listBenhNhan)
@@ -78,6 +80,7 @@ namespace GUI_QLPK
                 row["Địa chỉ"] = bn.DiachiBN;
                 row["Giới tính"] = bn.GtBN;
                 row["CCCD"] = bn.CanCuocCongDan;
+                row["Email"] = bn.Email;
 
                 table.Rows.Add(row);
             }
@@ -110,6 +113,7 @@ namespace GUI_QLPK
                 diachi.Text = row.Cells[3].Value.ToString();
                 gioitinh.Text = row.Cells[4].Value.ToString();
                 macccd.Text = row.Cells[5].Value.ToString();
+                email.Text = row.Cells[6].Value.ToString();
                 temp_ma = row.Cells[0].Value.ToString();
             }
         }
@@ -121,13 +125,13 @@ namespace GUI_QLPK
             bn.NgsinhBN = DateTime.Parse(ngaysinh.Text);
             bn.GtBN = gioitinh.Text;
             bn.CanCuocCongDan = macccd.Text;
-
+            bn.Email = email.Text;
             bool kq = bnBus.sua(bn, temp_ma);
             if (!kq)
-                System.Windows.Forms.MessageBox.Show("Update bênh nhân thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                System.Windows.Forms.MessageBox.Show("Cập nhật bênh nhân thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             else
             {
-                System.Windows.Forms.MessageBox.Show("Update bệnh nhân thành công", "Result");
+                System.Windows.Forms.MessageBox.Show("Cập nhật bệnh nhân thành công", "Result");
                 load_data();
             }
         }
@@ -171,6 +175,7 @@ namespace GUI_QLPK
             diachi.Text = string.Empty;
             macccd.Text = string.Empty;
             temp_ma = string.Empty;
+            email.Text = string.Empty;
             load_data();
         }
     }

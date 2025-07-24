@@ -36,9 +36,13 @@ namespace QLPKBUS
         {
             return lhDAL.CapNhatTrangThai(maLichHen, trangThaiMoi);
         }
-        public bool CapNhatDaGuiMail(string maLichHen, bool daGui)
+        public bool CapNhatTrangThai(string maBenhNhan, DateTime ngayHen, string trangThaiMoi)
         {
-            return lhDAL.CapNhatDaGuiMail(maLichHen, daGui);
+            return lhDAL.CapNhatTrangThai(maBenhNhan, ngayHen, trangThaiMoi);
+        }
+        public List<lichHenDTO> selectByDate(DateTime date)
+        {
+            return lhDAL.selectByDate(date);
         }
     }
 }

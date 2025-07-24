@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachBenhNhan));
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
@@ -50,7 +51,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -70,14 +71,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gird.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gird.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.Location = new System.Drawing.Point(0, 154);
+            this.gird.Location = new System.Drawing.Point(1, 174);
             this.gird.Name = "gird";
             this.gird.RowHeadersVisible = false;
             this.gird.RowHeadersWidth = 45;
             this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(1092, 771);
+            this.gird.Size = new System.Drawing.Size(1092, 726);
             this.gird.TabIndex = 4;
             this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -110,6 +110,7 @@
             this.Controls.Add(this.gird);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DanhSachBenhNhan";
             this.Text = "DanhSachBenhNhan";
             ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();

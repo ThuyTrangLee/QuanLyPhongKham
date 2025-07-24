@@ -14,13 +14,11 @@ namespace QLPKDTO
         private DateTime ngayHen;
         private string trangThai;
         private int maDieuDuong;
-        private bool daGuiMail; // true: da xac nhan, false: chua xac nhan
         public string MaLichHen { get => maLichHen; set => maLichHen = value; }
         public string MaBenhNhan { get => maBenhNhan; set => maBenhNhan = value; }
         public string MaTaiKhoan { get => maTaiKhoan; set => maTaiKhoan = value; }
         public DateTime NgayHen { get => ngayHen; set => ngayHen = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
         public int MaDieuDuong { get => maDieuDuong; set => maDieuDuong = value; }
-        public bool DaGuiMail { get => daGuiMail; set => daGuiMail = value; }
     }
 }

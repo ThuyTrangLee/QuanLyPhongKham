@@ -90,7 +90,7 @@ namespace GUI_QLPM
         private void Them_Click(object sender, EventArgs e)
         {
             ThemTaiKhoan ttk = new ThemTaiKhoan();
-            ttk.Show();
+            ttk.ShowDialog();
             load_data();
         }
 
@@ -127,9 +127,14 @@ namespace GUI_QLPM
             }
             foreach (loaiTaiKhoanDTO role in listRole)
             {
-                comboBoxRole.Items.Add(role.TenLoaiTaiKhoan);
-                comboBoxRole.SelectedIndex = 0;
+                if (role.TenLoaiTaiKhoan.Trim() != "Quản trị viên") // bỏ qua admin
+                {
+                    comboBoxRole.Items.Add(role.TenLoaiTaiKhoan);
+                }
             }
+
+            if (comboBoxRole.Items.Count > 0)
+                comboBoxRole.SelectedIndex = 0;
         }
 
         private void Sua_Click(object sender, EventArgs e)

@@ -50,5 +50,10 @@ namespace QLPKBUS
         {
             return thDAL.baocaobymonth(month, year);
         }
+        public bool kiemTraTrungTen(string tenThuoc)
+        {
+            return thDAL.KiemTraTenThuocDaTonTai(tenThuoc);
+        }
+
     }
 }

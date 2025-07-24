@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemBenhNhanMoi));
             this.Them = new Guna.UI2.WinForms.Guna2Button();
             this.mabenhnhan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ketoa = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.gioitinh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.macccd = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Panel_Top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +66,7 @@
             this.Them.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.Them.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
             this.Them.HoverState.ForeColor = System.Drawing.Color.White;
-            this.Them.Location = new System.Drawing.Point(186, 442);
+            this.Them.Location = new System.Drawing.Point(186, 499);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(134, 36);
             this.Them.TabIndex = 57;
@@ -280,7 +283,7 @@
             this.macccd.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macccd.ForeColor = System.Drawing.Color.Black;
             this.macccd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.macccd.Location = new System.Drawing.Point(186, 356);
+            this.macccd.Location = new System.Drawing.Point(186, 357);
             this.macccd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macccd.Name = "macccd";
             this.macccd.PlaceholderText = "";
@@ -292,18 +295,50 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 365);
+            this.label6.Location = new System.Drawing.Point(60, 422);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 21);
+            this.label6.Size = new System.Drawing.Size(51, 21);
             this.label6.TabIndex = 74;
-            this.label6.Text = "CCCD";
+            this.label6.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(186, 418);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(276, 40);
+            this.txtEmail.TabIndex = 77;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(60, 365);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 21);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "CCCD";
             // 
             // ThemBenhNhanMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(513, 507);
+            this.ClientSize = new System.Drawing.Size(513, 550);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.macccd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gioitinh);
@@ -319,6 +354,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Panel_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThemBenhNhanMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemBenhNhanMoi";
@@ -349,5 +385,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox gioitinh;
         private Guna.UI2.WinForms.Guna2TextBox macccd;
         private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private System.Windows.Forms.Label label7;
     }
 }

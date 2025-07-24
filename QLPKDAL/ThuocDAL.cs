@@ -363,5 +363,27 @@ namespace QLPKDAL
             }
             return lsThuoc;
         }
+        public bool KiemTraTenThuocDaTonTai(string tenThuoc)
+        {
+            string query = "SELECT COUNT(*) FROM Thuoc WHERE tenThuoc = @tenThuoc";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@tenThuoc", tenThuoc);
+                try
+                {
+                    con.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    con.Close();
+                    return count > 0;
+                }
+                catch
+                {
+                    con.Close();
+                    return false;
+                }
+            }
+        }
+
     }
 }

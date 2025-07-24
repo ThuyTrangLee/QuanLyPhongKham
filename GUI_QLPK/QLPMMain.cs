@@ -70,7 +70,13 @@ namespace GUI_QLPK
                             btn_qlThuoc.Visible = false;
                             btn_qlLoaiBenh.Visible = false;
                             btn_qlDV.Visible = false;
-                            dsLichkham.Visible = false;
+                            //dsLichkham.Visible = false;
+                        }
+                        else
+                        {
+                            phieukham.Visible = false;
+                            dangkykham.Enabled = false ;
+                            btnLHD.Enabled = false ;
                         }
                     }
                 }
@@ -79,13 +85,16 @@ namespace GUI_QLPK
         private void QLPMMain_Load(object sender, EventArgs e)
         {
             guna2ShadowForm1.SetShadowForm(this);
+            label_Val.Text = "Home";
+            container(new Home());
             customSubMenu();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             label_Val.Text = "Home";
-            
+            container(new Home());
+
         }
 
         //hàm container để hiển thị form con vào panel

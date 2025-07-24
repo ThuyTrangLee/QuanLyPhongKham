@@ -26,6 +26,7 @@ namespace GUI_QLPK
         public DSLaySoKham()
         {
             InitializeComponent();
+            nhapngay.Text = DateTime.Now.ToString("dd/MM/yyyy");
             load_data();    
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

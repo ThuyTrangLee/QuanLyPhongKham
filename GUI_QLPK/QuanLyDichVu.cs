@@ -77,15 +77,21 @@ namespace GUI_QLPK
         private void themdv_Click(object sender, EventArgs e)
         {
             ThemDichVuMoi themdvm = new ThemDichVuMoi();
-            themdvm.ShowDialog();
+            themdvm.Show();
             load_data();
         }
 
         private void capnhatdv_Click(object sender, EventArgs e)
         {
+            float tien;
+            if (float.TryParse(txtTienDV.Text.Trim(), out tien) && tien <= 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập số dương và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTienDV.Focus();
+                return;
+            }
             dv.TenDichVu = txtTenDV.Text;
             dv.TienDichVu = int.Parse(txtTienDV.Text);
-
 
             bool kq = dvBus.sua(dv, temp_ma);
             if (!kq)

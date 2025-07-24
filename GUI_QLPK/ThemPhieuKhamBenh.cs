@@ -29,32 +29,11 @@ namespace GUI_QLPK
         {
             maBS = mabs;
             InitializeComponent();
-            load_combobox_mabn();
             load_combobox_benh();
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Load_Gird();
             load_data();
 
-        }
-        //load dữ liệu bệnh nhân
-        public void load_combobox_mabn()
-        {
-            bnBUS = new BenhNhanBUS();
-            List<BenhNhanDTO> listBenhNhan = bnBUS.select();
-            this.loadData_Vao_comboboxbn(listBenhNhan);
-        }
-        // load dữ liệu mã bệnh nhân vào combobox
-        private void loadData_Vao_comboboxbn(List<BenhNhanDTO> listBenhNhan)
-        {
-            if (listBenhNhan == null)
-            {
-                System.Windows.Forms.MessageBox.Show("Có lỗi khi lấy thông tin bệnh nhân từ DB", "Result", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Error);
-                return;
-            }
-            foreach (BenhNhanDTO bn in listBenhNhan)
-            {
-                mabenhnhan.Items.Add(bn.MaBN.ToString());
-            }
         }
         // load dữ liệu mặc định cho phiếu khám bệnh
         public void load_data()
@@ -64,6 +43,7 @@ namespace GUI_QLPK
             hoten.Text = "";
             trieuchung.Text = "";
             benh.Text = "";
+            ngaytaikham.Text = DateTime.Now.AddDays(7).ToString("dd/MM/yyyy"); // mặc định ngày tái khám là 7 ngày sau
         }
         // load tên bệnh nhân theo mã bệnh nhân
         private void load_ten(List<BenhNhanDTO> listBenhNhan, string mabn)
@@ -146,6 +126,10 @@ namespace GUI_QLPK
             bool kq1 = cdBus.them(cd);
             if (kq2 == true && kq1 == true)
             {
+                // Cập nhật trạng thái lịch hẹn thành 'Đã khám'
+                string maBN = mabenhnhan.Text;
+                DateTime ngayHen = DateTime.ParseExact(ngaykham.Text, "dd/MM/yyyy HH:mm", null);
+                lhBUS.CapNhatTrangThai(maBN, ngayHen, "Đã khám");
 
                 System.Windows.Forms.MessageBox.Show("Lập phiếu thành công", "Result");
                 load_data();
@@ -156,7 +140,7 @@ namespace GUI_QLPK
         public void Load_Gird()
         {
             int stt = 1;
-
+            
             List<BenhNhanDTO> listBenhNhan = bnBUS.select();
             List<lichHenDTO> listLichHen = lhBUS.select();
             string mabs = maBS.ToString();
@@ -164,7 +148,7 @@ namespace GUI_QLPK
             foreach (lichHenDTO lh in listLichHen)
             {
                 //hiện trong ngày
-                if(lh.MaTaiKhoan == mabs && lh.NgayHen.Date >= DateTime.Today)
+                if(lh.MaTaiKhoan == mabs && lh.NgayHen.Date >= DateTime.Today && lh.TrangThai != "Đã khám")
                 {
                     lhbacsi.Add(lh);
                 }
@@ -180,6 +164,8 @@ namespace GUI_QLPK
             table.Columns.Add("Ngày hẹn", typeof(string));
             table.Columns.Add("Giờ hẹn", typeof(string));
             table.Columns.Add("Trạng thái", typeof(string));
+            // dùng HashSet để lưu mã bệnh nhân đang được hiển thị
+            HashSet<string> dsMaBN = new HashSet<string>();
 
             foreach (BenhNhanDTO bn in listBenhNhan)
             {
@@ -197,11 +183,17 @@ namespace GUI_QLPK
                         row["Giờ hẹn"] = lh.NgayHen.ToString("hh:mm");
                         row["Trạng thái"] = lh.TrangThai;
                         table.Rows.Add(row);
+                        dsMaBN.Add(bn.MaBN.ToString());
                         stt += 1;
                     }
                 }
             }
             gird.DataSource = table.DefaultView;
+            mabenhnhan.Items.Clear();
+            foreach (string ma in dsMaBN)
+            {
+                mabenhnhan.Items.Add(ma);
+            }
         }
         // Sự kiện tự động load thông tin lên
         private void gird_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -211,7 +203,6 @@ namespace GUI_QLPK
                 DataGridViewRow row = gird.Rows[e.RowIndex];
                 hoten.Text = row.Cells[2].Value.ToString();
                 mabenhnhan.Text = row.Cells[1].Value.ToString();
-                //malichhen = int.Parse(row.Cells["maLichHen"].Value.ToString());
                 string ngay = row.Cells[5].Value.ToString();    // "dd/MM/yyyy"
                 string gio = row.Cells[6].Value.ToString();     // "HH:mm"
                 ngaykham.Text = ngay+" " + gio;
