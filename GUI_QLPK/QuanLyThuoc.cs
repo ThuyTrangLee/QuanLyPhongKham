@@ -45,6 +45,7 @@ namespace GUI_QLPK
             donvitinh.Text = "";
             dongia.Text = "";
             cachdung.Text = "";
+            soluong.Value = 0;
         }
         public void load_data()
         {
@@ -54,6 +55,7 @@ namespace GUI_QLPK
             donvitinh.Text = "";
             dongia.Text = "";
             cachdung.Text = "";
+            soluong.Value = 0;
         }
 
         private void loadData_Vao_GridView(List<thuocDTO> listThuoc)
@@ -68,6 +70,7 @@ namespace GUI_QLPK
             table.Columns.Add("Mã thuốc", typeof(string));
             table.Columns.Add("Tên thuốc", typeof(string));
             table.Columns.Add("Đơn vị tính", typeof(string));
+            table.Columns.Add("Số lượng", typeof(int));
             table.Columns.Add("Đơn giá", typeof(float));
             table.Columns.Add("Cách dùng", typeof(string));
             foreach (thuocDTO th in listThuoc)
@@ -82,6 +85,7 @@ namespace GUI_QLPK
                         row["Đơn vị tính"] = donvi.TenDonVi;
                     }
                 }
+                row["Số lượng"] = th.SoLuong;
                 row["Đơn giá"] = th.DonGia;
                 foreach (cachdungDTO cd in listcd)
                 {
@@ -174,6 +178,7 @@ namespace GUI_QLPK
             th.MaThuoc = mathuoc.Text;
             th.TenThuoc = tenthuoc.Text;
             th.DonGia = float.Parse(dongia.Text);
+            th.SoLuong = (int)soluong.Value;
             foreach (donViDTO donvi in listdv)
             {
                 if (donvi.TenDonVi == donvitinh.Text)
@@ -225,6 +230,7 @@ namespace GUI_QLPK
                 return;
             }
             th.DonGia = int.Parse(dongia.Text);
+            th.SoLuong = (int)soluong.Value;
             bool kq = thBus.sua(th, temp);
             if (!kq)
                 System.Windows.Forms.MessageBox.Show("Cập nhật thuốc thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -255,6 +261,7 @@ namespace GUI_QLPK
                 }
             }
             th.DonGia = int.Parse(dongia.Text);
+            th.SoLuong = (int)soluong.Value;
             bool kq = thBus.xoa(th);
             if (!kq)
                 System.Windows.Forms.MessageBox.Show("Xóa thuốc thất bại. Vui lòng kiểm tra lại dữ liệu", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -274,8 +281,13 @@ namespace GUI_QLPK
                 mathuoc.Text = row.Cells[0].Value.ToString();
                 tenthuoc.Text = row.Cells[1].Value.ToString();
                 donvitinh.Text = row.Cells[2].Value.ToString();
-                dongia.Text = row.Cells[3].Value.ToString();
-                cachdung.Text = row.Cells[4].Value.ToString();
+                dongia.Text = row.Cells[4].Value.ToString();
+                cachdung.Text = row.Cells[5].Value.ToString();
+                soluong.Value = Convert.ToInt32(row.Cells[3].Value);
+                //if (row.Cells[3].Value != null && int.TryParse(row.Cells[3].Value.ToString(), out int soLuongValue))
+                //{
+                //    soluong.Value = soLuongValue;
+                //}
                 temp = row.Cells[0].Value.ToString();
             }
         }
@@ -289,6 +301,7 @@ namespace GUI_QLPK
             dongia.Text = string.Empty;
             cachdung.Text = string.Empty;
             donvitinh.Text = string.Empty;
+            soluong.Value = 0;
         }
     }
 

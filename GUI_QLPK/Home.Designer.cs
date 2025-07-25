@@ -37,10 +37,10 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tongbenhnhan = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tongbenhnhan = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,6 +69,10 @@
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.bieudo = new System.Windows.Forms.Panel();
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2Elipse9 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lb_thongbao = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -81,6 +85,7 @@
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.bieudo.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -92,43 +97,10 @@
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.tongbenhnhan);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(59, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(58, 28);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(209, 169);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng số bệnh nhân";
-            // 
-            // tongbenhnhan
-            // 
-            this.tongbenhnhan.AutoSize = true;
-            this.tongbenhnhan.Font = new System.Drawing.Font("Times New Roman", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tongbenhnhan.ForeColor = System.Drawing.Color.White;
-            this.tongbenhnhan.Location = new System.Drawing.Point(33, 125);
-            this.tongbenhnhan.Name = "tongbenhnhan";
-            this.tongbenhnhan.Size = new System.Drawing.Size(42, 31);
-            this.tongbenhnhan.TabIndex = 1;
-            this.tongbenhnhan.Text = "32";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(71, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Người";
             // 
             // guna2PictureBox1
             // 
@@ -142,6 +114,39 @@
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(71, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Người";
+            // 
+            // tongbenhnhan
+            // 
+            this.tongbenhnhan.AutoSize = true;
+            this.tongbenhnhan.Font = new System.Drawing.Font("Times New Roman", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tongbenhnhan.ForeColor = System.Drawing.Color.White;
+            this.tongbenhnhan.Location = new System.Drawing.Point(33, 125);
+            this.tongbenhnhan.Name = "tongbenhnhan";
+            this.tongbenhnhan.Size = new System.Drawing.Size(42, 31);
+            this.tongbenhnhan.TabIndex = 1;
+            this.tongbenhnhan.Text = "32";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(35, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tổng số bệnh nhân";
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(204)))), ((int)(((byte)(250)))));
@@ -151,7 +156,7 @@
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.lb_lichhen);
             this.guna2Panel2.Controls.Add(this.label5);
-            this.guna2Panel2.Location = new System.Drawing.Point(320, 12);
+            this.guna2Panel2.Location = new System.Drawing.Point(319, 28);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(209, 169);
             this.guna2Panel2.TabIndex = 3;
@@ -175,7 +180,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(79, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(82, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Cuộc hẹn";
             // 
@@ -197,7 +202,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(37, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 20);
+            this.label5.Size = new System.Drawing.Size(143, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Lịch hẹn hôm nay";
             // 
@@ -210,7 +215,7 @@
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Controls.Add(this.lb_thuoc);
             this.guna2Panel3.Controls.Add(this.label8);
-            this.guna2Panel3.Location = new System.Drawing.Point(573, 12);
+            this.guna2Panel3.Location = new System.Drawing.Point(572, 28);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(209, 169);
             this.guna2Panel3.TabIndex = 3;
@@ -234,7 +239,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(69, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 20);
+            this.label6.Size = new System.Drawing.Size(86, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Toa thuốc";
             // 
@@ -268,7 +273,7 @@
             this.guna2Panel4.Controls.Add(this.label9);
             this.guna2Panel4.Controls.Add(this.lb_phieu);
             this.guna2Panel4.Controls.Add(this.label11);
-            this.guna2Panel4.Location = new System.Drawing.Point(834, 12);
+            this.guna2Panel4.Location = new System.Drawing.Point(833, 28);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(209, 169);
             this.guna2Panel4.TabIndex = 3;
@@ -292,7 +297,7 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(72, 131);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 20);
+            this.label9.Size = new System.Drawing.Size(51, 21);
             this.label9.TabIndex = 2;
             this.label9.Text = "Phiếu";
             // 
@@ -356,7 +361,7 @@
             this.gird1.RowHeadersVisible = false;
             this.gird1.RowHeadersWidth = 45;
             this.gird1.RowTemplate.Height = 28;
-            this.gird1.Size = new System.Drawing.Size(979, 284);
+            this.gird1.Size = new System.Drawing.Size(519, 538);
             this.gird1.TabIndex = 6;
             this.gird1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gird1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -399,9 +404,9 @@
             this.guna2Panel5.Controls.Add(this.label12);
             this.guna2Panel5.Controls.Add(this.gird1);
             this.guna2Panel5.ForeColor = System.Drawing.Color.White;
-            this.guna2Panel5.Location = new System.Drawing.Point(59, 208);
+            this.guna2Panel5.Location = new System.Drawing.Point(59, 242);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(984, 339);
+            this.guna2Panel5.Size = new System.Drawing.Size(524, 580);
             this.guna2Panel5.TabIndex = 8;
             // 
             // label12
@@ -411,7 +416,7 @@
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(12, 13);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(149, 20);
+            this.label12.Size = new System.Drawing.Size(154, 22);
             this.label12.TabIndex = 7;
             this.label12.Text = "Lịch hẹn hôm nay";
             // 
@@ -426,14 +431,14 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 4);
+            this.chart1.Location = new System.Drawing.Point(4, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(976, 312);
+            this.chart1.Size = new System.Drawing.Size(408, 352);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
             // 
@@ -449,9 +454,9 @@
             // bieudo
             // 
             this.bieudo.Controls.Add(this.chart1);
-            this.bieudo.Location = new System.Drawing.Point(61, 571);
+            this.bieudo.Location = new System.Drawing.Point(628, 467);
             this.bieudo.Name = "bieudo";
-            this.bieudo.Size = new System.Drawing.Size(982, 329);
+            this.bieudo.Size = new System.Drawing.Size(415, 362);
             this.bieudo.TabIndex = 11;
             // 
             // guna2Elipse8
@@ -459,12 +464,54 @@
             this.guna2Elipse8.BorderRadius = 10;
             this.guna2Elipse8.TargetControl = this.bieudo;
             // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BackColor = System.Drawing.Color.White;
+            this.guna2Panel6.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Panel6.BorderRadius = 10;
+            this.guna2Panel6.BorderThickness = 1;
+            this.guna2Panel6.Controls.Add(this.lb_thongbao);
+            this.guna2Panel6.Controls.Add(this.label4);
+            this.guna2Panel6.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel6.Location = new System.Drawing.Point(625, 242);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(415, 191);
+            this.guna2Panel6.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(12, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 22);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Thông báo";
+            // 
+            // guna2Elipse9
+            // 
+            this.guna2Elipse9.BorderRadius = 10;
+            this.guna2Elipse9.TargetControl = this.guna2Panel6;
+            // 
+            // lb_thongbao
+            // 
+            this.lb_thongbao.AutoSize = true;
+            this.lb_thongbao.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_thongbao.ForeColor = System.Drawing.Color.Black;
+            this.lb_thongbao.Location = new System.Drawing.Point(23, 58);
+            this.lb_thongbao.Name = "lb_thongbao";
+            this.lb_thongbao.Size = new System.Drawing.Size(145, 21);
+            this.lb_thongbao.TabIndex = 3;
+            this.lb_thongbao.Text = "Thuốc đã gần hết ";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1092, 925);
+            this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.bieudo);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
@@ -492,6 +539,8 @@
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.bieudo.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -531,5 +580,9 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
         private System.Windows.Forms.Panel bieudo;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse9;
+        private System.Windows.Forms.Label lb_thongbao;
     }
 }

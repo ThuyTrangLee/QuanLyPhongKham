@@ -27,6 +27,7 @@ namespace GUI_QLPK
             InitializeComponent();
             load_data_lichhen();
             load_data_trieuchungphobien();
+            hienThiCanhBaoThuocTrongKhung();
 
         }
         private void Home_Load(object sender, EventArgs e)
@@ -130,8 +131,8 @@ namespace GUI_QLPK
                 return;
             }
 
+            // Đếm từng loại triệu chứng
             Dictionary<string, int> thongKeTrieuChung = new Dictionary<string, int>();
-
             foreach (phieukhambenhDTO pkb in dsPKB)
             {
                 string trieuChung = pkb.TrieuChung != null ? pkb.TrieuChung.Trim() : "";
@@ -148,24 +149,71 @@ namespace GUI_QLPK
                 }
             }
 
+            // Xóa dữ liệu cũ
             chart1.Series.Clear();
             chart1.Titles.Clear();
             chart1.Titles.Add("Tỷ lệ triệu chứng phổ biến trong ngày");
 
+            // Tạo series biểu đồ tròn
             Series series = new Series();
             series.ChartType = SeriesChartType.Pie;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Times New Roman", 11);
-            //series.Label = "#VALX: #PERCENT{P1}";
-            series.Label = "#PERCENT{P1}";
+            series.Label = "#PERCENT{P1}"; // hiển thị phần trăm trên biểu đồ
 
-            foreach (KeyValuePair<string, int> item in thongKeTrieuChung)
+            int tong = 0;
+            foreach (KeyValuePair<string, int> kvp in thongKeTrieuChung)
             {
-                series.Points.AddXY(item.Key, item.Value);
+                tong += kvp.Value;
+            }
+
+            foreach (KeyValuePair<string, int> kvp in thongKeTrieuChung)
+            {
+                int count = kvp.Value;
+                double tile = (double)count / tong * 100;
+
+                int index = series.Points.AddY(count);
+                series.Points[index].LegendText = kvp.Key;
             }
 
             chart1.Series.Add(series);
         }
+        private void hienThiCanhBaoThuocTrongKhung()
+        {
+            ThuocBUS thuocBus = new ThuocBUS();
+            List<thuocDTO> dsThuoc = thuocBus.select();
+            List<thuocDTO> thuocSapHet = new List<thuocDTO>();
+
+            foreach (thuocDTO thuoc in dsThuoc)
+            {
+                if (thuoc.SoLuong <= 10)
+                {
+                    thuocSapHet.Add(thuoc);
+                }
+            }
+
+            if (thuocSapHet.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("⚠️ Các thuốc sắp hết:");
+                foreach (thuocDTO thuoc in thuocSapHet)
+                {
+                    sb.AppendLine($"- {thuoc.TenThuoc}: còn {thuoc.SoLuong} viên");
+                }
+
+                lb_thongbao.Text = sb.ToString();
+                lb_thongbao.ForeColor = Color.Red;
+            }
+            else
+            {
+                lb_thongbao.Text = "✅ Tồn kho thuốc ổn định.";
+                lb_thongbao.ForeColor = Color.Green;
+            }
+
+            lb_thongbao.AutoSize = true;
+        }
+
+
 
     }
 }

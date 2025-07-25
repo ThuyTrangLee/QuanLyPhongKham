@@ -54,6 +54,9 @@ namespace QLPKBUS
         {
             return thDAL.KiemTraTenThuocDaTonTai(tenThuoc);
         }
-
+        public bool truSoLuong(string maThuoc, int soLuong)
+        {
+            return thDAL.TruSoLuongThuoc(maThuoc, soLuong);
+        }
     }
 }

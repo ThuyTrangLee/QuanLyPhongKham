@@ -256,6 +256,9 @@ namespace GUI_QLPK
                 }
                 ktBus = new ChiTietToaThuocBUS();
                 bool kq1 = ktBus.kethuoc(kt);
+                //TRỪ SỐ LƯỢNG THUỐC
+                thBus = new ThuocBUS();
+                bool tru = thBus.truSoLuong(kt.MaThuoc, kt.SoLuong); 
             }
             if (kq == false)
             {

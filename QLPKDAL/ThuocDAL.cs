@@ -20,8 +20,8 @@ namespace QLPKDAL
         public bool them(thuocDTO th)
         {
             string query = string.Empty;
-            query += "INSERT INTO [Thuoc] ([tenThuoc],[maDonVi],[Dongia],[maCachDung])";
-            query += "VALUES (@tenThuoc,@donVi,@Dongia,@CachDung)";
+            query += "INSERT INTO [Thuoc] ([tenThuoc],[maDonVi],[Dongia],[maCachDung],[soLuong])";
+            query += "VALUES (@tenThuoc,@donVi,@Dongia,@CachDung, @soLuong)";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -34,6 +34,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@donVi", th.MaDonVi);
                     cmd.Parameters.AddWithValue("@Dongia", th.DonGia);
                     cmd.Parameters.AddWithValue("@CachDung", th.MaCachDung);
+                    cmd.Parameters.AddWithValue("@soluong", th.SoLuong);
                     try
                     {
                         con.Open();
@@ -54,7 +55,7 @@ namespace QLPKDAL
         {
             string query = string.Empty;
             query += "update [Thuoc]";
-            query += "set tenThuoc=@tenThuoc,maDonVi=@DonVi,Dongia=@Dongia,maCachDung=@CachDung where maThuoc=@maThuocold";
+            query += "set tenThuoc=@tenThuoc,maDonVi=@DonVi,Dongia=@Dongia,maCachDung=@CachDung, soLuong=@soLuong where maThuoc=@maThuocold";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -69,6 +70,7 @@ namespace QLPKDAL
                     cmd.Parameters.AddWithValue("@Dongia", th.DonGia);
                     cmd.Parameters.AddWithValue("@CachDung", th.MaCachDung);
                     cmd.Parameters.AddWithValue("@maThuocold", maThuocold);
+                    cmd.Parameters.AddWithValue("@soLuong", th.SoLuong);
                     try
                     {
                         con.Open();
@@ -151,7 +153,7 @@ namespace QLPKDAL
                                 th.MaDonVi = int.Parse(reader["maDonVi"].ToString());
                                 th.MaCachDung = int.Parse(reader["maCachDung"].ToString());
                                 th.DonGia = float.Parse(reader["donGia"].ToString());
-
+                                th.SoLuong = int.Parse(reader["soLuong"].ToString());
                                 lsThuoc.Add(th);
 
                             }
@@ -203,7 +205,7 @@ namespace QLPKDAL
                                 th.MaDonVi = int.Parse(reader["maDonVi"].ToString());
                                 th.MaCachDung = int.Parse(reader["maCachDung"].ToString());
                                 th.DonGia = float.Parse(reader["donGia"].ToString());
-
+                                th.SoLuong = int.Parse(reader["soLuong"].ToString());
                                 lsThuoc.Add(th);
 
                             }
@@ -376,6 +378,28 @@ namespace QLPKDAL
                     int count = (int)cmd.ExecuteScalar();
                     con.Close();
                     return count > 0;
+                }
+                catch
+                {
+                    con.Close();
+                    return false;
+                }
+            }
+        }
+        public bool TruSoLuongThuoc(string maThuoc, int soLuongTru)
+        {
+            string query = "UPDATE Thuoc SET soLuong = soLuong - @soLuong WHERE maThuoc = @maThuoc";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@soLuong", soLuongTru);
+                cmd.Parameters.AddWithValue("@maThuoc", maThuoc);
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    return true;
                 }
                 catch
                 {
