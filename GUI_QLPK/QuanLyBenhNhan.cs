@@ -18,7 +18,7 @@ namespace GUI_QLPK
         BenhNhanBUS bnBus = new BenhNhanBUS();
         BenhNhanDTO bn = new BenhNhanDTO();
         PhieukhambenhBUS pkbBUS = new PhieukhambenhBUS();
-        private string temp_ma;
+        private string temp_ma; //lưu mabn
         private int maloai;
         public QuanLyBenhNhan( int maloaiTk)
         {

@@ -43,7 +43,7 @@ namespace QLPKDAL
                         {
                             while (reader.Read()) // Duyệt qua từng hàng dữ liệu
                             {
-                                // Đọc dữ liệu từ SqlDataReader và tạo đối tượng donViDTO
+                             
                                 donViDTO dv = new donViDTO();
                                 dv.MaDonVi = int.Parse(reader["maDonVi"].ToString()); // Đọc mã đơn vị
                                 dv.TenDonVi = reader["tenDonVi"].ToString(); // Đọc tên đơn vị

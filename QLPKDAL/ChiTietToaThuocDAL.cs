@@ -100,6 +100,7 @@ namespace QLPKDAL
         public List<ChiTietToaThuocDTO> baocaobymonth(string month, string year)
         {
             string query = string.Empty;
+            //lấy danh sách các loại thuốc và tổng số lượng đã kê trong một tháng/năm
             query += "SELECT TH.maThuoc, TH.tenThuoc, sum (KT.soLuong) as soLuong FROM ToaThuoc T JOIN ChiTietDonThuoc KT ON T.maToaThuoc=KT.maToaThuoc JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc WHERE MONTH(T.ngayKeToa)=@month and year(T.ngayKeToa)=@year group by TH.maThuoc,TH.tenThuoc";
 
 
@@ -148,6 +149,7 @@ namespace QLPKDAL
         {
             int SLD = 0;
             string query = string.Empty;
+            //số lần thuốc đc kê trong tháng/năm
             query += "SELECT  count (KT.maToaThuoc) as SLD FROM ToaThuoc T JOIN ChiTietDonThuoc KT ON T.maToaThuoc=KT.maToaThuoc JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc WHERE MONTH(T.ngayKeToa)=@month and year(T.ngayKeToa)=@year and TH.maThuoc=@mathuoc";
 
 

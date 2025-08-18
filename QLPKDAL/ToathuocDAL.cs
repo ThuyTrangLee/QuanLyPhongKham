@@ -30,7 +30,7 @@ namespace QLPKDAL
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query; ;
+                    cmd.CommandText = query; 
                     cmd.Parameters.AddWithValue("@maPKB", tt.MaPkb);
                     cmd.Parameters.AddWithValue("@ngayKeToa", tt.NgayKetoa);
 

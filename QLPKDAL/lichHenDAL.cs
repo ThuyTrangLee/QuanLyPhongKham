@@ -143,25 +143,7 @@ namespace QLPKDAL
                 return true;
             }
         }
-        public bool CapNhatTrangThai(int maLichHen, string trangThaiMoi)
-        {
-            string query = "UPDATE LichHen SET trangThai = @trangThai WHERE maLichHen = @maLichHen";
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                cmd.Parameters.AddWithValue("@trangThai", trangThaiMoi);
-                cmd.Parameters.AddWithValue("@maLichHen", maLichHen);
-                try
-                {
-                    con.Open();
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
+
         public bool CapNhatTrangThai(string maBenhNhan, DateTime ngayHen, string trangThaiMoi)
         {
             string query = "UPDATE LichHen SET TrangThai = @trangThaiMoi WHERE MaBenhNhan = @maBenhNhan AND CAST(NgayHen AS DATE) = @ngayHen";

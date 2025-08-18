@@ -32,10 +32,7 @@ namespace QLPKBUS
             bool re = lhDAL.xoa(lh);
             return re;
         }
-        public bool CapNhatTrangThai(int maLichHen, string trangThaiMoi)
-        {
-            return lhDAL.CapNhatTrangThai(maLichHen, trangThaiMoi);
-        }
+
         public bool CapNhatTrangThai(string maBenhNhan, DateTime ngayHen, string trangThaiMoi)
         {
             return lhDAL.CapNhatTrangThai(maBenhNhan, ngayHen, trangThaiMoi);

@@ -69,7 +69,7 @@ namespace GUI_QLPK
             bn.Email = txtEmail.Text;
 
             List<BenhNhanDTO> danhSach = bnBus.select();
-            if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan))
+            if (danhSach.Any(b => b.CanCuocCongDan == bn.CanCuocCongDan)) //kiểm tra tồn tại cccd ít nhất 1
             {
                 MessageBox.Show("CCCD đã tồn tại. Vui lòng nhập CCCD khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

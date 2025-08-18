@@ -53,7 +53,6 @@ namespace GUI_QLPK
                 MessageBox.Show("Sai mật khẩu hoặc tài khoản", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 username.Text = "";
                 matkhau.Text = "";
-                // Đặt con trỏ vào ô nhập tên đăng nhập
                 username.Focus();
             }
         }

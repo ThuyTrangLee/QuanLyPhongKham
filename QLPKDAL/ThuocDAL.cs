@@ -263,7 +263,7 @@ namespace QLPKDAL
             }
             return mathuoc;
         }
-
+        //danh sách các thuoc da ke trong pkb
         public List<thuocDTO> selectbypkb(string mapkb)
         {
             string query = @"
@@ -320,6 +320,7 @@ namespace QLPKDAL
         public List<thuocDTO> baocaobymonth(string month, string year)
         {
             string query = string.Empty;
+            //lấy ds các loại thuốc đã được kê trong các toa thuốc theo tháng/năm
             query += "SELECT TH.maThuoc, TH.tenThuoc, TH.maDonVi FROM ToaThuoc T JOIN ChiTietDonThuoc KT ON T.maToaThuoc=KT.maToaThuoc JOIN Thuoc TH ON KT.maThuoc=TH.maThuoc WHERE MONTH(T.ngayKeToa)=@month and YEAR(T.ngayKeToa)=@year group by TH.maThuoc,TH.tenThuoc,TH.maDonVi";
 
 

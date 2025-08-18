@@ -12,7 +12,7 @@ namespace QLPKDAL
     public class cachDungDAL
     {
         private string connectionString;
-        public cachDungDAL() // Hàm khởi tạo cho lớp cachDungDAL
+        public cachDungDAL() 
         {
             // Đọc chuỗi kết nối từ cấu hình ứng dụng
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
@@ -45,9 +45,9 @@ namespace QLPKDAL
                         {
                             while (reader.Read()) // Đọc từng dòng kết quả
                             {
-                                cachdungDTO cd = new cachdungDTO(); // Tạo đối tượng cachdungDTO
-                                cd.TenCachDung = reader["tenCachDung"].ToString(); // Gán giá trị cho TenCachDung
-                                cd.MaCachDung = int.Parse(reader["maCachDung"].ToString()); // Gán giá trị cho MaCachDung
+                                cachdungDTO cd = new cachdungDTO(); 
+                                cd.TenCachDung = reader["tenCachDung"].ToString(); 
+                                cd.MaCachDung = int.Parse(reader["maCachDung"].ToString()); 
                                 lscd.Add(cd); // Thêm vào danh sách
                             }
                         }

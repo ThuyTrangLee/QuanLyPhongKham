@@ -93,10 +93,10 @@ namespace GUI_QLPK
 
             foreach (phieukhambenhDTO pkb in lishPKB)
             {
-                // chỉ quan tâm ngày hẹn đúng 2 ngày sau
+                //kiểm tra xem ngày hẹn đúng 2 ngày sau
                 if (pkb.NgayTaiKham.Date == ngayCanNhac)
                 {
-                    // chỉ xử lý nếu chưa gửi
+                    //xử lý chưa gửi
                     if (!pkb.DaGuiMail)
                     {
                         // tìm thông tin bệnh nhân
@@ -128,34 +128,35 @@ namespace GUI_QLPK
         {
             try
             {
+                //tạo đối tượng
                 MailMessage msg = new MailMessage();
+                //Người gửi
                 msg.From = new MailAddress("2251050074trang@ou.edu.vn", "Phòng khám tư nhân");
+                //Người nhận
                 msg.To.Add(new MailAddress(toEmail));
+                //tiêu đề
                 msg.Subject = "Nhắc lịch tái khám";
+                //nội dung
                 msg.Body = "Chào " + tenBN + ",\n\n" +
                            "Bạn có lịch tái khám vào ngày " + ngayHen.ToString("dd/MM/yyyy") + ".\n" +
                            "Xin vui lòng thu xếp thời gian.\n\n" +
                            "Trân trọng,\nPhòng khám Trang";
-                msg.IsBodyHtml = false;
+                msg.IsBodyHtml = false;  //nd hiển thị là chữ thường
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(
+                //cấu hình SMTP
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587); //cổng 587
+                smtp.EnableSsl = true; //Bật TLS cho kết nối.
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network; 
+                smtp.Credentials = new NetworkCredential(// thông tin đăng nhập
                     "httranggg@gmail.com",
                     "ycib qlhn mffw sbqi"
                 );
-                //smtp.Credentials = new NetworkCredential(
-                //    "dealinetoi@gmail.com",
-                //    "rtos kcqi bueq nfnd"
-                //);
                 smtp.Send(msg);
                 MessageBox.Show("Gửi mail thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Gửi mail thất bại: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("Chi tiết lỗi: " + ex.ToString(), "Lỗi gửi mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -173,7 +174,7 @@ namespace GUI_QLPK
             {
                 if (luaChon == "Tất cả")
                 {
-                    ketQuaLoc.Add(pkb);
+                    ketQuaLoc.Add(pkb); //add vao list ketqualoc
                 }
                 else if (luaChon == "Đã gửi" && pkb.DaGuiMail)
                 {

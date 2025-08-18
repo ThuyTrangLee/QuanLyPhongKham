@@ -42,10 +42,6 @@ namespace QLPKBUS
         {
             return bnDAL.AutoGenerateMaBN();
         }
-        public List<BenhNhanDTO> selectBenhNhanLanDauKhamTrongNgay(DateTime ngay)
-        {
-            return bnDAL.selectBenhNhanLanDauKhamTrongNgay(ngay);
-        }
 
     }
 }

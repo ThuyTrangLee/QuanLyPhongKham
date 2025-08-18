@@ -228,7 +228,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThemDichVuMoi";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDichVuMoi";
             this.Load += new System.EventHandler(this.ThemDichVuMoi_Load);
             this.Panel_Top.ResumeLayout(false);

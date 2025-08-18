@@ -73,12 +73,17 @@ namespace GUI_QLPM
                 System.Windows.Forms.MessageBox.Show("Có lỗi khi lấy thông tin nạp vào combox pkb từ DB", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-
             foreach (loaiTaiKhoanDTO role in listRole)
             {
-                comboBoxRole.Items.Add(role.TenLoaiTaiKhoan);
-                comboBoxRole.SelectedIndex = 0;
+                if (role.TenLoaiTaiKhoan.Trim() != "Quản trị viên") // bỏ qua admin
+                {
+                    comboBoxRole.Items.Add(role.TenLoaiTaiKhoan);
+                }
             }
+
+            if (comboBoxRole.Items.Count > 0)
+                comboBoxRole.SelectedIndex = 0;
+
         }
 
         private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)

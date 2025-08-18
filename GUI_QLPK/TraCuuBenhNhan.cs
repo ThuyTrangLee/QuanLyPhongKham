@@ -29,11 +29,11 @@ namespace GUI_QLPK
             load_data();
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        public void load()
-        {
-            db1.Clear();
-            db1.Columns.Add("MaHD", typeof(System.Int32));
-        }
+        //public void load()
+        //{
+        //    db1.Clear();
+        //    db1.Columns.Add("MaHD", typeof(System.Int32));
+        //}
         public void load_data()
         {
             bnBus = new BenhNhanBUS();

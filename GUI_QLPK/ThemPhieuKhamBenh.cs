@@ -120,14 +120,12 @@ namespace GUI_QLPK
             pkb.MaBenhNhan = mabenhnhan.Text;
             pkb.NgayTaiKham = ngaytaikham.Value.Date;
             pkb.MBS = maBS;
-            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-            ChandoanBUS cdBus = new ChandoanBUS();
-            bool kq2 = pkbBus.them(pkb);
-            bool kq1 = cdBus.them(cd);
+            bool kq2 = pkbBUS.them(pkb); //lưu phiếu
+            bool kq1 = cdBUS.them(cd); //lưu chuẩn đoán
             if (kq2 == true && kq1 == true)
             {
                 // Cập nhật trạng thái lịch hẹn thành 'Đã khám'
-                string maBN = mabenhnhan.Text;
+                string maBN = mabenhnhan.Text;  
                 DateTime ngayHen = DateTime.ParseExact(ngaykham.Text, "dd/MM/yyyy HH:mm", null);
                 lhBUS.CapNhatTrangThai(maBN, ngayHen, "Đã khám");
 
@@ -140,11 +138,12 @@ namespace GUI_QLPK
         public void Load_Gird()
         {
             int stt = 1;
-            
-            List<BenhNhanDTO> listBenhNhan = bnBUS.select();
-            List<lichHenDTO> listLichHen = lhBUS.select();
-            string mabs = maBS.ToString();
+           
+            List<BenhNhanDTO> listBenhNhan = bnBUS.select(); //lấy ds bệnh nhân
+            List<lichHenDTO> listLichHen = lhBUS.select(); //lấy ds lịch hẹn
+            string mabs = maBS.ToString(); //mabn hiện tại
             List<lichHenDTO> lhbacsi = new List<lichHenDTO>();
+            //lọc lịch hẹn của bác sĩ
             foreach (lichHenDTO lh in listLichHen)
             {
                 //hiện trong ngày
@@ -164,7 +163,7 @@ namespace GUI_QLPK
             table.Columns.Add("Ngày hẹn", typeof(string));
             table.Columns.Add("Giờ hẹn", typeof(string));
             table.Columns.Add("Trạng thái", typeof(string));
-            // dùng HashSet để lưu mã bệnh nhân đang được hiển thị
+            // dùng HashSet để lưu mã bệnh nhân đang được hiển thị (lưu không trùng)
             HashSet<string> dsMaBN = new HashSet<string>();
 
             foreach (BenhNhanDTO bn in listBenhNhan)
@@ -198,8 +197,10 @@ namespace GUI_QLPK
         // Sự kiện tự động load thông tin lên
         private void gird_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Kiểm tra dòng hợp lệ
             if(e.RowIndex >= 0 && e.RowIndex < gird.Rows.Count)
             {
+                //lấy dòng đang click
                 DataGridViewRow row = gird.Rows[e.RowIndex];
                 hoten.Text = row.Cells[2].Value.ToString();
                 mabenhnhan.Text = row.Cells[1].Value.ToString();

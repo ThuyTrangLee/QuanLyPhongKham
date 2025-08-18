@@ -14,9 +14,11 @@ namespace QLPKDAL
         private string connectionString;
         public PhieukhambenhDAL()
         {
+            //kết nối
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+        //lấy tất cả phiếu khám bệnh
         public List<phieukhambenhDTO> select()
         {
             string query = "SELECT * FROM [PhieuKhamBenh]";
@@ -29,7 +31,7 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
+                        SqlDataReader reader = cmd.ExecuteReader(); //thực thi truy vấn
 
                         while (reader.Read())
                         {
@@ -52,6 +54,7 @@ namespace QLPKDAL
             }
             return lspkb;
         }
+        //lấy phiếu khám bệnh theo mã và theo ngày khám
         public List<phieukhambenhDTO> selectByKeyWord(string sKeyword)
         {
             string query = "SELECT * FROM [PhieuKhamBenh] WHERE (maPKB LIKE '%' + @sKeyword + '%') OR (NgayKham = @sKeyword)";
@@ -91,7 +94,7 @@ namespace QLPKDAL
         public int AutoGenerateMaPKB()
         {
             int maPKB = 1;
-            string query = "SELECT MAX(maPKB) AS MaxMaPKB FROM [PhieuKhamBenh]";
+            string query = "SELECT MAX(maPKB) AS MaxMaPKB FROM [PhieuKhamBenh]"; //lấy mã max hiện tại trả về max
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -149,7 +152,7 @@ namespace QLPKDAL
             return true;
         }
         public bool CapNhatDaGuiMail(string maPKB, bool daGui)
-        {
+        {    //cập nhật khi đúng maPKB và trạng thái đã gửi mail
             string query = "UPDATE PhieuKhamBenh SET DaGuiMail = @daGui WHERE maPKB = @maPKB";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
@@ -167,6 +170,8 @@ namespace QLPKDAL
                 }
             }
         }
+
+        // Lấy danh sách phiếu khám bệnh theo ngày
         public List<phieukhambenhDTO> selectByDate(DateTime ngay)
         {
             string query = "SELECT * FROM PhieuKhamBenh WHERE CAST(NgayKham AS DATE) = @ngay";

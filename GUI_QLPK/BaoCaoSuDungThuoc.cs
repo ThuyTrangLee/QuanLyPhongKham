@@ -74,7 +74,7 @@ namespace GUI_QLPK
                         DataRow row = table.NewRow();
                         row["Số Thứ Tự"] = stt;
                         row["Tên Thuốc"] = th.TenThuoc;
-                        donViDTO dv = listDonVi.Find(x => x.MaDonVi == th.MaDonVi);
+                        donViDTO dv = listDonVi.Find(x => x.MaDonVi == th.MaDonVi); //tìm trong listdonvi lấy ra tên đơn vị
                         row["Đơn Vị Tính"] = dv.TenDonVi;
                         row["Số Lượng"] = kt.SoLuong;
                         row["Số Lần Dùng"] = ktBus.solandungbymonth(th.MaThuoc, month, year);
@@ -94,13 +94,14 @@ namespace GUI_QLPK
 
         private void btn_Xuatpdf_Click(object sender, EventArgs e)
         {
-            string fontPath = @"C:\Windows\Fonts\arial.ttf";
+            string fontPath = @"C:\Windows\Fonts\arial.ttf"; //font trong máy
+            //tạo hộp thoại chọn nơi lưu
             SaveFileDialog save = new SaveFileDialog
             {
-                Filter = "PDF files (*.pdf)|*.pdf",
-                FileName = "BaoCaoSuDungThuoc.pdf"
+                Filter = "PDF files (*.pdf)|*.pdf", //chỉ định file
+                FileName = "BaoCaoSuDungThuoc.pdf" //tên gợi ý
             };
-
+            //mở hộp thoại bấm save
             if (save.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -108,9 +109,9 @@ namespace GUI_QLPK
                     PdfWriter writer = new PdfWriter(save.FileName);
                     PdfDocument pdfDoc = new PdfDocument(writer);
                     Document doc = new Document(pdfDoc, iText.Kernel.Geom.PageSize.A4);
-                    doc.SetMargins(40, 40, 40, 40);
+                    doc.SetMargins(40, 40, 40, 40); //lề trang
 
-                    PdfFont vnFont = PdfFontFactory.CreateFont(fontPath, PdfEncodings.IDENTITY_H, EmbeddingStrategy.PREFER_EMBEDDED);
+                    PdfFont vnFont = PdfFontFactory.CreateFont(fontPath, PdfEncodings.IDENTITY_H, EmbeddingStrategy.PREFER_EMBEDDED); 
                     doc.SetFont(vnFont);
                     doc.SetFontSize(12);
 
@@ -132,8 +133,8 @@ namespace GUI_QLPK
                     doc.Add(subtitle);
 
                     // 3. Bảng dữ liệu
-                    float[] colWidths = Enumerable.Repeat(1f, gird.Columns.Count).ToArray();
-                    Table table = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth();
+                    float[] colWidths = Enumerable.Repeat(1f, gird.Columns.Count).ToArray(); //tạo dãy có n cột mỗi cột = 1f(tỉ lệ chia độ rộng cột)
+                    Table table = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth(); //chia theo tỉ lệ và bảng chiếm hết bề ngang vùng in
 
                     // Tiêu đề cột
                     foreach (DataGridViewColumn col in gird.Columns)

@@ -112,6 +112,7 @@ namespace GUI_QLPM
                 this.loadData_Vao_GridView(listTaiKhoan, listLoaiTaiKhoan);
             }
         }
+        //load role
         public void load_combobox()
         {
             List<loaiTaiKhoanDTO> listRole = loaitkBUS.select();

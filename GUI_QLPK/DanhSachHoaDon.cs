@@ -54,7 +54,7 @@ namespace GUI_QLPK
 
             }
             // Sắp xếp mã phiếu khám tăng dần
-            listpkb.Sort((x, y) => int.Parse(x.MaPKB).CompareTo(int.Parse(y.MaPKB)));
+            listpkb.Sort((x, y) => int.Parse(x.MaPKB).CompareTo(int.Parse(y.MaPKB))); //so sánh pkb x voi y dung bieu thuc landa
             DataTable table = new DataTable();
             table.Columns.Add("Số thứ tự", typeof(int));
             table.Columns.Add("Tên bệnh nhân", typeof(string));

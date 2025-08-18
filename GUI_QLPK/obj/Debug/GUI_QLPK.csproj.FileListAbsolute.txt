@@ -125,3 +125,4 @@ D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\BouncyCastle.Cryptography.xml
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\bin\Debug\itext.bouncy-castle-adapter.xml
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.QuanLyNhacHen.resources
 D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.Home.resources
+D:\WORKSPACE\QuanLyPhongKham\GUI_QLPK\obj\Debug\GUI_QLPK.exe.config

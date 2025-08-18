@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.themdv = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,65 +42,10 @@
             this.capnhatdv = new Guna.UI2.WinForms.Guna2Button();
             this.TimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.maDichVu = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
+            this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.QLDichVu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gird
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gird.ColumnHeadersHeight = 30;
-            this.gird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gird.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gird.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.Location = new System.Drawing.Point(0, 0);
-            this.gird.Name = "gird";
-            this.gird.RowHeadersVisible = false;
-            this.gird.RowHeadersWidth = 45;
-            this.gird.RowTemplate.Height = 28;
-            this.gird.Size = new System.Drawing.Size(1076, 886);
-            this.gird.TabIndex = 22;
-            this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gird.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gird.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gird.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gird.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.gird.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gird.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.gird.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gird.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gird.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gird.ThemeStyle.HeaderStyle.Height = 30;
-            this.gird.ThemeStyle.ReadOnly = false;
-            this.gird.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gird.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gird.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gird.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gird.ThemeStyle.RowsStyle.Height = 28;
-            this.gird.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gird.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gird.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gird_CellContentClick);
             // 
             // themdv
             // 
@@ -312,25 +256,78 @@
             this.maDichVu.TabIndex = 20;
             this.maDichVu.TextOffset = new System.Drawing.Point(5, 0);
             // 
+            // gird
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gird.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gird.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gird.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gird.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gird.ColumnHeadersHeight = 30;
+            this.gird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gird.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gird.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gird.Location = new System.Drawing.Point(0, 340);
+            this.gird.Name = "gird";
+            this.gird.RowHeadersVisible = false;
+            this.gird.RowHeadersWidth = 45;
+            this.gird.RowTemplate.Height = 28;
+            this.gird.Size = new System.Drawing.Size(1076, 534);
+            this.gird.TabIndex = 27;
+            this.gird.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gird.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gird.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gird.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gird.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gird.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gird.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gird.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gird.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.gird.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gird.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gird.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gird.ThemeStyle.HeaderStyle.Height = 30;
+            this.gird.ThemeStyle.ReadOnly = false;
+            this.gird.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gird.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gird.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gird.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gird.ThemeStyle.RowsStyle.Height = 28;
+            this.gird.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gird.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // QuanLyDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 886);
-            this.Controls.Add(this.QLDichVu);
             this.Controls.Add(this.gird);
+            this.Controls.Add(this.QLDichVu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDichVu";
             this.Text = "QuanLyDichVu";
-            ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
             this.QLDichVu.ResumeLayout(false);
             this.QLDichVu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2DataGridView gird;
         private Guna.UI2.WinForms.Guna2Button themdv;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -342,5 +339,6 @@
         private Guna.UI2.WinForms.Guna2Button TimKiem;
         private Guna.UI2.WinForms.Guna2TextBox maDichVu;
         private Guna.UI2.WinForms.Guna2Button huydv;
+        private Guna.UI2.WinForms.Guna2DataGridView gird;
     }
 }

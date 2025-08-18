@@ -196,10 +196,11 @@ namespace GUI_QLPK
             }
             else
             {
-                bool notExist = true;
+                bool notExist = true; //cờ kiểm tra thuốc tồn tại chưa
                 DataRow[] rows = db1.Select();
                 if (rows.Length == 0)
                 {
+                    //thêm thuốc đầu tiên
                     thBus = new ThuocBUS();
                     List<thuocDTO> listThuoc = thBus.select();
                     this.loadData_Vao_GridView(listThuoc, soLuong.Text);
@@ -209,15 +210,17 @@ namespace GUI_QLPK
                 {
                     for (int i = 0; i < rows.Length; i++)
                     {
+                        // tìm thuốc trùng cộng dồn
                         if (rows[i]["Tên thuốc"].ToString() == TenThuoc.Text.ToString())
                         {
                             int sl = 0;
-                            sl = int.Parse(rows[i]["Số lượng"].ToString());
+                            sl = int.Parse(rows[i]["Số lượng"].ToString()); //sl hiện tại
                             db1.Rows[i][5] = sl + int.Parse(soLuong.Text.ToString());
                             notExist = false;
                             break;
                         }
                     }
+                    //không có trùng thuốc
                     if (notExist == true)
                     {
                         thBus = new ThuocBUS();
@@ -229,6 +232,7 @@ namespace GUI_QLPK
             }
         }
 
+        //kê toa và trừ số lượng kho
         private void KeThuoc_Click(object sender, EventArgs e)
         {
             int row = db1.Rows.Count;
@@ -281,15 +285,6 @@ namespace GUI_QLPK
             }
         }
 
-        private void gird_Click(object sender, EventArgs e)
-        {
-            DataRow[] drr = db1.Select("Mã thuốc='" + id + "'");
-            for (int i = 0; i < drr.Length; i++)
-                drr[i].Delete();
-            db1.AcceptChanges();
-            gird.DataSource = db1.DefaultView;
-        }
-
         private void XoaThuoc_Click(object sender, EventArgs e)
         {
             if (id == null)
@@ -306,7 +301,7 @@ namespace GUI_QLPK
                 {
                     row.Delete();
                 }
-                db1.AcceptChanges();
+                db1.AcceptChanges();// thay đổi trong datatable
                 gird.DataSource = db1.DefaultView;
                 id = null; // reset lại
             }

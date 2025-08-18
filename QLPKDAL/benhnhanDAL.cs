@@ -284,46 +284,6 @@ namespace QLPKDAL
             }
             return maBN;
         }
-        public List<BenhNhanDTO> selectBenhNhanLanDauKhamTrongNgay(DateTime ngay)
-        {
-            List<BenhNhanDTO> list = new List<BenhNhanDTO>();
-
-            string query = @"
-                        SSELECT BN.maBenhNhan, BN.tenBenhNhan
-                        FROM BenhNhan BN
-                        INNER JOIN (
-                            SELECT MaBenhNhan, MIN(NgayKham) AS NgayKhamDauTien
-                            FROM PhieuKhamBenh
-                            GROUP BY MaBenhNhan
-                        ) PKBMin ON BN.maBenhNhan = PKBMin.MaBenhNhan
-                        WHERE CAST(PKBMin.NgayKhamDauTien AS DATE) = @ngay";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                cmd.Parameters.AddWithValue("@ngay", ngay.Date);
-
-                try
-                {
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        BenhNhanDTO bn = new BenhNhanDTO();
-                        bn.MaBN = reader["maBenhNhan"].ToString();
-                        bn.TenBN = reader["tenBenhNhan"].ToString();
-                        list.Add(bn);
-                    }
-                    reader.Close();
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-
-            return list;
-        }
-
+ 
     }
 }
