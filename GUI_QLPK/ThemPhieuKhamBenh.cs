@@ -143,10 +143,10 @@ namespace GUI_QLPK
             List<lichHenDTO> listLichHen = lhBUS.select(); //lấy ds lịch hẹn
             string mabs = maBS.ToString(); //mabn hiện tại
             List<lichHenDTO> lhbacsi = new List<lichHenDTO>();
-            //lọc lịch hẹn của bác sĩ
+            //lọc lịch hẹn của bác sĩ đang đăng nhập
             foreach (lichHenDTO lh in listLichHen)
             {
-                //hiện trong ngày
+                //hiện trong ngày của bác sĩ 
                 if(lh.MaTaiKhoan == mabs && lh.NgayHen.Date >= DateTime.Today && lh.TrangThai != "Đã khám")
                 {
                     lhbacsi.Add(lh);

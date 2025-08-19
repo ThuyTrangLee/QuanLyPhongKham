@@ -77,7 +77,7 @@ namespace GUI_QLPK
             {
                 // chỉ lấy hẹn hôm nay + trạng thái "Chờ khám"
                 string trangThai = lh.TrangThai == null ? "" : lh.TrangThai.Trim();
-                bool chuaKham = string.Equals(trangThai, "Chờ khám", StringComparison.OrdinalIgnoreCase);
+                bool chuaKham = string.Equals(trangThai, "Chờ khám", StringComparison.OrdinalIgnoreCase); //so sanh ko phan biet hoa thuong
                 if (lh.NgayHen.Date == homNay && chuaKham)
                 {
                     foreach (BenhNhanDTO bn in listbn)

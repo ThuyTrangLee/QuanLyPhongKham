@@ -139,6 +139,7 @@ namespace GUI_QLPK
         private void xoa_Click(object sender, EventArgs e)
         {
             List<phieukhambenhDTO> pkb = pkbBUS.select();
+            //có pkb thì ko xóa được
             foreach (phieukhambenhDTO phieukhambenh in pkb)
             {
                 if (phieukhambenh.MaBenhNhan == temp_ma)
