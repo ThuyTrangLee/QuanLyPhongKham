@@ -77,15 +77,6 @@ namespace GUI_QLPM
             }
             gird.DataSource = table.DefaultView;
         }
-        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadRole();
-        }
-        private void loadRole()
-        {
-            int selectedIndex = comboBoxRole.SelectedIndex;
-            List<loaiTaiKhoanDTO> listRole = loaitkBUS.select();
-        }
 
         private void Them_Click(object sender, EventArgs e)
         {
@@ -116,34 +107,41 @@ namespace GUI_QLPM
         public void load_combobox()
         {
             List<loaiTaiKhoanDTO> listRole = loaitkBUS.select();
-            this.loadData_Vao_Combobox(listRole);
-        }
-        private void loadData_Vao_Combobox(List<loaiTaiKhoanDTO> listRole)
-        {
-            comboBoxRole.Items.Clear();
             if (listRole == null)
             {
-                System.Windows.Forms.MessageBox.Show("Có lỗi khi lấy thông tin nạp vào combox pkb từ DB", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi khi lấy role từ DB", "Result",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
+
+            // Bỏ qua admin
+            List<loaiTaiKhoanDTO> listRoleFiltered = new List<loaiTaiKhoanDTO>();
             foreach (loaiTaiKhoanDTO role in listRole)
             {
-                if (role.TenLoaiTaiKhoan.Trim() != "Quản trị viên") // bỏ qua admin
+                if (!string.Equals(role.TenLoaiTaiKhoan.Trim(), "Quản trị viên",
+                                   StringComparison.OrdinalIgnoreCase))
                 {
-                    comboBoxRole.Items.Add(role.TenLoaiTaiKhoan);
+                    listRoleFiltered.Add(role);
                 }
             }
+
+            comboBoxRole.DataSource = null;  // reset
+            comboBoxRole.DisplayMember = "TenLoaiTaiKhoan"; // hiển thị tên
+            comboBoxRole.ValueMember = "MaRole";          // giữ ID role
+            comboBoxRole.DataSource = listRoleFiltered;  // nạp DS
 
             if (comboBoxRole.Items.Count > 0)
                 comboBoxRole.SelectedIndex = 0;
         }
+
 
         private void Sua_Click(object sender, EventArgs e)
         {
             tk.Username = username.Text;
             tk.Password = password.Text;
             tk.Name = hoten.Text;
-            tk.MaLoai = comboBoxRole.SelectedIndex + 1;
+            if (comboBoxRole.SelectedValue != null)
+                tk.MaLoai = Convert.ToInt32(comboBoxRole.SelectedValue);
 
             bool kq = tkBus.sua(tk, temp_ma);
             if (!kq)
@@ -163,14 +161,19 @@ namespace GUI_QLPM
                 username.Text = row.Cells[1].Value.ToString();
                 password.Text = row.Cells[2].Value.ToString();
                 hoten.Text = row.Cells[3].Value.ToString();
-                if (e.RowIndex >= 0 && e.RowIndex < gird.Rows.Count && e.ColumnIndex == 4)
+                string roleName = "";
+                if (row.Cells[4].Value != null)
                 {
-                    string cellValue = row.Cells[4].Value?.ToString();
-                    int roleIndex;
-                    if (int.TryParse(cellValue, out roleIndex))
-                    {
-                        comboBoxRole.SelectedIndex = roleIndex;
-                    }
+                    roleName = row.Cells[4].Value.ToString();
+                }
+                int idx = comboBoxRole.FindStringExact(roleName);
+                if (idx >= 0)
+                {
+                    comboBoxRole.SelectedIndex = idx;
+                }
+                else
+                {
+                    comboBoxRole.SelectedIndex = -1; // không tìm thấy => clear selection
                 }
             }
         }

@@ -75,7 +75,10 @@ namespace GUI_QLPK
 
             foreach (lichHenDTO lh in listLichhen)
             {
-                if (lh.NgayHen.Date == homNay)
+                // chỉ lấy hẹn hôm nay + trạng thái "Chờ khám"
+                string trangThai = lh.TrangThai == null ? "" : lh.TrangThai.Trim();
+                bool chuaKham = string.Equals(trangThai, "Chờ khám", StringComparison.OrdinalIgnoreCase);
+                if (lh.NgayHen.Date == homNay && chuaKham)
                 {
                     foreach (BenhNhanDTO bn in listbn)
                     {
@@ -92,35 +95,6 @@ namespace GUI_QLPK
             }
             gird1.DataSource = table.DefaultView;
         }
-        //public void load_data_bn()
-        //{
-        //    DateTime homNay = DateTime.Today;
-        //    bnBus = new BenhNhanBUS();
-        //    List<BenhNhanDTO> dsBenhNhanLanDau = bnBus.selectBenhNhanLanDauKhamTrongNgay(homNay);
-        //    //loadData_Vao_GridViewBenhNhan(dsBenhNhanLanDau);
-        //}
-
-        //private void loadData_Vao_GridViewBenhNhan(List<BenhNhanDTO> listbn)
-        //{
-        //    if (listbn == null)
-        //    {
-        //        MessageBox.Show("Có lỗi khi lấy dữ liệu phiếu khám hoặc bệnh nhân.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-
-        //    DataTable table = new DataTable();
-        //    table.Columns.Add("Mã bệnh nhân");
-        //    table.Columns.Add("Tên bệnh nhân");
-
-        //    foreach (BenhNhanDTO bn in listbn)
-        //    {
-        //        DataRow row = table.NewRow();
-        //        row["Mã bệnh nhân"] = bn.MaBN;
-        //        row["Tên bệnh nhân"] = bn.TenBN;
-        //        table.Rows.Add(row);
-        //    }
-        //    gird2.DataSource = table.DefaultView;
-        //}
         private void load_data_trieuchungphobien()
         {
             List<phieukhambenhDTO> dsPKB = pkbBus.selectByDate(DateTime.Today);
@@ -135,11 +109,11 @@ namespace GUI_QLPK
             Dictionary<string, int> thongKeTrieuChung = new Dictionary<string, int>();
             foreach (phieukhambenhDTO pkb in dsPKB)
             {
-                string trieuChung = pkb.TrieuChung != null ? pkb.TrieuChung.Trim() : "";
+                string trieuChung = pkb.TrieuChung != null ? pkb.TrieuChung.Trim() : ""; //lấy triệu chứng từ pkb
 
                 if (trieuChung == "") continue;
 
-                if (thongKeTrieuChung.ContainsKey(trieuChung))
+                if (thongKeTrieuChung.ContainsKey(trieuChung)) //kiem tra co ton tai khong
                 {
                     thongKeTrieuChung[trieuChung]++;
                 }
@@ -162,6 +136,7 @@ namespace GUI_QLPK
             series.Label = "#PERCENT{P1}"; // hiển thị phần trăm trên biểu đồ
 
             int tong = 0;
+            //tổng triệu chứng
             foreach (KeyValuePair<string, int> kvp in thongKeTrieuChung)
             {
                 tong += kvp.Value;
@@ -169,11 +144,11 @@ namespace GUI_QLPK
 
             foreach (KeyValuePair<string, int> kvp in thongKeTrieuChung)
             {
-                int count = kvp.Value;
-                double tile = (double)count / tong * 100;
+                int count = kvp.Value; //số lần xuất hiện
+                double tile = (double)count / tong * 100; //tỉ lệ %
 
-                int index = series.Points.AddY(count);
-                series.Points[index].LegendText = kvp.Key;
+                int index = series.Points.AddY(count); //thêm điểm vào series
+                series.Points[index].LegendText = kvp.Key; //hiển thị nhãn
             }
 
             chart1.Series.Add(series);
@@ -191,11 +166,11 @@ namespace GUI_QLPK
                     thuocSapHet.Add(thuoc);
                 }
             }
-
+            //liệt kê
             if (thuocSapHet.Count > 0)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("⚠️ Các thuốc sắp hết:");
+                StringBuilder sb = new StringBuilder(); //dùng để thông báo
+                sb.AppendLine("Các thuốc sắp hết:");
                 foreach (thuocDTO thuoc in thuocSapHet)
                 {
                     sb.AppendLine($"- {thuoc.TenThuoc}: còn {thuoc.SoLuong} viên");
@@ -206,7 +181,7 @@ namespace GUI_QLPK
             }
             else
             {
-                lb_thongbao.Text = "✅ Tồn kho thuốc ổn định.";
+                lb_thongbao.Text = "Tồn kho thuốc ổn định.";
                 lb_thongbao.ForeColor = Color.Green;
             }
 

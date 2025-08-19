@@ -43,5 +43,9 @@ namespace QLPKBUS
         {
             return beDAL.autogenerate_mabenh();
         }
+        public bool kiemTraTrungTen(string tenBenh)
+        {
+            return beDAL.kiemTraTrungTen(tenBenh);
+        }
     }
 }

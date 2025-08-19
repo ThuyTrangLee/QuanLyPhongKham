@@ -28,6 +28,7 @@ namespace GUI_QLPK
             InitializeComponent();
             load_combobox_mabn(); // load mã bệnh nhân
             load_combobox_bacsi(); // load bác sĩ
+            load_combobox_giokham();
             ngaykham.Text = DateTime.Now.ToString();
             gird.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             load_Gird(); 
@@ -39,6 +40,18 @@ namespace GUI_QLPK
             malichhen.Text = lhBus.autogenerate_malichhen().ToString();
             hoten.Text = "";
             mabenhnhan.Text = "";
+        }
+        private void load_combobox_giokham()
+        {
+            giokham.Items.Clear();
+            //các khung giờ nửa tiếng 08:00–17:00
+            int hour;
+            for (hour = 8; hour <= 17; hour++)
+            {
+                giokham.Items.Add(string.Format("{0:D2}:00", hour));
+                giokham.Items.Add(string.Format("{0:D2}:30", hour));
+            }
+            giokham.SelectedIndex = -1;
         }
 
         //load dữ liệu bệnh nhân
@@ -61,6 +74,7 @@ namespace GUI_QLPK
                 mabenhnhan.Items.Add(bn.MaBN.ToString());
             }
         }
+        //load dữ liệu bác sĩ
         public void load_combobox_bacsi()
         {
             List<loaiTaiKhoanDTO> listTaiKhoan = ltkBus.select();
@@ -79,7 +93,7 @@ namespace GUI_QLPK
                 }
             }
             List<taiKhoanDTO> allUsers = tkBus.select();
-            List<taiKhoanDTO> listBacSi = new List<taiKhoanDTO>();
+            List<taiKhoanDTO> listBacSi = new List<taiKhoanDTO>(); //lọc ra danh sách bác sĩ
             foreach (taiKhoanDTO user in allUsers)
             {
                 if (user.MaLoai == bacSiRole.MaRole)
@@ -113,7 +127,7 @@ namespace GUI_QLPK
                 }
             }
         }
-
+        //thay đổi lựa chọn cho mã bệnh nhân
         private void mabenhnhan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (mabenhnhan.SelectedIndex < 0) return;
@@ -134,7 +148,12 @@ namespace GUI_QLPK
                 return;
             }
             DateTime ngay = ngaykham.Value.Date;
-            TimeSpan gio = giokham.Value.TimeOfDay;
+            TimeSpan gio; //pare từ combobox sang time
+            if (!TimeSpan.TryParse(giokham.SelectedItem.ToString(), out gio))
+            {
+                MessageBox.Show("Giờ khám không hợp lệ.", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DateTime lichhen = ngay + gio;
             if (lichhen < DateTime.Now)
             {
@@ -143,6 +162,20 @@ namespace GUI_QLPK
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
                 return;
+            }
+            //Kiểm tra trùng lịch theo bác sĩ + ngày giờ
+            List<lichHenDTO> dsTrongNgay = lhBus.selectByDate(ngay); //lịch hẹn trong ngày
+            string maBacSiChon = bacsi.SelectedValue.ToString();
+            foreach (lichHenDTO x in dsTrongNgay)
+            {
+                if (x.MaTaiKhoan == maBacSiChon && x.NgayHen.TimeOfDay == gio)
+                {
+                    MessageBox.Show("Khung giờ này bác sĩ đã có lịch. Vui lòng chọn giờ khác.",
+                                    "Trùng lịch",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
             }
             lichHenDTO lh = new lichHenDTO();
             lh.MaDieuDuong = madd;
@@ -210,6 +243,7 @@ namespace GUI_QLPK
             if (gird.Columns["Mã bệnh nhân"] != null)
                 gird.Columns["Mã bệnh nhân"].Visible = false; // Ẩn cột Mã bệnh nhân
         }
+        //click vao ô trong DataGirdView
         private void gird_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < gird.Rows.Count)
@@ -221,16 +255,17 @@ namespace GUI_QLPK
                 bacsi.Text = row.Cells[4].Value.ToString();
                 string ngay = row.Cells[5].Value.ToString();    // "dd/MM/yyyy"
                 string gio = row.Cells[6].Value.ToString();     // "HH:mm"
-                if (DateTime.TryParseExact($"{ngay} {gio}", "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime dt))
+                if (DateTime.TryParseExact(ngay, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime dt))
                 {
                     ngaykham.Value = dt;
-                    giokham.Value = dt;
                 }
                 else
                 {
                     MessageBox.Show("Invalid date or time format.");
                 }
-
+                // Chọn giờ đúng trong combobox
+                int idx = giokham.FindStringExact(gio); //tìm
+                giokham.SelectedIndex = idx; // = -1 nếu không có
 
             }
         }

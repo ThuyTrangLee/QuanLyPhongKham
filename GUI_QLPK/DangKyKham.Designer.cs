@@ -34,7 +34,6 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mabenhnhan = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.giokham = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.hoten = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.btn_dangky = new Guna.UI2.WinForms.Guna2Button();
             this.gird = new Guna.UI2.WinForms.Guna2DataGridView();
             this.QLBenhNhan = new Guna.UI2.WinForms.Guna2Panel();
+            this.giokham = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.QLBenhNhan.SuspendLayout();
             this.SuspendLayout();
@@ -88,22 +88,6 @@
             this.mabenhnhan.Size = new System.Drawing.Size(247, 36);
             this.mabenhnhan.TabIndex = 43;
             this.mabenhnhan.SelectedIndexChanged += new System.EventHandler(this.mabenhnhan_SelectedIndexChanged);
-            // 
-            // giokham
-            // 
-            this.giokham.BackColor = System.Drawing.Color.White;
-            this.giokham.Checked = true;
-            this.giokham.FillColor = System.Drawing.Color.White;
-            this.giokham.Font = new System.Drawing.Font("Times New Roman", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.giokham.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.giokham.Location = new System.Drawing.Point(737, 171);
-            this.giokham.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.giokham.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.giokham.Name = "giokham";
-            this.giokham.ShowUpDown = true;
-            this.giokham.Size = new System.Drawing.Size(247, 40);
-            this.giokham.TabIndex = 42;
-            this.giokham.Value = new System.DateTime(2025, 7, 18, 8, 17, 0, 0);
             // 
             // label6
             // 
@@ -338,10 +322,10 @@
             // QLBenhNhan
             // 
             this.QLBenhNhan.BackColor = System.Drawing.Color.LightCyan;
+            this.QLBenhNhan.Controls.Add(this.giokham);
             this.QLBenhNhan.Controls.Add(this.guna2HtmlLabel2);
             this.QLBenhNhan.Controls.Add(this.guna2HtmlLabel1);
             this.QLBenhNhan.Controls.Add(this.mabenhnhan);
-            this.QLBenhNhan.Controls.Add(this.giokham);
             this.QLBenhNhan.Controls.Add(this.label6);
             this.QLBenhNhan.Controls.Add(this.hoten);
             this.QLBenhNhan.Controls.Add(this.label1);
@@ -359,6 +343,21 @@
             this.QLBenhNhan.Name = "QLBenhNhan";
             this.QLBenhNhan.Size = new System.Drawing.Size(1076, 391);
             this.QLBenhNhan.TabIndex = 33;
+            // 
+            // giokham
+            // 
+            this.giokham.BackColor = System.Drawing.Color.Transparent;
+            this.giokham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.giokham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.giokham.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.giokham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.giokham.Font = new System.Drawing.Font("Times New Roman", 12.22642F);
+            this.giokham.ForeColor = System.Drawing.Color.Black;
+            this.giokham.ItemHeight = 30;
+            this.giokham.Location = new System.Drawing.Point(737, 175);
+            this.giokham.Name = "giokham";
+            this.giokham.Size = new System.Drawing.Size(247, 36);
+            this.giokham.TabIndex = 47;
             // 
             // DangKyKham
             // 
@@ -382,7 +381,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox mabenhnhan;
-        private Guna.UI2.WinForms.Guna2DateTimePicker giokham;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox hoten;
         private System.Windows.Forms.Label label1;
@@ -397,5 +395,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_dangky;
         private Guna.UI2.WinForms.Guna2DataGridView gird;
         private Guna.UI2.WinForms.Guna2Panel QLBenhNhan;
+        private Guna.UI2.WinForms.Guna2ComboBox giokham;
     }
 }

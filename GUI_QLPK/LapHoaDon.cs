@@ -44,7 +44,7 @@ namespace GUI_QLPK
         public int stt;
         public LapHoaDon(int mataikhoan)
         {
-            maNV = mataikhoan;
+            maNV = mataikhoan; //lưu NV đăng nhập
             InitializeComponent();
             listcd = cdBus.select();
             listdv = donviBus.select();
@@ -64,7 +64,7 @@ namespace GUI_QLPK
             loadtiendichvu();
             load_data(mapkb.Text);
         }
-
+        //load PKB & dịch vụ
         public void load_combobox()
         {
             BenhNhanBUS bnBus = new BenhNhanBUS();
@@ -80,6 +80,7 @@ namespace GUI_QLPK
             List<phieukhambenhDTO> listpkb = pkbBus.select();
             this.loadData_TenBN(listBenhnhan, listpkb);
         }
+        //nạp mã PKB & dịch vụ
         private void loadData_Vao_Combobox(List<phieukhambenhDTO> listpkb, List<hoadonDTO> listhd, List<dichvuDTO> listdv)
         {
             mapkb.Items.Clear();
@@ -90,6 +91,7 @@ namespace GUI_QLPK
                 System.Windows.Forms.MessageBox.Show("Có lỗi khi lấy thông tin nạp vào combox pkb từ DB", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
+            // Chọn ra các PKB CHƯA có hoá đơn
             foreach (phieukhambenhDTO pkb in listpkb)
             {
                 bool exists = false;
@@ -111,6 +113,7 @@ namespace GUI_QLPK
             if (mapkb.Items.Count > 0)
             { mapkb.SelectedIndex = 0; }
 
+            //nạp dịch vụ
             foreach (dichvuDTO dichvu in listdv)
             {
 
@@ -118,7 +121,7 @@ namespace GUI_QLPK
                 comboDichVu.SelectedIndex = 0;
             }
         }
-
+        //Hiển thị tên BN và ngày tái khám theo PKB
         private void loadData_TenBN(List<BenhNhanDTO> listBenhnhan, List<phieukhambenhDTO> listpkb)
         {
             foreach (phieukhambenhDTO pkb in listpkb)
@@ -269,17 +272,18 @@ namespace GUI_QLPK
         {
             loadtiendichvu();
         }
-
+        //tính tiền 
         public void loadtiendichvu()
         {
-            int selectedIndex = comboDichVu.SelectedIndex;
+            int selectedIndex = comboDichVu.SelectedIndex; 
             List<dichvuDTO> listdv = dvBus.select();
             foreach (dichvuDTO d in listdv)
             {
-                if (selectedIndex + 1 == d.MaDichVu)
+                if (selectedIndex + 1 == d.MaDichVu) //giả định ID = vị trí+1
                 {
                     tienkham.Text = d.TienDichVu.ToString();
                     tkham = d.TienDichVu;
+                    //format tiền khám N0
                     decimal valueTienkham;
                     if (decimal.TryParse(tienkham.Text, System.Globalization.NumberStyles.AllowThousands, culture, out valueTienkham))
                     {
@@ -309,7 +313,7 @@ namespace GUI_QLPK
 
             }
         }
-
+        //khi nguoi dung chon pkb khac tinh toan lai
         private void mapkb_SelectedIndexChanged(object sender, EventArgs e)
         {
             load_data(mapkb.Text);

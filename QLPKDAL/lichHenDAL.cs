@@ -22,17 +22,17 @@ namespace QLPKDAL
 
         public List<lichHenDTO> select()
         {
-            string query = "SELECT * FROM [LichHen]";
+            string query = "SELECT * FROM [LichHen]"; //lấy all lịch hẹn
             List<lichHenDTO> lslichHen = new List<lichHenDTO>();
 
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString)) //khởi tạo kết nối csdl
             {
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     try
                     {
                         con.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
+                        SqlDataReader reader = cmd.ExecuteReader(); //đọc dl từng dòng
 
                         while (reader.Read())
                         {
@@ -70,7 +70,7 @@ namespace QLPKDAL
                     try
                     {
                         con.Open();
-                        cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery(); //chạy sql insert
                         con.Close();
                     }
                     catch (Exception ex)
@@ -98,7 +98,7 @@ namespace QLPKDAL
                     {
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
-                        if (reader.Read() && !reader.IsDBNull(0))
+                        if (reader.Read() && !reader.IsDBNull(0)) //kiểm tra xem có giá trị nào trong cột MaxMaLH không
                         {
                             maLichHen = int.Parse(reader["MaxMaLH"].ToString()) + 1;
                         }
@@ -114,7 +114,7 @@ namespace QLPKDAL
         public bool xoa(lichHenDTO lh)
         {
             string query = string.Empty;
-            query += "delete from [LichHen]";
+            query += "delete from [LichHen]"; //câu lệnh xóa
             query += "where maLichHen=@maLichHen";
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -131,7 +131,7 @@ namespace QLPKDAL
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        con.Dispose();
+                        con.Dispose(); //giải phóng
                     }
                     catch (Exception ex)
                     {
@@ -165,6 +165,7 @@ namespace QLPKDAL
                 }
             }
         }
+        //lấy ds lịch hẹn theo ngày
         public List<lichHenDTO> selectByDate(DateTime ngay)
         {
             string query = "SELECT * FROM LichHen WHERE CAST(NgayHen AS DATE) = @ngay";
@@ -175,7 +176,7 @@ namespace QLPKDAL
             {
                 cmd.Parameters.AddWithValue("@ngay", ngay.Date);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader(); //thực thi truy vấn và lấy dữ liệu
 
                 while (reader.Read())
                 {

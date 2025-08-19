@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Globalization;
 
 
 namespace GUI_QLPK
@@ -40,7 +41,7 @@ namespace GUI_QLPK
             mathuoc.Text = thBus.autogenerate_mathuoc().ToString();
             listcd = cdBUS.select();
             listdv = donViBUS.select();
-            this.load_combobox(listdv, listcd);
+            this.load_combobox(listdv, listcd); //tải dữ liệu vào combobox
             tenthuoc.Text = "";
             donvitinh.Text = "";
             dongia.Text = "";
@@ -71,7 +72,7 @@ namespace GUI_QLPK
             table.Columns.Add("Tên thuốc", typeof(string));
             table.Columns.Add("Đơn vị tính", typeof(string));
             table.Columns.Add("Số lượng", typeof(int));
-            table.Columns.Add("Đơn giá", typeof(float));
+            table.Columns.Add("Đơn giá", typeof(decimal));
             table.Columns.Add("Cách dùng", typeof(string));
             foreach (thuocDTO th in listThuoc)
             {
@@ -86,7 +87,7 @@ namespace GUI_QLPK
                     }
                 }
                 row["Số lượng"] = th.SoLuong;
-                row["Đơn giá"] = th.DonGia;
+                row["Đơn giá"] = Convert.ToDecimal(th.DonGia); //éo định dạng
                 foreach (cachdungDTO cd in listcd)
                 {
                     if (cd.MaCachDung == th.MaCachDung)
@@ -98,6 +99,7 @@ namespace GUI_QLPK
                 table.Rows.Add(row);
             }
             gird.DataSource = table.DefaultView;
+            gird.Columns["Đơn giá"].DefaultCellStyle.Format = "N0"; 
         }
 
         private void load_combobox(List<donViDTO> listdv, List<cachdungDTO> listcd)
@@ -152,8 +154,8 @@ namespace GUI_QLPK
 
         private void Them_Click(object sender, EventArgs e)
         {
-            float gia;
-            if (!float.TryParse(dongia.Text.Trim(), out gia) || gia <= 0)
+            decimal gia;
+            if (!decimal.TryParse(dongia.Text.Trim(), out gia) || gia <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập số dương và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dongia.Text = "";
@@ -177,7 +179,7 @@ namespace GUI_QLPK
             thuocDTO th = new thuocDTO();
             th.MaThuoc = mathuoc.Text;
             th.TenThuoc = tenthuoc.Text;
-            th.DonGia = float.Parse(dongia.Text);
+            th.DonGia = (float)gia;// ép decimal sang float
             th.SoLuong = (int)soluong.Value;
             foreach (donViDTO donvi in listdv)
             {
@@ -222,14 +224,14 @@ namespace GUI_QLPK
                     th.MaCachDung = cd.MaCachDung;
                 }
             }
-            int gia;
-            if (int.TryParse(dongia.Text.Trim(), out gia) && gia <= 0)
+            decimal gia;
+            if (!decimal.TryParse(dongia.Text.Trim(), out gia) && gia <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập số dương và không được để trống", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dongia.Focus();
                 return;
             }
-            th.DonGia = int.Parse(dongia.Text);
+            th.DonGia = (float)gia;
             th.SoLuong = (int)soluong.Value;
             bool kq = thBus.sua(th, temp);
             if (!kq)
@@ -260,7 +262,12 @@ namespace GUI_QLPK
                     th.MaCachDung = cd.MaCachDung;
                 }
             }
-            th.DonGia = int.Parse(dongia.Text);
+            decimal gia;
+            if (!decimal.TryParse(dongia.Text.Trim(), out gia))
+            {
+                th.DonGia =(float)gia ;
+            }
+            
             th.SoLuong = (int)soluong.Value;
             bool kq = thBus.xoa(th);
             if (!kq)
@@ -281,13 +288,10 @@ namespace GUI_QLPK
                 mathuoc.Text = row.Cells[0].Value.ToString();
                 tenthuoc.Text = row.Cells[1].Value.ToString();
                 donvitinh.Text = row.Cells[2].Value.ToString();
-                dongia.Text = row.Cells[4].Value.ToString();
+                dongia.Text = Convert.ToDecimal(row.Cells[4].Value).ToString("N0");
                 cachdung.Text = row.Cells[5].Value.ToString();
                 soluong.Value = Convert.ToInt32(row.Cells[3].Value);
-                //if (row.Cells[3].Value != null && int.TryParse(row.Cells[3].Value.ToString(), out int soLuongValue))
-                //{
-                //    soluong.Value = soLuongValue;
-                //}
+
                 temp = row.Cells[0].Value.ToString();
             }
         }

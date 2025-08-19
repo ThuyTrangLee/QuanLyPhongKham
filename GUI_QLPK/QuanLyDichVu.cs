@@ -53,7 +53,7 @@ namespace GUI_QLPK
                 DataRow row = table.NewRow();
                 row["Mã dịch vụ"] = dv.MaDichVu;
                 row["Tên dịch vụ"] = dv.TenDichVu;
-                row["Tiền dịch vụ"] = dv.TienDichVu;
+                row["Tiền dịch vụ"] = Convert.ToDecimal(dv.TienDichVu).ToString("N0"); //ép định dạng
                 table.Rows.Add(row);
             }
             gird.DataSource = table.DefaultView;
@@ -91,7 +91,7 @@ namespace GUI_QLPK
                 return;
             }
             dv.TenDichVu = txtTenDV.Text;
-            dv.TienDichVu = int.Parse(txtTienDV.Text);
+            dv.TienDichVu = (int)Math.Round(tien, MidpointRounding.AwayFromZero); //làm tròn số thập phân (làm tròn ra xa số 0)
 
             bool kq = dvBus.sua(dv, temp_ma);
             if (!kq)
@@ -129,7 +129,7 @@ namespace GUI_QLPK
             {
                 DataGridViewRow row = gird.Rows[e.RowIndex];
                 txtTenDV.Text = row.Cells[1].Value.ToString();
-                txtTienDV.Text = row.Cells[2].Value.ToString();
+                txtTienDV.Text = Convert.ToDecimal(row.Cells[2].Value).ToString("N0");
                 temp_ma = int.Parse(row.Cells[0].Value.ToString());
             }
         }

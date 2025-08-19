@@ -56,7 +56,7 @@ namespace GUI_QLPK
                 float doanhthu = hdBus.doanhthuMonth(mon.ToString(), year);
                 if(doanhthu > 0)
                 {
-                    dataByMonth.Add(monthName, doanhthu);
+                    dataByMonth.Add(monthName, doanhthu); //thêm doanh thu vào dictionary
                 }
             }
             //xóa all dữ liệu 
@@ -80,7 +80,7 @@ namespace GUI_QLPK
                 series.Points.AddXY(item.Key, item.Value);
             }
 
-
+            //tạo dictionary để lưu doanh thu theo ngày
             Dictionary<string, float> dataByDate = new Dictionary<string, float>();
             for (int day = 1; day <= DateTime.DaysInMonth(int.Parse(year), int.Parse(month)); day++)
             {
@@ -95,8 +95,8 @@ namespace GUI_QLPK
 
             chart2.Series.Clear();
             chart2.ChartAreas.Clear();
-            ChartArea chartArea2 = chart2.ChartAreas.Add("chartArea");
-            Series series2 = chart2.Series.Add("Doanh thu tháng " + month);
+            ChartArea chartArea2 = chart2.ChartAreas.Add("chartArea"); //tạo khu vực biểu đồ mới
+            Series series2 = chart2.Series.Add("Doanh thu tháng " + month); //tạo serise mới kiểu column
             series2.ChartType = SeriesChartType.Column;
 
             foreach (var item in dataByDate)
@@ -104,6 +104,7 @@ namespace GUI_QLPK
                 series2.Points.AddXY(item.Key, item.Value);
             }
         }
+        //table
         private void loadData_Vao_GirdView(List<hoadonDTO> listhoadon)
         {
             if (listhoadon == null)
@@ -115,7 +116,7 @@ namespace GUI_QLPK
             DataTable table = new DataTable();
             table.Columns.Add("Số Thứ Tự", typeof(int));
             table.Columns.Add("Ngày Lập Hóa Đơn", typeof(string));
-            table.Columns.Add("Số Bệnh Nhân", typeof(int));
+            table.Columns.Add("Tổng Số Bệnh Nhân", typeof(int));
             table.Columns.Add("Doanh Thu", typeof(string));
             table.Columns.Add("Tỷ Lệ", typeof(string));
             // Tính tổng doanh thu
@@ -131,7 +132,7 @@ namespace GUI_QLPK
                 string ngkham = DateTime.Parse(hd.NgayLapHoaDon.ToString()).ToString("yyyy-MM-dd");
                 row["Ngày Lập Hóa Đơn"] = DateTime.Parse(ngkham.ToString()).ToString("dd-MM-yyyy");
                 //lấy số bệnh nhân trong ngày
-                row["Số Bệnh Nhân"] = int.Parse(hdBus.sobenhnhan(ngkham).ToString());
+                row["Tổng Số Bệnh Nhân"] = int.Parse(hdBus.sobenhnhan(ngkham).ToString());
                 //lấy doanh thu trong ngày và chuyển đổi sang chuỗi
                 string valueDoanhthu = hdBus.doanhthu(ngkham).ToString(CultureInfo.InvariantCulture);
                 decimal parsedDoanhthu;

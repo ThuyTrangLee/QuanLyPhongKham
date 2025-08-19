@@ -67,7 +67,7 @@ namespace GUI_QLPK
                     {
                         if (bn.MaBN == lh.MaBenhNhan)
                         {
-                            string bacsi = "";
+                            string bacsi = ""; //biến để lưu tên bác sĩ
                             string trangthai = "";
                             DataRow row =  table.NewRow();
                             row["Số thứ tự"] = stt++;
@@ -88,25 +88,6 @@ namespace GUI_QLPK
                                     row["Nhân viên đăng ký"] = tk.Name;
                                 }
                             }
-                            //foreach (loaiTaiKhoanDTO loaiTk in listLoaiTk)
-                            //{
-                            //    if (loaiTk.MaRole == ma)
-                            //    {
-                            //        bacsi = loaiTk.TenLoaiTaiKhoan;
-                            //        if (lh.TrangThai == "Chờ khám")
-                            //        {
-                            //            trangthai = "Chờ khám";
-                            //        }
-                            //        else if (lh.TrangThai == "Đã khám")
-                            //        {
-                            //            trangthai = "Đã khám";
-                            //        }
-                            //        else
-                            //        {
-                            //            trangthai = "Hủy lịch hẹn";
-                            //        }
-                            //    }
-                            //}
                             table.Rows.Add(row);
                         }
                     }

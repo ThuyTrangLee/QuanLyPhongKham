@@ -256,5 +256,27 @@ namespace QLPKDTO
             }
             return mabenh;
         }
+        public bool kiemTraTrungTen(string tenBenh)
+        {
+            string query = "SELECT COUNT(*) FROM [Benh] WHERE tenBenh = @tenBenh";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@tenBenh", tenBenh);
+                    try
+                    {
+                        con.Open();
+                        int count = (int)cmd.ExecuteScalar();
+                        return count > 0; // true = có trùng
+                    }
+                    catch
+                    {
+                        return false; // lỗi thì cho false
+                    }
+                }
+            }
+        }
+
     }
 }

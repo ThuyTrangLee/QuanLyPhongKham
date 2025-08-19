@@ -16,7 +16,7 @@ namespace GUI_QLPK
 {
     public partial class TraCuuBenhNhan : Form
     {
-        public DataTable db1 = new DataTable("BenhNhan");
+        //public DataTable db1 = new DataTable("BenhNhan");
         BenhNhanBUS bnBus = new BenhNhanBUS();
         BenhNhanDTO bn = new BenhNhanDTO();
         PhieukhambenhBUS pkbBUS = new PhieukhambenhBUS();
@@ -43,6 +43,7 @@ namespace GUI_QLPK
             List<benhDTO> listBenh = benhBUS.select();
             this.loadData_Vao_GridView(listBenhNhan, listPhieuKham, listChandoan, listBenh);
         }
+        //load dữ liệu vào girdview
         private void loadData_Vao_GridView(List<BenhNhanDTO> listBenhNhan, List<phieukhambenhDTO> listPhieuKham, List<chandoanDTO> listChuanDoan, List<benhDTO> listBenh)
         {
 

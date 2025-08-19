@@ -111,7 +111,7 @@ namespace QLPKDAL
             }
             return lsHoaDon;
         }
-
+        //tong doanh thu
         public decimal doanhthu(string ngayLapHoaDon)
         {
             decimal doanhthu = 0;
@@ -303,7 +303,6 @@ namespace QLPKDAL
                     }
                     catch (Exception ex)
                     {
-                        // Handle exception (optional: log the exception)
                         con.Close();
                     }
                 }

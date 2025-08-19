@@ -87,6 +87,13 @@ namespace GUI_QLPK
             }
             else
             {
+                // Kiểm tra trùng tên bệnh
+                if (beBus.kiemTraTrungTen(tenBenh.Text.Trim()))
+                {
+                    System.Windows.Forms.MessageBox.Show("Tên bệnh đã tồn tại. Vui lòng nhập lại", "Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    tenBenh.Focus();
+                    return;
+                }
                 benhDTO be = new benhDTO();
                 be.TenBenh = tenBenh.Text;
 
