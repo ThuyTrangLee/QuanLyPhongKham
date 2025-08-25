@@ -1,4 +1,4 @@
-# 🏥 Đồ án môn Lập trình cơ sở dữ liệu - Quản Lý Phòng Khám
+# 🏥 Bài tập lớn môn Lập trình cơ sở dữ liệu - Quản Lý Phòng Khám
 
 ---
 
@@ -49,4 +49,5 @@
    - Kiểm thử giao diện người dùng.
 
 ---
+
 
